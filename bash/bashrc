@@ -1,0 +1,107 @@
+#!/bin/bash
+
+#source other scripts
+#source /usr/share/doc/pkgfile/command-not-found.bash
+[ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
+
+shopt -s autocd
+export HISTFILESIZE=5000
+export EDITOR=vim
+export VISUAL=vim
+
+#alias definitions
+alias chmox="chmod +x"
+alias cd..="cd .."
+alias ddd="killall -USR1 dd"
+alias sddd="sudo killall -USR1 dd"
+#auto color for specified commands
+alias l="ls --color=auto"
+alias ls="ls --color=auto"
+alias ll="ls --color=auto -l"
+alias lr="ls --color=auto -r"
+alias lla="ls --color=auto -la"
+
+alias killlall="killall"
+alias kilall="killall"
+alias kilal="killall"
+alias killlal="killall"
+
+alias quit="exit"
+
+alias wget='wget --content-disposition'
+alias vim="vim -p"
+alias vi="vim -p"
+alias grep='grep --color=auto'
+alias rgrep='grep -r --color=auto'
+
+#END alias-definitions
+
+alias pwedit="vim -p /etc/{passwd,group,shadow,gshadow}"
+alias pitime='time echo "scale=1000; 4*a(1)" | bc -l > /dev/null'
+alias cmdlist='find $(echo $PATH | tr ":" "\n")'
+alias makepasswd='makepasswd --minchars=10 --maxchars=25 --count=10'
+alias upd_linux="mount -o remount,rw /boot && pacman -Syu && mount -o remount,ro /boot && mount | grep ^/dev/vda1"
+alias reload=". ~/.bashrc"
+
+#correct some fast tipped cds
+function c {
+	if [ $1 == "d.." ]; then
+		cd ..;
+		pwd;
+	fi
+	if [ -d $1 ]; then
+		cd $1;
+		pwd;
+	fi
+	return 0;
+}
+
+#The function will find the given user and search for a mysql-password in its
+#Home-direcotory, which will get printed out!
+#arg1: user where to find a config-file
+#      if not given, it uses the current user in the $HOME and $USER-Variable
+function mysqlpw() {
+	if [[ -z $1 ]]; then
+		H=$HOME
+		U=$USER
+		elif [[ `id $1` ]]; then
+			U=$1;
+			H=$(grep ^${1}: /etc/passwd | cut -d":" -f 6);
+		else 
+			return 1;
+	fi;
+
+	echo MySQL-Password for user $U is $(grep "password=" $H/.my.cnf | cut -d"=" -f 2);
+}
+
+#read $HOME/.bash.d
+for file in $HOME/.bash.d/*.sh 
+do
+	if [ -x $file ]
+		then
+		source $file
+	fi
+done
+unset file
+
+if [[ `which git` ]]; then
+function parse_git_dirty {
+	[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+function parse_git_branch {
+	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+}
+else
+	function parse_git_branch(){
+		return 0;
+	}
+fi
+
+commandsof (){
+	pacman -Ql $1 | grep --perl-regexp "($(echo $PATH | tr : \|))"
+}
+
+PS1='\[\033[0m\]$(if [ $? != 0 ]; then echo "\[\033[0;1;31m\]"; else echo "\[\033[0;32m\]"; fi)[$(if [ $UID == 0 ]; then echo "\[\033[41m\]"; fi)\u\[\033[49m\]@\h:\W$(parse_git_branch)]\[\033[0m\] \#\$ '
+PS2='> '
+PS3='> '
+PS4='+ '
