@@ -1,0 +1,23 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+[user]
+	name = Benedikt Heine
+	email = bebe@bebehei.de
+[url "ssh://git/~/git/"]
+	insteadof = private:
+[url "git://git.gnome.org/"]
+	insteadof = gnome:
+[merge]
+	defaultToUpstream = true
+	tool = vimdiff
+	template = /home/bebe/.git/review-template
+[push]
+	default = matching
+[core]
+	editor = vim
+	eol = native
+[alias]
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
