@@ -1,0 +1,63 @@
+"" Syntaxhervorhebung
+syntax on
+
+set encoding=utf-8
+"" weite Möglichkeiten zur Einstellung des Zeichensatzes
+" set termencoding=iso-8859-15
+" set fileencodings=ucs-bom,utf-8,latin1
+
+"" immer die Statuszeile mit dem Dateinamen anzeigen
+set ls=2
+
+"" automatischer Zeilenumbruch, wenn die Zeile zu lang ist
+set wrap
+" set nowrap
+
+"" Kompatibilitätsmodus zu vi abschalten
+set nocompatible
+
+"" Wieviele Leerzeichen lang ist ein Tabulator?
+set ts=2
+"" Ersetze Tabulatoren durch Leerzeichen
+" set expandtab
+"" Einrückungstiefe
+set shiftwidth=2
+"" Einrückungen im C-Stil
+" set cindent
+"" alternative Einrückungsstile
+ set autoindent
+ set smartindent
+
+"" Suchfunktion ignoriert Groß- und Kleinschreibung
+set ignorecase
+
+"" zeigt unten links diverse Positionsinformationen der Schreibmarke
+set ruler
+
+"" die Shell, die beim Starten von Programmen aus dem Editor heraus verwendet werden soll
+set shell=/bin/bash
+
+"" zeigt in der Statuszeile an, ob man sich im Einfügemodus (INSERT) oder im Ersetzungsmodus (REPLACE) befindet
+set showmode
+
+"" Zeilennummern anzeigen
+set number
+
+"" Verhalten der Rückschritttaste
+set backspace=indent,eol,start
+
+"" F9 wechselt Syntaxhervorhebung
+map <F9> :if has("syntax_items")<CR>syntax off<CR>else<CR>syntax on<CR>endif<CR><CR>
+
+"" F8 wechselt Zeilenubruch
+map <F8> :if has("nowrap_items")<CR>set nowrap<CR>else<CR>set wrap<CR>endif<CR><CR>
+"" nicht an den Zeilenanfang bei Benutzung von Bild auf und Bild ab gehen
+set nostartofline
+
+"" Suchergebnisse hervorheben
+set hlsearch
+set incsearch
+
+"" Wer die Maus für übliches Copy&Paste verwenden will, der sollte diese Zeile hinzufügen:
+set mouse=
+
