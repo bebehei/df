@@ -8,6 +8,7 @@ PATH=$HOME/bin:$HOME/.gem/ruby/2.0.0/bin:$PATH
 
 shopt -s autocd
 export HISTFILESIZE=5000
+export HISTCONTROL=ignoreboth
 export EDITOR=vim
 export VISUAL=vim
 
