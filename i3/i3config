@@ -1,0 +1,147 @@
+set $mod Mod4
+floating_modifier $mod
+
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+##Various 
+assign [class="Spotify"] 10
+hide_edge_borders both
+focus_follows_mouse no
+
+#mit windows+tab zwischen workspaces durchswitchen
+# ähnlich strg+tab in firefox
+bindsym $mod+Tab workspace next
+bindsym Shift+$mod+Tab workspace prev
+
+
+##firefox bughelper
+bindsym $mod+^ floating toggle; floating toggle;
+
+#Colors
+#colorclasses           border  backgr  text    indicator
+client.focused          #403e3a #403e3a #FFFFFF #ac0734 
+client.focused_inactive #333333 #5f676a #ffffff #484e50
+client.unfocused        #333333 #222222 #888888 #292d2e
+client.urgent           #2f343a #900000 #ffffff #900000
+
+bar {
+	status_command i3status
+	position top
+}
+
+#AUDIO SECTION
+bindsym XF86AudioRaiseVolume exec /home/bebe/bin/xfbuttons.sh XF86AudioRaiseVolume
+bindsym XF86AudioLowerVolume exec /home/bebe/bin/xfbuttons.sh XF86AudioLowerVolume
+bindsym XF86AudioMute        exec /home/bebe/bin/xfbuttons.sh XF86AudioMute
+bindsym XF86AudioPlay        exec /home/bebe/bin/xfbuttons.sh XF86AudioPlay
+bindsym XF86AudioNext        exec /home/bebe/bin/xfbuttons.sh XF86AudioNext
+bindsym XF86AudioPrev        exec /home/bebe/bin/xfbuttons.sh XF86AudioPrev
+
+
+# main commands
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exit
+
+# start a terminal
+#bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec gnome-terminal
+
+# screensaver
+bindsym $mod+y exec /home/bebe/bin/i3lock.sh
+
+# start dmenu (a program launcher)
+bindsym $mod+x exec dmenu_run
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# fullscreen
+bindsym $mod+f fullscreen
+
+# change layouts 
+bindsym $mod+b split h
+bindsym $mod+v split v
+bindsym $mod+c layout toggle split
+bindsym $mod+z layout stacking
+bindsym $mod+t layout tabbed
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+#bindsym $mod+space focus mode_toggle
+bindsym $mod+space exec /home/bebe/bin/xkbdtoggle.sh
+bindsym $mod+s focus child
+bindsym $mod+a focus parent
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+bindsym Ctrl+1 move container to workspace 1; workspace 1
+bindsym Ctrl+2 move container to workspace 2; workspace 2
+bindsym Ctrl+3 move container to workspace 3; workspace 3
+bindsym Ctrl+4 move container to workspace 4; workspace 4
+bindsym Ctrl+5 move container to workspace 5; workspace 5
+bindsym Ctrl+6 move container to workspace 6; workspace 6
+bindsym Ctrl+7 move container to workspace 7; workspace 7
+bindsym Ctrl+8 move container to workspace 8; workspace 8
+bindsym Ctrl+9 move container to workspace 9; workspace 9
+#mit strg+0 soll der zoom auf 100% gestellt werden und nicht das fenster neben spotify gesetzt werden
+#bindsym Ctrl+0 move container to workspace 10; workspace 10
+
+#FOCUS
+bindsym $mod+h      focus left
+bindsym $mod+j      focus down
+bindsym $mod+k      focus up
+bindsym $mod+l      focus right
+bindsym $mod+Left   focus left
+bindsym $mod+Down   focus down
+bindsym $mod+Up     focus up
+bindsym $mod+Right  focus right
+
+# move focused window
+bindsym $mod+Shift+h     move left
+bindsym $mod+Shift+j     move down
+bindsym $mod+Shift+k     move up
+bindsym $mod+Shift+l     move right
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Right move right
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+	bindsym h resize shrink width  10 px or 10 ppt
+	bindsym j resize shrink height 10 px or 10 ppt
+	bindsym k resize grow   height 10 px or 10 ppt
+	bindsym l resize grow   width  10 px or 10 ppt
+
+	bindsym Left  resize shrink width  10 px or 10 ppt
+	bindsym Up    resize grow   height 10 px or 10 ppt
+	bindsym Down  resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow   width  10 px or 10 ppt
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
