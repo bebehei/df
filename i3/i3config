@@ -48,7 +48,8 @@ bindsym $mod+Shift+e exit
 bindsym $mod+Return exec gnome-terminal
 
 # screensaver
-bindsym $mod+y exec /home/bebe/bin/i3lock.sh
+#bindsym $mod+y exec /home/bebe/bin/i3lock.sh
+bindsym $mod+y exec i3lock
 
 # start dmenu (a program launcher)
 bindsym $mod+x exec dmenu_run
@@ -64,8 +65,8 @@ bindsym $mod+f fullscreen
 bindsym $mod+b split h
 bindsym $mod+v split v
 bindsym $mod+c layout toggle split
-bindsym $mod+z layout stacking
-bindsym $mod+t layout tabbed
+#bindsym $mod+z layout stacking
+#bindsym $mod+t layout tabbed
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
