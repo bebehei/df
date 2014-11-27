@@ -4,7 +4,12 @@
 #source /usr/share/doc/pkgfile/command-not-found.bash
 [ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
 
-PATH=$HOME/bin:$HOME/.gem/ruby/2.0.0/bin:$PATH
+for path in $HOME/bin $HOME/.gem/ruby/2.0.0/bin; do
+	if [[ -d $path ]]; then
+		PATH=$path:$PATH
+	fi
+done
+export PATH
 
 shopt -s autocd
 shopt -s checkwinsize
@@ -52,7 +57,6 @@ alias pwedit="vim -p /etc/{passwd,group,shadow,gshadow}"
 alias pitime='time echo "scale=1000; 4*a(1)" | bc -l > /dev/null'
 alias cmdlist='find $(echo $PATH | tr ":" "\n")'
 alias makepasswd='makepasswd --minchars=10 --maxchars=25 --count=10'
-alias upd_linux="mount -o remount,rw /boot && pacman -Syu && mount -o remount,ro /boot && mount | grep ^/dev/vda1"
 alias reload=". ~/.bashrc"
 alias snet='ip addr | \grep -v "inet6" | \grep inet | cut -d " " -f 6 | \grep -v 127.0.0.1/8 | xargs nmap -sP'
 
@@ -97,20 +101,20 @@ do
 done
 unset file
 
-if [[ `which git` ]]; then
-	function parse_git_dirty {
-		[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
-		}
+if [[ $(which git) ]]; then
 	function parse_git_branch {
-		git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+		if [[ $(git status -s 2>/dev/null) ]]; then
+			echo '*'
+		fi
+		git branch 2>/dev/null | cut -d ' ' -f 2
 	}
 else
 	function parse_git_branch(){
 		return 0;
 	}
 fi
-export PS1="\[\e[00;37m\]\$? \[\e[0m\]\[\e[01;33m\]\u\[\e[0m\]\[\e[01;31m\]@\[\e[0m\]\[\e[01;34m\]\h\[\e[0m\]\[\e[00;37m\]:\[\e[0m\]\[\e[01;32m\]\w\[\e[0m\]\[\e[00;37m\]\n\[\e[0m\]\[\e[01;32m\]\A\[\e[0m\]\[\e[00;37m\] \\$> \[\e[0m\]"
-#export PS1='\[\033[0m\]$(if [ $? != 0 ]; then echo "\[\033[0;1;31m\]"; else echo "\[\033[0;32m\]"; fi)[$(if [ $UID == 0 ]; then echo "\[\033[41m\]"; fi)\u\[\033[49m\]@\h:\W$(parse_git_branch)]\[\033[0m\] \#\$ '
+
+export PS1="\[\e[00;37m\]\$? \[\e[0m\]\[\e[01;33m\]\u\[\e[0m\]\[\e[01;31m\]@\[\e[0m\]\[\e[01;34m\]\h\[\e[0m\]\[\e[00;37m\]:\[\e[0m\]\[\e[01;32m\]\w\[\e[0m\]\[\e[00;37m\]\n\[\e[0m\]\[\e[01;32m\]\A\[\e[0m\]\[\e[00;37m\] \[\e[01;31m\]\$(parse_git_branch | tr -d '\n')\[\e[0m\] \[\e[00;37m\]\# \[\e[0m\]\\$> "
 export PS2='2nd> '
 export PS3='3rd> '
 export PS4='4th> '
