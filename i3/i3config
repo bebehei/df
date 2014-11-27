@@ -1,6 +1,9 @@
 set $mod Mod4
 floating_modifier $mod
 
+#startup programs
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 ##Various 
@@ -12,6 +15,8 @@ focus_follows_mouse no
 # ähnlich strg+tab in firefox
 bindsym $mod+Tab workspace next
 bindsym Shift+$mod+Tab workspace prev
+#mit alt+tab fenster wechseln
+bindsym Mod1+Tab exec /home/bebe/bin/winmenu
 
 
 ##firefox bughelper
