@@ -51,6 +51,20 @@ alias wget='wget --content-disposition'
 alias vim="vim -p"
 alias vi="vim -p"
 
+#create sudo aliases WITHOUT leading s
+for sudo in wifi-menu systemctl netctl mount umount ip pacman shutdown reboot;
+do
+	type $sudo > /dev/null 2>&1 && alias $sudo="sudo $sudo";
+done
+unset sudo
+
+#create sudo aliases WITH leading s
+for sudo in ps vim chown chmod;
+do
+	type $sudo > /dev/null 2>&1  && alias s$sudo="sudo $sudo";
+done
+unset sudo 
+
 #END alias-definitions
 
 alias pwedit="vim -p /etc/{passwd,group,shadow,gshadow}"
@@ -118,13 +132,3 @@ export PS1="\[\e[00;37m\]\$? \[\e[0m\]\[\e[01;33m\]\u\[\e[0m\]\[\e[01;31m\]@\[\e
 export PS2='2nd> '
 export PS3='3rd> '
 export PS4='4th> '
-
-#read $HOME/.bash.d
-for file in $HOME/.bash.d/*.sh 
-do
-	if [ -x $file ]
-		then
-		source $file
-	fi
-done
-unset file
