@@ -26,9 +26,9 @@ bindsym $mod+^ floating toggle; floating toggle;
 
 #Colors
 #colorclasses           border  backgr  text    indicator
-client.focused          #333333 #333333 #FFFFFF #333333 
-client.focused_inactive #333333 #5f676a #FFFFFF #484e50
-client.unfocused        #333333 #333333 #444444 #333333 
+client.focused          #2d2d2d #2d2d2d #FFFFFF #2d2d2d 
+client.focused_inactive #2d2d2d #2d2d2d #FFFFFF #2d2d2d
+client.unfocused        #2d2d2d #2d2d2d #444444 #2d2d2d 
 client.urgent           #2f343a #900000 #FFFFFF #900000
 
 bar {
