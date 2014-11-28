@@ -3,6 +3,8 @@ floating_modifier $mod
 
 #startup programs
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nm-applet
+exec --no-startup-id gnome-keyring-daemon
 
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
