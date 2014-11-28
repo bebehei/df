@@ -6,7 +6,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-keyring-daemon
 
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:Ubuntu Bold 11
 
 ##Various 
 assign [class="Spotify"] 10
@@ -26,10 +26,10 @@ bindsym $mod+^ floating toggle; floating toggle;
 
 #Colors
 #colorclasses           border  backgr  text    indicator
-client.focused          #403e3a #403e3a #FFFFFF #ac0734 
-client.focused_inactive #333333 #5f676a #ffffff #484e50
-client.unfocused        #333333 #222222 #888888 #292d2e
-client.urgent           #2f343a #900000 #ffffff #900000
+client.focused          #333333 #333333 #FFFFFF #333333 
+client.focused_inactive #333333 #5f676a #FFFFFF #484e50
+client.unfocused        #333333 #333333 #444444 #333333 
+client.urgent           #2f343a #900000 #FFFFFF #900000
 
 bar {
 	status_command i3status
@@ -51,8 +51,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
 # start a terminal
-#bindsym $mod+Return exec xfce4-terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # screensaver
 #bindsym $mod+y exec /home/bebe/bin/i3lock.sh
