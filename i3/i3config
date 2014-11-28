@@ -5,6 +5,7 @@ floating_modifier $mod
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-keyring-daemon
+exec --no-startup-id numlockx on
 
 font pango:Ubuntu Bold 11
 
