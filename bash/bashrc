@@ -52,7 +52,7 @@ alias vim="vim -p"
 alias vi="vim -p"
 
 #create sudo aliases WITHOUT leading s
-for sudo in wifi-menu systemctl netctl mount umount ip pacman shutdown reboot;
+for sudo in wifi-menu netctl mount umount ip pacman shutdown reboot;
 do
 	type $sudo > /dev/null 2>&1 && alias $sudo="sudo $sudo";
 done
