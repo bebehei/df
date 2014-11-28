@@ -5,13 +5,13 @@ general {
 }
 
 order += "disk /"
-order += "wireless wlan0"
-order += "ethernet eth0"
+order += "wireless wlp2s0"
+order += "ethernet enp1s0f1"
 order += "volume master"
-order += "battery 0"
 order += "battery 1"
-order += "cpu_temperature 0"
 order += "cpu_temperature 1"
+#order += "cpu_temperature 2"
+#order += "cpu_temperature 3"
 order += "load"
 order += "time"
 
@@ -26,17 +26,12 @@ ethernet eth0 {
         format_down = ""
 }
 
-battery 0 {
-        format = "%status %percentage %remaining"
+battery 1 {
+        format = "%status %percentage %remaining %consumption"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 15
 }
 
-battery 1 {
-        format = "%consumption"
-        path = "/sys/class/power_supply/BAT0/uevent"
-        low_threshold = 15
-}
 run_watch DHCP {
         pidfile = "/var/run/dhclient*.pid"
 }
@@ -49,13 +44,17 @@ load {
         format = "%5min"
 }
 
-cpu_temperature 0 {
-        format = "%degrees°C"
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp2_input"
-}
 cpu_temperature 1 {
-        format = "%degrees°C"
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp3_input"
+	format = "%degrees°C"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp%d_input"
+}
+cpu_temperature 2 {
+	format = "%degrees°C"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp%d_input"
+}
+cpu_temperature 3 {
+	format = "%degrees°C"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp%d_input"
 }
 
 disk "/" {
