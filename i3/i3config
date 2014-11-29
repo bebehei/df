@@ -38,12 +38,14 @@ bar {
 }
 
 #AUDIO SECTION
-bindsym XF86AudioRaiseVolume exec /home/bebe/bin/xfbuttons.sh XF86AudioRaiseVolume
-bindsym XF86AudioLowerVolume exec /home/bebe/bin/xfbuttons.sh XF86AudioLowerVolume
-bindsym XF86AudioMute        exec /home/bebe/bin/xfbuttons.sh XF86AudioMute
-bindsym XF86AudioPlay        exec /home/bebe/bin/xfbuttons.sh XF86AudioPlay
-bindsym XF86AudioNext        exec /home/bebe/bin/xfbuttons.sh XF86AudioNext
-bindsym XF86AudioPrev        exec /home/bebe/bin/xfbuttons.sh XF86AudioPrev
+bindsym XF86AudioRaiseVolume  exec /home/bebe/bin/xfbuttons.sh XF86AudioRaiseVolume
+bindsym XF86AudioLowerVolume  exec /home/bebe/bin/xfbuttons.sh XF86AudioLowerVolume
+bindsym XF86AudioMute         exec /home/bebe/bin/xfbuttons.sh XF86AudioMute
+bindsym XF86AudioPlay         exec /home/bebe/bin/xfbuttons.sh XF86AudioPlay
+bindsym XF86AudioNext         exec /home/bebe/bin/xfbuttons.sh XF86AudioNext
+bindsym XF86AudioPrev         exec /home/bebe/bin/xfbuttons.sh XF86AudioPrev
+bindsym XF86MonBrightnessUp   exec /home/bebe/bin/xfbuttons.sh XF86MonBrightnessUp
+bindsym XF86MonBrightnessDown exec /home/bebe/bin/xfbuttons.sh XF86MonBrightnessDown
 
 
 # main commands

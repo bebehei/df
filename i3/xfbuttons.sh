@@ -29,5 +29,11 @@ case $1 in
 	XF86AudioMute)
 		pulseaudio-ctl mute
 	;;
+	XF86MonBrightnessUp)
+		xbacklight -inc 10%
+	;;
+	XF86MonBrightnessDown)
+		xbacklight -dec 10%
+	;;
 		
 esac
