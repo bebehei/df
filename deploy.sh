@@ -4,7 +4,7 @@ DEPLOY="./deployment"
 
 updLink(){
 	# if file is a symbolic link, remove the old one
-	[[ -L $1 ]] && rm $1
+	[[ -L $2 ]] && rm $2
 	ln -s $1 $2
 }
 
