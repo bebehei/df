@@ -1,0 +1,12 @@
+bash/bashrc .bashrc
+git/gitconfig .gitconfig
+i3/i3lock.sh bin/i3lock.sh
+i3/i3config .i3/config
+i3/i3status .i3status.conf
+i3/winmenu bin/winmenu
+i3/xkbdtoggle.sh bin/xkbdtoggle.sh
+i3/xfbuttons.sh bin/xfbuttons.sh
+top/toprc .toprc
+top/toprc /etc/toprc
+vim/vimrc .vimrc
+vim/vimrc /etc/vimrc
