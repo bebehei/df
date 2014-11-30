@@ -58,7 +58,7 @@ bindsym $mod+Return exec xfce4-terminal
 
 # screensaver
 #bindsym $mod+y exec /home/bebe/bin/i3lock.sh
-bindsym $mod+y exec i3lock
+bindsym $mod+z exec i3lock
 
 # start dmenu (a program launcher)
 bindsym $mod+x exec dmenu_run
