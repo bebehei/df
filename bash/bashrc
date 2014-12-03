@@ -1,5 +1,14 @@
 #!/bin/bash
 
+#check if git-repo has new entries
+if [[ $(cd $(dirname $(readlink $HOME/.bashrc)) && git status -s) ]]; then
+	echo -e '\e[01;31m'
+	echo '####################################'
+	echo '# GIT-config-Repo is not commited! #'
+	echo '####################################'
+	echo -e '\e[0m'
+fi
+
 #source other scripts
 #source /usr/share/doc/pkgfile/command-not-found.bash
 [ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
