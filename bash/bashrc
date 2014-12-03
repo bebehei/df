@@ -105,16 +105,6 @@ function mysqlpw() {
 	echo MySQL-Password for user $U is $(grep "password=" $H/.my.cnf | cut -d"=" -f 2);
 }
 
-#read $HOME/.bash.d
-for file in $HOME/.bash.d/*.sh 
-do
-	if [ -x $file ]
-		then
-		source $file
-	fi
-done
-unset file
-
 if [[ $(which git) ]]; then
 	function parse_git_branch {
 		if [[ $(git status -s 2>/dev/null) ]]; then
