@@ -58,7 +58,7 @@ cpu_temperature 3 {
 }
 
 disk "/" {
-        format = "%free"
+        format = "%avail"
 }
 
 volume master {
