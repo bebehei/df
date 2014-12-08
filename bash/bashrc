@@ -60,6 +60,8 @@ alias wget='wget --content-disposition'
 alias vim="vim -p"
 alias vi="vim -p"
 
+alias fuck="sudo !!"
+
 #create sudo aliases WITHOUT leading s
 for sudo in wifi-menu netctl mount umount pacman shutdown reboot;
 do
