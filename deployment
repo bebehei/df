@@ -10,3 +10,4 @@ top/toprc .toprc
 top/toprc /etc/toprc
 vim/vimrc .vimrc
 vim/vimrc /etc/vimrc
+wget/wgetrc .wgetrc

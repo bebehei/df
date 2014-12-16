@@ -56,7 +56,6 @@ alias killlal="killall"
 
 alias quit="exit"
 
-alias wget='wget --content-disposition'
 alias vim="vim -p"
 alias vi="vim -p"
 
