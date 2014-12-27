@@ -13,7 +13,7 @@
 [merge]
 	defaultToUpstream = true
 	tool = vimdiff
-	template = /home/bebe/.git/review-template
+	template = ~/.git/review-template
 [push]
 	default = matching
 [core]

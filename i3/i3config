@@ -22,7 +22,7 @@ focus_follows_mouse no
 bindsym $mod+Tab workspace next
 bindsym Shift+$mod+Tab workspace prev
 #mit alt+tab fenster wechseln
-bindsym Mod1+Tab exec /home/bebe/bin/winmenu
+bindsym Mod1+Tab exec ~/bin/winmenu
 
 
 ##firefox bughelper
@@ -41,16 +41,16 @@ bar {
 }
 
 #AUDIO SECTION
-bindsym Ctrl+Up               exec /home/bebe/bin/xfbuttons.sh XF86AudioRaiseVolume
-bindsym Ctrl+Down             exec /home/bebe/bin/xfbuttons.sh XF86AudioLowerVolume
-bindsym XF86AudioRaiseVolume  exec /home/bebe/bin/xfbuttons.sh XF86AudioRaiseVolume
-bindsym XF86AudioLowerVolume  exec /home/bebe/bin/xfbuttons.sh XF86AudioLowerVolume
-bindsym XF86AudioMute         exec /home/bebe/bin/xfbuttons.sh XF86AudioMute
-bindsym XF86AudioPlay         exec /home/bebe/bin/xfbuttons.sh XF86AudioPlay
-bindsym XF86AudioNext         exec /home/bebe/bin/xfbuttons.sh XF86AudioNext
-bindsym XF86AudioPrev         exec /home/bebe/bin/xfbuttons.sh XF86AudioPrev
-bindsym XF86MonBrightnessUp   exec /home/bebe/bin/xfbuttons.sh XF86MonBrightnessUp
-bindsym XF86MonBrightnessDown exec /home/bebe/bin/xfbuttons.sh XF86MonBrightnessDown
+bindsym Ctrl+Up               exec ~/bin/xfbuttons.sh XF86AudioRaiseVolume
+bindsym Ctrl+Down             exec ~/bin/xfbuttons.sh XF86AudioLowerVolume
+bindsym XF86AudioRaiseVolume  exec ~/bin/xfbuttons.sh XF86AudioRaiseVolume
+bindsym XF86AudioLowerVolume  exec ~/bin/xfbuttons.sh XF86AudioLowerVolume
+bindsym XF86AudioMute         exec ~/bin/xfbuttons.sh XF86AudioMute
+bindsym XF86AudioPlay         exec ~/bin/xfbuttons.sh XF86AudioPlay
+bindsym XF86AudioNext         exec ~/bin/xfbuttons.sh XF86AudioNext
+bindsym XF86AudioPrev         exec ~/bin/xfbuttons.sh XF86AudioPrev
+bindsym XF86MonBrightnessUp   exec ~/bin/xfbuttons.sh XF86MonBrightnessUp
+bindsym XF86MonBrightnessDown exec ~/bin/xfbuttons.sh XF86MonBrightnessDown
 
 
 # main commands
@@ -84,7 +84,7 @@ bindsym $mod+c layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 #bindsym $mod+space focus mode_toggle
-bindsym $mod+space exec /home/bebe/bin/xkbdtoggle.sh
+bindsym $mod+space exec ~/bin/xkbdtoggle.sh
 bindsym $mod+s focus child
 bindsym $mod+a focus parent
 
