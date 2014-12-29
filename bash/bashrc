@@ -61,6 +61,9 @@ alias vi="vim -p"
 
 alias fuck="sudo !!"
 
+# open any file wihtout the knowledge of what type it is
+alias of="xdg-open"
+
 #create sudo aliases WITHOUT leading s
 for sudo in wifi-menu netctl mount umount pacman shutdown reboot;
 do
