@@ -20,4 +20,5 @@
 	editor = vim
 	eol = native
 [alias]
-	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	ct         = log --graph --decorate --pretty=oneline --abbrev-commit
+	committree = log --graph --decorate --pretty=oneline --abbrev-commit
