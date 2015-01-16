@@ -63,6 +63,7 @@ bindsym $mod+Return exec xfce4-terminal
 
 # screensaver
 bindsym $mod+z exec xautolock -locknow
+bindsym $mod+y exec xautolock -locknow
 
 # start dmenu (a program launcher)
 bindsym $mod+x exec dmenu_run
