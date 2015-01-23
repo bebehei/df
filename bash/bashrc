@@ -134,6 +134,7 @@ fi
 function notif-reboot(){
 	while true; do
 		ping -c 1 $1 && aplay /usr/share/sounds/purple/alert.wav
+		sleep 1
 	done
 }
 
