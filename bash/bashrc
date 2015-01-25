@@ -133,7 +133,7 @@ fi
 
 function notif-reboot(){
 	while true; do
-		ping -c 1 $1 && aplay /usr/share/sounds/purple/alert.wav
+		ping -c 1 $1 && notify-send "Host is up" "Host $1 is up!" && return
 		sleep 1
 	done
 }
