@@ -3,6 +3,7 @@
 DEPLOY="./deployment"
 
 updLink(){
+	mkdir -p $(dirname $2)
 	# if file is a symbolic link, remove the old one
 	[[ -L $2 ]] && rm $2
 	ln -s $1 $2
