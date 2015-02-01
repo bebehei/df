@@ -1,6 +1,7 @@
 #!/bin/bash
 
 DEPLOY="./deployment"
+BASE=$(readlink -f $(dirname $DEPLOY))
 
 updLink(){
 	mkdir -p $(dirname $2)
@@ -17,8 +18,8 @@ cat $DEPLOY | while read line; do
 	#    leading slash -> absolute link
 	# no leading slash -> link based on $HOME 
 	if [[ "$dst" =~ ^/ ]]; then
-		updLink $(pwd)/$src $dst
+		updLink $BASE/$src $dst
 		else
-			updLink $(pwd)/$src $HOME/$dst
+			updLink $BASE/$src $HOME/$dst
 	fi
 done
