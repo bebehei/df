@@ -1,6 +1,13 @@
 #!/bin/bash
 
-DEPLOY="./deployment"
+if [ -z $DEPLOY ]; then
+	DEPLOY="./deployment"
+fi
+if [ ! -r $DEPLOY ]; then
+	echo "Deployment-file $DEPLOY not readable." >&2
+	exit 1
+fi
+
 BASE=$(readlink -f $(dirname $DEPLOY))
 
 updLink(){
