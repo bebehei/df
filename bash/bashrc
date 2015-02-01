@@ -72,18 +72,20 @@ alias fuck="sudo !!"
 alias of="xdg-open"
 
 #create sudo aliases WITHOUT leading s
-for sudo in wifi-menu netctl mount umount pacman shutdown reboot;
-do
-	type $sudo > /dev/null 2>&1 && alias $sudo="sudo $sudo";
-done
-unset sudo
+if [ ! -z "$(type sudo 2>/dev/null)" ]; then
+	for sudo in wifi-menu netctl mount umount pacman shutdown reboot;
+	do
+		type $sudo > /dev/null 2>&1 && alias $sudo="sudo $sudo";
+	done
+	unset sudo
 
-#create sudo aliases WITH leading s
-for sudo in ps vim chown chmod;
-do
-	type $sudo > /dev/null 2>&1  && alias s$sudo="sudo $sudo";
-done
-unset sudo 
+	#create sudo aliases WITH leading s
+	for sudo in ps vim chown chmod;
+	do
+		type $sudo > /dev/null 2>&1  && alias s$sudo="sudo $sudo";
+	done
+	unset sudo
+fi
 
 #END alias-definitions
 
