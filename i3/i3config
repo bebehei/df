@@ -75,6 +75,7 @@ bindsym $mod+Shift+q kill
 
 # fullscreen
 bindsym $mod+f fullscreen
+bindsym $mod+g fullscreen global
 
 # change layouts 
 bindsym $mod+b split h
@@ -89,6 +90,11 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space exec ~/bin/xkbdtoggle.sh
 bindsym $mod+s focus child
 bindsym $mod+a focus parent
+
+bindsym Mod1+Left move workspace to output left
+bindsym Mod1+Right move workspace to output right
+bindsym Mod1+Up move workspace to output up
+bindsym Mod1+Down move workspace to output down
 
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -123,6 +129,8 @@ bindsym Ctrl+8 move container to workspace 8; workspace 8
 bindsym Ctrl+9 move container to workspace 9; workspace 9
 #mit strg+0 soll der zoom auf 100% gestellt werden und nicht das fenster neben spotify gesetzt werden
 #bindsym Ctrl+0 move container to workspace 10; workspace 10
+
+bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
 #FOCUS
 bindsym $mod+h      focus left
