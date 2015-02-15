@@ -16,11 +16,16 @@ export PERL_LOCAL_LIB_ROOT="$HOME/perl5:$PERL_LOCAL_LIB_ROOT"
 export PERL_MB_OPT="--install_base \"$HOME/perl5\""
 export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"
 
+#rubygems path
+if which ruby 2>&1 >/dev/null && which gem 2>&1 >/dev/null; then
+    PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 #source other scripts
 #source /usr/share/doc/pkgfile/command-not-found.bash
 [ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
 
-for path in $HOME/bin $HOME/.gem/ruby/2.0.0/bin; do
+for path in $HOME/bin; do
 	if [[ -d $path ]]; then
 		PATH=$path:$PATH
 	fi
