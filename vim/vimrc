@@ -25,8 +25,8 @@ set shiftwidth=2
 "" Einrückungen im C-Stil
 " set cindent
 "" alternative Einrückungsstile
- set autoindent
- set smartindent
+" set autoindent
+" set smartindent
 
 
 "" zeigt unten links diverse Positionsinformationen der Schreibmarke
