@@ -42,5 +42,4 @@ alias pwedit="vim -p /etc/{passwd,group,shadow,gshadow}"
 alias pitime='time echo "scale=1000; 4*a(1)" | bc -l > /dev/null'
 alias cmdlist='find $(echo $PATH | tr ":" "\n")'
 alias makepasswd='makepasswd --minchars=10 --maxchars=25 --count=10'
-alias reload=". ~/.bashrc"
 alias snet='ip addr | \grep -v "inet6" | \grep inet | cut -d " " -f 6 | \grep -v 127.0.0.1/8 | xargs nmap -sP'

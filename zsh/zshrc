@@ -22,3 +22,5 @@ source ~/.liquidprompt/liquidprompt
 RPROMPT='[%*]'
 
 source ~/.profile.d/load
+
+alias reload=". ~/.zshrc"
