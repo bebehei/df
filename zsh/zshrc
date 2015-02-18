@@ -1,0 +1,24 @@
+# Path to your oh-my-zsh installation.
+export ZSH=~/.oh-my-zsh
+
+ZSH_THEME=""
+
+CASE_SENSITIVE="true"
+DISABLE_AUTO_UPDATE="true"
+DISABLE_LS_COLORS="false"
+DISABLE_AUTO_TITLE="true"
+ENABLE_CORRECTION="false"
+COMPLETION_WAITING_DOTS="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+HIST_STAMPS="yyyy-mm-dd"
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+plugins=(history git sudo common-aliases colored-man systemd)
+source $ZSH/oh-my-zsh.sh
+
+#LP_ENABLE_RUNTIME=1
+LP_ENABLE_TITLE=1
+source ~/.liquidprompt/liquidprompt
+RPROMPT='[%*]'
+
+source ~/.profile.d/load

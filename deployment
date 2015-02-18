@@ -1,5 +1,4 @@
 bash/bashrc .bashrc
-bash/bashrc .profile
 git/gitconfig .gitconfig
 i3/i3config .i3/config
 i3/i3status .i3status.conf
@@ -8,8 +7,21 @@ i3/winmenu bin/winmenu
 i3/randr.sh .i3/randr.sh
 i3/xkbdtoggle.sh bin/xkbdtoggle.sh
 i3/xfbuttons.sh bin/xfbuttons.sh
+shell/load .profile.d/load
+shell/part-aliases.sh .profile.d/aliases.sh
+shell/part-cd.sh .profile.d/cd.sh
+shell/part-command-not-found.sh .profile.d/command-not-found.sh
+shell/part-gitrepo-commited.sh .profile.d/gitrepo-commited.sh
+shell/part-mysqlpw.sh .profile.d/mysqlpw.sh
+shell/part-paths.sh .profile.d/paths.sh
+shell/part-perl.sh .profile.d/perl.sh
+shell/part-ruby.sh .profile.d/ruby.sh
+shell/part-vars.sh .profile.d/vars.sh
 top/toprc .toprc
 top/toprc /etc/toprc
 vim/vimrc .vimrc
 vim/vimrc /etc/vimrc
 wget/wgetrc .wgetrc
+zsh/zshrc .zshrc
+zsh/oh-my-zsh .oh-my-zsh
+zsh/liquidprompt .liquidprompt

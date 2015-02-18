@@ -1,0 +1,8 @@
+[submodule "zsh/liquidprompt"]
+	path = zsh/liquidprompt
+	url = https://github.com/nojhan/liquidprompt
+	branch = master
+[submodule "zsh/oh-my-zsh"]
+	path = zsh/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh
+	branch = master
