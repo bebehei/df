@@ -19,8 +19,8 @@ shell/part-ruby.sh .profile.d/ruby.sh
 shell/part-vars.sh .profile.d/vars.sh
 top/toprc .toprc
 top/toprc /etc/toprc
-vim/wuam-vimrc .vim
-vim/wuam-vimrc/vimrc .vimrc
+vim/wuman-vimrc .vim
+vim/wuman-vimrc/vimrc .vimrc
 vim/vimrc /etc/vimrc
 wget/wgetrc .wgetrc
 zsh/zshrc .zshrc
