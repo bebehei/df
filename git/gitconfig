@@ -22,3 +22,5 @@
 [alias]
 	ct         = log --graph --decorate --pretty=oneline --abbrev-commit
 	committree = log --graph --decorate --pretty=oneline --abbrev-commit
+[rerere]
+	enabled = true
