@@ -8,6 +8,8 @@ if [ ! -r $DEPLOY ]; then
 	exit 1
 fi
 
+git submodule update --init --recursive
+
 BASE=$(readlink -f $(dirname $DEPLOY))
 
 updLink(){
