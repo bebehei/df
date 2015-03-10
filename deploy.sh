@@ -32,3 +32,5 @@ cat $DEPLOY | while read line; do
 			updLink $BASE/$src $HOME/$dst
 	fi
 done
+
+updLink $BASE/deployment $HOME/.configrepo
