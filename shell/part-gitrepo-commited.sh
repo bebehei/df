@@ -1,6 +1,10 @@
 #!/bin/sh
 #check if git-repo has new entries
-if [[ $(cd $(dirname $(readlink $HOME/.bashrc)) && git status -s) ]]; then
+cfgrepo=`readlink $HOME/.configrepo`
+repo=`dirname $cfgrepo`
+changes=`cd $repo && git status --porcelain | wc -l`
+
+if [ $changes -gt 0 ]; then
 	echo -e '\e[01;31m'
 	echo '####################################'
 	echo '# GIT-config-Repo is not commited! #'
