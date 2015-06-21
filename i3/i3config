@@ -69,7 +69,7 @@ bindsym $mod+y exec xautolock -locknow
 
 # start dmenu (a program launcher)
 bindsym $mod+x exec dmenu_run
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='sort | dmenu -f -i'
 
 # kill focused window
 bindsym $mod+Shift+q kill
