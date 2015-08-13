@@ -24,6 +24,8 @@
 	committree = log --graph --decorate --pretty=oneline --abbrev-commit
 [rerere]
 	enabled = true
+[branch]
+	autoSetupMerge = always
 [remote "origin"]
 	fetch = +refs/pull/*/head:refs/remotes/origin/pull/*
 [remote "upstream"]
