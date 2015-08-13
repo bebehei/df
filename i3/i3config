@@ -16,6 +16,7 @@ font pango:Ubuntu Bold 11
 
 ##Various 
 assign [class="Spotify"] 10
+for_window [class="Spotify"] move workspace 10
 hide_edge_borders both
 focus_follows_mouse no
 
