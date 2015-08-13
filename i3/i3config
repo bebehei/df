@@ -61,7 +61,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # screensaver
 bindsym $mod+z exec xautolock -locknow
