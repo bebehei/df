@@ -32,17 +32,17 @@ volume master {
 
 ipv6 {
 	format_up = "%ip"
-	format_down = "no ipv6"
+	format_down = "v6"
 }
 
 wireless wlp2s0 {
         format_up = "W: (%quality at %essid, %bitrate) %ip"
-        format_down = ""
+        format_down = "wifi"
 }
 
 ethernet enp1s0f1 {
         format_up = "E: %ip (%speed)"
-        format_down = ""
+        format_down = "eth"
 }
 
 battery 1 {
