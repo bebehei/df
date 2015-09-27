@@ -3,6 +3,7 @@ git/gitconfig .gitconfig
 i3/i3config .i3/config
 i3/i3status .i3status.conf
 i3/lockscreen.png .lockscreen
+i3/locknow.sh bin/locknow
 i3/winmenu bin/winmenu
 i3/randr.sh .i3/randr.sh
 i3/xkbdtoggle.sh bin/xkbdtoggle.sh
