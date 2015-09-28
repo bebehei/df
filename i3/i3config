@@ -71,7 +71,7 @@ bindsym $mod+z exec ~/bin/locknow
 bindsym $mod+y exec ~/bin/locknow
 
 # start dmenu (a program launcher)
-bindsym $mod+x exec dmenu_run
+bindsym $mod+x exec --no-startup-id i3-dmenu-desktop --entry-type=command
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --display-binary --dmenu='dmenu -f -i'
 
 # kill focused window
