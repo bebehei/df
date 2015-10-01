@@ -1,4 +1,5 @@
 bash/bashrc .bashrc
+bash/bashrc .bash_profile
 git/gitconfig .gitconfig
 i3/i3config .i3/config
 i3/i3status .i3status.conf
