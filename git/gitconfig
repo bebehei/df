@@ -28,5 +28,7 @@
 	autoSetupMerge = always
 [remote "origin"]
 	fetch = +refs/pull/*/head:refs/remotes/origin/pull/*
+	fetch = +refs/heads/*:refs/remotes/origin/*
 [remote "upstream"]
 	fetch = +refs/pull/*/head:refs/remotes/upstream/pull/*
+	fetch = +refs/heads/*:refs/remotes/upstream/*
