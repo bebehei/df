@@ -15,7 +15,7 @@ exec --no-startup-id keepassx
 
 font pango:Ubuntu Bold 11
 
-##Various 
+##Various
 assign [class="Spotify"] 10
 for_window [class="Spotify"] move workspace 10
 hide_edge_borders both
@@ -35,9 +35,9 @@ bindsym $mod+^ floating toggle; floating toggle;
 
 #Colors
 #colorclasses           border  backgr  text    indicator
-client.focused          #2d2d2d #2d2d2d #FFFFFF #2d2d2d 
+client.focused          #2d2d2d #2d2d2d #FFFFFF #2d2d2d
 client.focused_inactive #2d2d2d #2d2d2d #FFFFFF #2d2d2d
-client.unfocused        #2d2d2d #2d2d2d #444444 #2d2d2d 
+client.unfocused        #2d2d2d #2d2d2d #444444 #2d2d2d
 client.urgent           #2f343a #900000 #FFFFFF #900000
 
 bar {
@@ -81,7 +81,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+f fullscreen
 bindsym $mod+g fullscreen global
 
-# change layouts 
+# change layouts
 bindsym $mod+b split h
 bindsym $mod+v split v
 bindsym $mod+c layout toggle split

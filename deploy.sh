@@ -25,7 +25,7 @@ cat $DEPLOY | while read line; do
 
 	# make a difference if destination has got leading slash
 	#    leading slash -> absolute link
-	# no leading slash -> link based on $HOME 
+	# no leading slash -> link based on $HOME
 	if [[ "$dst" =~ ^/ ]]; then
 		updLink $BASE/$src $dst
 		else
