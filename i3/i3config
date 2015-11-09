@@ -11,6 +11,7 @@ exec --no-startup-id ~/bin/xmon right
 exec --no-startup-id xautolock -time 3 -locker "i3lock -p win -t -i ~/.lockscreen" -notify 15 -notifier 'notify-send -u critical -t 5000 -i screensaver "Locking Screen" "Will Lock Screen in 15s"' -noclose
 exec --no-startup-id gajim
 exec --no-startup-id owncloud
+exec --no-startup-id evolution
 exec --no-startup-id redshift -t 6500:4500 -b 1:0.5
 exec --no-startup-id keepassx
 
@@ -19,6 +20,8 @@ font pango:Ubuntu Bold 11
 ##Various
 assign [class="Spotify"] 10
 for_window [class="Spotify"] move workspace 10
+assign [class="Evolution"] 9
+for_window [class="Evolution"] move workspace 9
 hide_edge_borders both
 focus_follows_mouse no
 
