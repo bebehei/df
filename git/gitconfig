@@ -22,6 +22,7 @@
 [alias]
 	ct         = log --graph --decorate --pretty=oneline --abbrev-commit
 	committree = log --graph --decorate --pretty=oneline --abbrev-commit
+	d = difftool
 [rerere]
 	enabled = true
 [branch]
@@ -32,3 +33,7 @@
 [remote "upstream"]
 	fetch = +refs/pull/*/head:refs/remotes/upstream/pull/*
 	fetch = +refs/heads/*:refs/remotes/upstream/*
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
