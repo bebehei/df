@@ -31,7 +31,7 @@ bindsym $mod+Tab workspace next
 bindsym Shift+$mod+Tab workspace prev
 #mit alt+tab fenster wechseln
 bindsym Mod1+Tab exec ~/bin/winmenu
-bindsym $mod+m exec  keepassx
+bindsym $mod+m exec  keepassx2
 
 
 ##firefox bughelper
