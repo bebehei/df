@@ -5,5 +5,5 @@ function set_path(){
 	fi
 }
 
-set_path /home/bebe/.local/bin/
+set_path ~/.local/bin/
 set_path ~/bin
