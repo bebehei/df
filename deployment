@@ -29,3 +29,4 @@ wget/wgetrc .wgetrc
 zsh/zshrc .zshrc
 zsh/oh-my-zsh .oh-my-zsh
 zsh/liquidprompt .liquidprompt
+zsh/completion/README.md .zcomplete/README.md
