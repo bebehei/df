@@ -7,6 +7,7 @@ i3/lockscreen.png .lockscreen
 i3/locknow.sh bin/locknow
 i3/winmenu bin/winmenu
 i3/xmon.sh bin/xmon
+i3/xmon.sh.comp.zsh .zcomplete/_xmon
 i3/xkbdtoggle.sh bin/xkbdtoggle.sh
 i3/xfbuttons.sh bin/xfbuttons.sh
 shell/load .profile.d/load
