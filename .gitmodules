@@ -8,5 +8,5 @@
 	branch = master
 [submodule "vim/wuman-vimrc"]
 	path = vim/wuman-vimrc
-	url = git@github.com:bebehei/vimrc.git
-	branch = bene-changes
+	url = https://github.com/bebehei/vimrc.git
+	branch = changes-bene
