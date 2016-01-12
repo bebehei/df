@@ -25,7 +25,8 @@ disk "/" {
 }
 
 volume master {
-        format = "vol: %volume"
+        format = "♪: %volume"
+        format_muted = "🔇"
         device = "default"
         mixer = "Master"
 }
