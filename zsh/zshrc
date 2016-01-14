@@ -28,6 +28,6 @@ mountpoint $HOME 2> /dev/null > /dev/null && LP_DISABLED_VCS_PATH="$HOME"
 source ~/.liquidprompt/liquidprompt
 RPROMPT='[%*]'
 
-source ~/.profile.d/load
-
 alias reload=". ~/.zshrc"
+
+source ~/.profile.d/load

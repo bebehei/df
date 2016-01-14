@@ -32,6 +32,6 @@ export PS2='2nd> '
 export PS3='3rd> '
 export PS4='4th> '
 
-source ~/.profile.d/load
-
 alias reload=". ~/.bashrc"
+
+source ~/.profile.d/load
