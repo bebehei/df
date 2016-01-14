@@ -17,7 +17,7 @@ order += "time"
 
 
 time {
-        format = "%a %d.%m.%Y %H:%M:%S"
+        format = "%a %d.%m.%Y 🕐%H:%M:%S"
 }
 
 disk "/" {
