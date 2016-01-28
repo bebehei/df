@@ -22,6 +22,8 @@ shell/part-perl.sh .profile.d/perl.sh
 shell/part-ruby.sh .profile.d/ruby.sh
 shell/part-vars.sh .profile.d/vars.sh
 top/toprc .toprc
+redshift/redshift.conf .config/redshift.conf
+redshift/notify.sh .config/redshift/hooks/notify.sh
 vim/wuman-vimrc .vim
 vim/wuman-vimrc/vimrc .vimrc
 wget/wgetrc .wgetrc
