@@ -20,8 +20,8 @@ updLink(){
 }
 
 cat $DEPLOY | while read line; do
-	src=$(echo $line | cut -d ' ' -f 1)
-	dst=$(echo $line | cut -d ' ' -f 2)
+	src=$(echo $line | awk '{print $1}')
+	dst=$(echo $line | awk '{print $2}')
 
 	# make a difference if destination has got leading slash
 	#    leading slash -> absolute link
