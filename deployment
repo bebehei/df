@@ -1,3 +1,5 @@
+# The hash starts a comment
+# Comments are allowed everywhere
 bash/bashrc .bashrc
 bash/bashrc .bash_profile
 git/gitconfig .gitconfig

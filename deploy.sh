@@ -19,7 +19,7 @@ updLink(){
 	ln -s $1 $2
 }
 
-cat $DEPLOY | while read line; do
+grep -v --perl-regexp '^\s*#' $DEPLOY | while read line; do
 	src=$(echo $line | awk '{print $1}')
 	dst=$(echo $line | awk '{print $2}')
 
