@@ -1,10 +1,9 @@
 #!/bin/sh
 
-count=0
 waiting=30 #number of seconds it will display wehn host is not online
 
-while true; do
-	ping -c 1 $1 2>&1 >/dev/null && break
+count=0
+while ! ping -c 1 $1 2>&1 >/dev/null; do
 	sleep 1
 	count=$(( $count + 1))
 	if [ $count -gt $waiting ]; then
