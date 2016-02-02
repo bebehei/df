@@ -8,7 +8,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id gnome-keyring-daemon
 exec --no-startup-id numlockx on
 exec --no-startup-id ~/bin/xmon right
-exec --no-startup-id xautolock -time 3 -locker "~/bin/checknofullscreen && i3lock -p win -t -i ~/.lockscreen" -notify 15 -notifier '~/bin/checknofullscreen && notify-send -u critical -t 5000 -i screensaver "Locking Screen" "Will Lock Screen in 15s"' -noclose
+exec --no-startup-id ~/bin/lockscreen -d
 exec --no-startup-id gajim
 exec --no-startup-id owncloud
 exec --no-startup-id evolution
@@ -77,8 +77,8 @@ bindsym $mod+Shift+e exit
 bindsym $mod+Return exec xfce4-terminal
 
 # screensaver
-bindsym $mod+z exec ~/bin/locknow
-bindsym $mod+y exec ~/bin/locknow
+bindsym $mod+z exec ~/bin/lockscreen -fl
+bindsym $mod+y exec ~/bin/lockscreen -fl
 
 # start dmenu (a program launcher)
 bindsym $mod+x exec --no-startup-id i3-dmenu-desktop --entry-type=command
