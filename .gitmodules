@@ -10,3 +10,6 @@
 	path = vim/wuman-vimrc
 	url = https://github.com/bebehei/vimrc.git
 	branch = changes-bene
+[submodule "dav-backup"]
+	path = dav-backup
+	url = https://github.com/Stunkymonkey/dav-backup
