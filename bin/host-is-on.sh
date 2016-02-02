@@ -4,7 +4,7 @@
 waiting=30
 
 count=0
-while ! ping -c 1 $1 2>&1 >/dev/null; do
+while ! ping -W 1 -w 1 -c 1 $1 2>&1 >/dev/null; do
 	sleep 1
 	count=$(( $count + 1))
 	if [ $count -gt $waiting ]; then
