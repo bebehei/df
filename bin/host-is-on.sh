@@ -1,6 +1,7 @@
 #!/bin/sh
 
-waiting=30 #number of seconds it will display wehn host is not online
+# repeat a notification if the host is not online after this amount of seconds yet
+waiting=30
 
 count=0
 while ! ping -c 1 $1 2>&1 >/dev/null; do
