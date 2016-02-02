@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ $# -eq 0 ]; then
+	echo "No host given!" >&2
+	exit 1
+fi
+
 # repeat a notification if the host is not online after this amount of seconds yet
 waiting=30
 
