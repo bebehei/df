@@ -14,23 +14,12 @@ fi
 
 git -C $DEPL_BASE submodule update --init --recursive
 
-updLink(){
-	mkdir -p $(dirname $2)
-	# if file is a symbolic link, remove the old one
-	[[ -L $2 ]] && rm $2
-	ln -s $1 $2
-}
-
 grep -v --perl-regexp '^\s*#' $DEPL_FILE | while read line; do
 	src=$(echo $line | awk '{print $1}')
 	dst=$(echo $line | awk '{print $2}')
 
-	# make a difference if destination has got leading slash
-	#    leading slash -> absolute link
-	# no leading slash -> link based on $HOME
-	if [[ "$dst" =~ ^/ ]]; then
-		updLink $DEPL_BASE/$src $dst
-		else
-			updLink $DEPL_BASE/$src $HOME/$dst
-	fi
+	mkdir -p $(dirname $dst)
+	# if file is a symbolic link, remove the old one
+	[[ -L $dst ]] && rm $dst
+	ln -s $src $dst
 done
