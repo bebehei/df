@@ -21,5 +21,5 @@ grep -v --perl-regexp '^\s*#' $DEPL_FILE | while read line; do
 	mkdir -p $(dirname $dst)
 	# if file is a symbolic link, remove the old one
 	[[ -L $dst ]] && rm $dst
-	ln -s $src $dst
+	ln -s $BASE/$src $dst
 done
