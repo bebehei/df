@@ -39,6 +39,7 @@ shell/part-vars.sh ~/.profile.d/vars.sh
 vim/wuman-vimrc ~/.vim
 vim/wuman-vimrc/vimrc ~/.vimrc
 wget/wgetrc ~/.wgetrc
+yaourt/yaourtrc .yaourtrc
 zsh/zshrc ~/.zshrc
 zsh/oh-my-zsh ~/.oh-my-zsh
 zsh/liquidprompt ~/.liquidprompt
