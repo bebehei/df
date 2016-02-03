@@ -26,6 +26,8 @@ i3/xmon.sh ~/bin/xmon
 i3/xmon.sh.comp.zsh ~/.zcomplete/_xmon
 i3/xkbdtoggle.sh ~/bin/xkbdtoggle.sh
 i3/xfbuttons.sh ~/bin/xfbuttons.sh
+media/music-gain.sh bin/music-gain
+media/music-tag.sh bin/music-tag
 shell/load ~/.profile.d/load
 shell/part-aliases.sh ~/.profile.d/aliases.sh
 shell/part-cd.sh ~/.profile.d/cd.sh
