@@ -15,8 +15,8 @@ fi
 git -C $DEPL_BASE submodule update --init --recursive
 
 grep -v --perl-regexp '^\s*#' $DEPL_FILE | while read line; do
-	src=$(echo $line | awk '{print $1}')
-	dst=$(echo $line | awk '{print $2}')
+	src=$(echo "${line//\~/$HOME}" | awk '{print $1}')
+	dst=$(echo "${line//\~/$HOME}" | awk '{print $2}')
 
 	mkdir -p $(dirname $dst)
 	# if file is a symbolic link, remove the old one

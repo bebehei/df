@@ -1,5 +1,13 @@
 # The hash starts a comment
 # Comments are allowed everywhere
+#
+# To reference a file based in your HOME, use the tilde
+# It'll get expanded by deploy.sh
+#
+# Format:
+# <sourcefile><whitespace><destinationfile>
+#
+# Files with whitespace are not allowed, these are not processed correct.
 bash/bashrc ~/.bashrc
 bash/bashrc ~/.bash_profile
 bin/host-is-on.sh ~/bin/host-is-on
