@@ -1,72 +1,77 @@
 set $mod Mod4
 floating_modifier $mod
+exec setxkbmap de -option ctrl:nocaps
 
-#startup programs
+# startup programs:
 exec --no-startup-id hsetroot -center ~/.wallpaper
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-keyring-daemon
 exec --no-startup-id numlockx on
-exec --no-startup-id ~/bin/xmon right
+#exec --no-startup-id ~/bin/xmon right
 exec --no-startup-id ~/bin/lockscreen -d
+exec --no-startup-id synapse -s
 exec --no-startup-id gajim
 exec --no-startup-id owncloud
-exec --no-startup-id evolution
+exec --no-startup-id telegram -startintray
+#exec --no-startup-id evolution
 exec --no-startup-id redshift-gtk
-exec --no-startup-id keepassx
+#exec --no-startup-id keepassx2
+exec --no-startup-id rhythmbox
 
-font pango:Ubuntu Bold 11
+font pango:Source Sans Pro Bold 11
 
 ##Various
-assign [class="Spotify"] 10
-for_window [class="Spotify"] move workspace 10
 assign [class="Evolution"] 9
 for_window [class="Evolution"] move workspace 9
+assign [class="Rhythmbox"] 10
+for_window [class="Rhythmbox"] move workspace 10
 hide_edge_borders both
 focus_follows_mouse no
 
-#mit windows+tab zwischen workspaces durchswitchen
-# ähnlich strg+tab in firefox
+# to switch workspace-tabs
 bindsym $mod+Tab workspace next
 bindsym Shift+$mod+Tab workspace prev
-#mit alt+tab fenster wechseln
+# change window with alt-tab
 bindsym Mod1+Tab exec ~/bin/winmenu
+
 bindsym $mod+m exec  keepassx2
 
+# Screenshot
+bindsym Print exec "scrot ~/Downloads/Screenshot%Y-%m-%d%H:%M:%S.png -z"
+
+# forward an backward at arrow-keys
+#bindsym XF86Back exec
+#bindsym XF86Forward exec
+
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad controls
+# bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
+#bindsym XF86AudioPlay exec playerctl play
+#bindsym XF86AudioPause exec playerctl pause
+#bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.rhythmbox /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym XF86AudioPause exec dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.rhythmbox /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym XF86AudioNext exec dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.rhythmbox /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym XF86AudioPrev exec dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.rhythmbox /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+
+# Microphone
+bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input #toggle
 
 ##firefox bughelper
 bindsym $mod+^ floating toggle; floating toggle;
-
-set $bg-color            #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
-
-bar {
-	status_command i3status
-	position top
-}
-
-#AUDIO SECTION
-bindsym Ctrl+Up               exec ~/bin/xfbuttons.sh XF86AudioRaiseVolume
-bindsym Ctrl+Down             exec ~/bin/xfbuttons.sh XF86AudioLowerVolume
-bindsym XF86AudioRaiseVolume  exec ~/bin/xfbuttons.sh XF86AudioRaiseVolume
-bindsym XF86AudioLowerVolume  exec ~/bin/xfbuttons.sh XF86AudioLowerVolume
-bindsym XF86AudioMute         exec ~/bin/xfbuttons.sh XF86AudioMute
-bindsym XF86AudioPlay         exec ~/bin/xfbuttons.sh XF86AudioPlay
-bindsym XF86AudioNext         exec ~/bin/xfbuttons.sh XF86AudioNext
-bindsym XF86AudioPrev         exec ~/bin/xfbuttons.sh XF86AudioPrev
-bindsym XF86MonBrightnessUp   exec ~/bin/xfbuttons.sh XF86MonBrightnessUp
-bindsym XF86MonBrightnessDown exec ~/bin/xfbuttons.sh XF86MonBrightnessDown
-
 
 # main commands
 bindsym $mod+Shift+c reload
@@ -88,8 +93,8 @@ bindsym $mod+d exec --no-startup-id synapse
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# fullscreen
-bindsym $mod+f fullscreen
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
 bindsym $mod+g fullscreen global
 
 # change layouts
@@ -103,7 +108,9 @@ bindsym $mod+c layout toggle split
 bindsym $mod+Shift+space floating toggle
 #bindsym $mod+space focus mode_toggle
 bindsym $mod+space exec ~/bin/xkbdtoggle.sh
+# focus the child container
 bindsym $mod+s focus child
+# focus the parent container
 bindsym $mod+a focus parent
 
 bindsym Mod1+Left move workspace to output left
@@ -111,6 +118,7 @@ bindsym Mod1+Right move workspace to output right
 bindsym Mod1+Up move workspace to output up
 bindsym Mod1+Down move workspace to output down
 
+# switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -122,6 +130,7 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+# move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
@@ -133,6 +142,7 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# move windows to workspace and switch to it
 bindsym Ctrl+1 move container to workspace 1; workspace 1
 bindsym Ctrl+2 move container to workspace 2; workspace 2
 bindsym Ctrl+3 move container to workspace 3; workspace 3
@@ -142,7 +152,7 @@ bindsym Ctrl+6 move container to workspace 6; workspace 6
 bindsym Ctrl+7 move container to workspace 7; workspace 7
 bindsym Ctrl+8 move container to workspace 8; workspace 8
 bindsym Ctrl+9 move container to workspace 9; workspace 9
-#mit strg+0 soll der zoom auf 100% gestellt werden und nicht das fenster neben spotify gesetzt werden
+# for settings the zoom-level back to default in firefox
 #bindsym Ctrl+0 move container to workspace 10; workspace 10
 
 bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
@@ -184,3 +194,44 @@ mode "resize" {
 	bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
+
+# remove title-bar
+#for_window [class="^.*"] border pixel 1
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+
+set $bg-color			#2F343F
+set $inactive-bg-color		#2F343F
+set $text-color			#F3F4F5
+set $inactive-text-color	#676E7D
+set $urgent-bg-color		#E53935
+set $indicator-color		#00FF00
+
+set $workspace-color		#5294E2
+set $inactive-workspace		#2F343F
+set $seperator-color		#666666
+set $ws-text-color		#FFFFFF
+set $ws-inactive-text-color	#D3DAE3
+
+bar {
+    position    top
+    status_command  i3status
+    workspace_buttons   yes
+    # tray_output primary
+    colors {
+        background  $bg-color
+        statusline  $ws-inactive-text-color
+        separator   $seperator-color
+        focused_workspace	$workspace-color	$workspace-color	$ws-text-color
+        active_workspace	$inactive-workspace	$inactive-workspace	$ws-inactive-text-color
+        inactive_workspace	$inactive-workspace	$inactive-workspace	$ws-inactive-text-color
+        urgent_workspace	$urgent-bg-color	$urgent-bg-color	$ws-text-color
+    }
+}
+
+# border background text indicator
+client.focused          $bg-color           $bg-color          $text-color          $indicator-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator-color
