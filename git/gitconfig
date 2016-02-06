@@ -4,8 +4,8 @@
 	branch = auto
 	ui = true
 [user]
-	name = Benedikt Heine
-	email = bebe@bebehei.de
+	name = Felix Buehler
+	email = felix.christian.buehler@web.de
 [url "ssh://git/~/git/"]
 	insteadof = private:
 [url "git://git.gnome.org/"]

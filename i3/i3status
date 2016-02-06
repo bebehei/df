@@ -5,27 +5,36 @@ general {
 }
 
 order += "disk /"
+order += "disk /home"
 order += "ipv6"
-order += "wireless wlp2s0"
-order += "ethernet enp1s0f1"
+order += "run_watch DHCP"
+#order += "path_exists VPN"
+order += "wireless wlp3s0"
+order += "ethernet enp0s25"
+order += "cpu_usage"
+#order += "cpu_temperature 0"
 order += "volume master"
 order += "battery 1"
-order += "cpu_usage"
-order += "cpu_temperature 1"
-order += "load"
+#order += "load"
 order += "time"
 
 
 time {
-        format = "%a %d.%m.%Y 🕐%H:%M:%S"
+        format = "📅%a %d.%m.%Y 🕐%H:%M:%S"
 }
 
 disk "/" {
         format = "root: %avail"
 }
 
+disk "/home" {
+        format = "home: %avail"
+}
+
+
 volume master {
-        format = "♪: %volume"
+        format = "🔊 %volume"
+        #format = "♪ %volume"
         format_muted = "🔇"
         device = "default"
         mixer = "Master"
@@ -36,25 +45,39 @@ ipv6 {
 	format_down = "v6"
 }
 
-wireless wlp2s0 {
+wireless wlp3s0 {
         format_up = "W: (%quality at %essid, %bitrate) %ip"
         format_down = "wifi"
 }
 
-ethernet enp1s0f1 {
+ethernet enpp0s25 {
         format_up = "E: %ip (%speed)"
         format_down = "eth"
 }
 
-battery 1 {
-        format = "%status %percentage %remaining %consumption"
+run_watch DHCP {
+        pidfile = "/var/run/dhclient*.pid"
+	format_down = "DHCP"
+	format = ""
+}
+
+path_exists VPN {
+        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+        path = "/proc/sys/net/ipv4/conf/tun0"
+	format_down = "VPN"
+}
+
+battery 0 {
+        format = "%status %percentage %remaining %emptytime"
         format_down = "No battery"
         status_chr = "⚡"
         status_bat = "🔋"
         status_full = "☻"
+        hide_seconds = true
+        integer_battery_capacity = true
         path = "/sys/class/power_supply/BAT%d/uevent"
-        low_threshold = 5
-				threshold_type = percentage
+        low_threshold = 8
+		threshold_type = percentage
 }
 
 load {

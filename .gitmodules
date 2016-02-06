@@ -10,3 +10,6 @@
 	path = vim/wuman-vimrc
 	url = https://github.com/bebehei/vimrc.git
 	branch = changes-bene
+[submodule "i3/i3lock-fancy"]
+	path = i3/i3lock-fancy
+	url = https://github.com/meskarune/i3lock-fancy.git
