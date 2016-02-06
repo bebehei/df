@@ -16,7 +16,7 @@ exec --no-startup-id owncloud
 exec --no-startup-id telegram -startintray
 #exec --no-startup-id evolution
 exec --no-startup-id redshift-gtk
-#exec --no-startup-id keepassx
+#exec --no-startup-id keepassx2
 exec --no-startup-id rhythmbox
 
 font pango:Source Sans Pro Bold 11
@@ -35,7 +35,7 @@ bindsym Shift+$mod+Tab workspace prev
 # change window with alt-tab
 bindsym Mod1+Tab exec ~/bin/winmenu
 
-bindsym $mod+m exec  keepassx
+bindsym $mod+m exec  keepassx2
 
 # Screenshot
 bindsym Print exec "scrot ~/Downloads/Screenshot%Y-%m-%d%H:%M:%S.png -z"

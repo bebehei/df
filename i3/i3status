@@ -57,7 +57,7 @@ ethernet enpp0s25 {
 
 run_watch DHCP {
         pidfile = "/var/run/dhclient*.pid"
-	format_down = "No DHCP"
+	format_down = "DHCP"
 	format = ""
 }
 
