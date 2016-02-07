@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cfgrepo=`readlink $0`
+cfgrepo=`readlink ~/.profile.d/gitrepo-commited.sh`
 repo=`dirname $cfgrepo`
 changes=`git -C $repo status --porcelain | wc -l`
 
