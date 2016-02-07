@@ -17,6 +17,10 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(history git sudo common-aliases colored-man systemd)
 source $ZSH/oh-my-zsh.sh
 
+# Liquidprompt #
+
+# if you change settings of liquidprompt, change settings in bashrc, too
+
 #LP_ENABLE_RUNTIME=1
 LP_ENABLE_TITLE=1
 LP_ENABLE_SSH_COLORS=1
@@ -27,6 +31,8 @@ LP_ENABLE_TEMP=0
 mountpoint $HOME 2> /dev/null > /dev/null && LP_DISABLED_VCS_PATH="$HOME"
 source ~/.liquidprompt/liquidprompt
 RPROMPT='[%*]'
+
+# Liquidprompt END #
 
 alias reload=". ~/.zshrc"
 

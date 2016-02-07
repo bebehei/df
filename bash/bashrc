@@ -14,23 +14,22 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-if [[ $(which git) ]]; then
-	function parse_git_branch {
-		if [[ $(git status -s 2>/dev/null) ]]; then
-			echo '*'
-		fi
-		git branch 2>/dev/null | cut -d ' ' -f 2
-	}
-else
-	function parse_git_branch(){
-		return 0;
-	}
-fi
+# Liquidprompt #
 
-export PS1="\[\e[00;37m\]\$? \[\e[0m\]\[\e[01;33m\]\u\[\e[0m\]\[\e[01;31m\]@\[\e[0m\]\[\e[01;34m\]\h\[\e[0m\]\[\e[00;37m\]:\[\e[0m\]\[\e[01;32m\]\w\[\e[0m\]\[\e[00;37m\]\n\[\e[0m\]\[\e[01;32m\]\A\[\e[0m\]\[\e[00;37m\] \[\e[01;31m\]\$(parse_git_branch | tr -d '\n')\[\e[0m\] \[\e[00;37m\]\# \[\e[0m\]\\$> "
-export PS2='2nd> '
-export PS3='3rd> '
-export PS4='4th> '
+# if you change settings of liquidprompt, change settings in zshrc, too
+
+#LP_ENABLE_RUNTIME=1
+LP_ENABLE_TITLE=1
+LP_ENABLE_SSH_COLORS=1
+LP_ENABLE_VCS_ROOT=1
+LP_DISABLED_VCS_PATH=""
+LP_ENABLE_TEMP=0
+# if in git folder, the prompt takes very long to rebuild
+mountpoint $HOME 2> /dev/null > /dev/null && LP_DISABLED_VCS_PATH="$HOME"
+source ~/.liquidprompt/liquidprompt
+RPROMPT='[%*]'
+
+# Liquidprompt END #
 
 alias reload=". ~/.bashrc"
 
