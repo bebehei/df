@@ -33,4 +33,10 @@ RPROMPT='[%*]'
 
 alias reload=". ~/.bashrc"
 
+# Bind PageUp and PageDown to history search
+if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
+	bind '"\e[5~": history-search-backward'
+	bind '"\e[6~": history-search-forward'
+fi
+
 source ~/.profile.d/load
