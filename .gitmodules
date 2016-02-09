@@ -10,3 +10,6 @@
 	path = vim/wuman-vimrc
 	url = https://github.com/bebehei/vimrc.git
 	branch = changes-bene
+[submodule "git/diff-so-fancy"]
+	path = git/diff-so-fancy
+	url = https://github.com/stevemao/diff-so-fancy.git
