@@ -90,7 +90,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec xterm
 
 # screensaver
 bindsym $mod+z exec ~/bin/lockscreen -fl
