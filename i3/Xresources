@@ -6,6 +6,8 @@ xterm*saveLines: 4096
 xterm*locale: true
 xterm*termName: xterm-256color
 xterm*borderWidth: 0
+xterm*scrollTtyOutput: false
+xterm*scrollKey: true
 
 ! http://unix.stackexchange.com/questions/227701/how-to-use-ctrl-insert-to-copy-from-xterm
 XTerm*VT100.Translations:       #override\n\
