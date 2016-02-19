@@ -11,6 +11,7 @@
 bash/bashrc ~/.bashrc
 bash/bashrc ~/.bash_profile
 bin/host-is-on.sh ~/bin/host-is-on
+bin/mdo.sh ~/bin/mdo
 git/diff-so-fancy/diff-so-fancy ~/bin/diff-so-fancy
 git/diff-so-fancy/diff-highlight ~/bin/diff-highlight
 git/gitconfig ~/.gitconfig
