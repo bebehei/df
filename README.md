@@ -21,6 +21,14 @@ These are my personal dotfiles. Free for personal use.
     * git
     * top
 
+# Concepts of this repo
+
+- Just by simply cloning, updating submodules and symlinking everything should be installed.
+- There should always be a possibility to include configuration, which should not get tracked.
+- This repo should be as general as possible.
+- Every static file should get symlinked with its destination to the source repo.
+  If you don't like a file to get deployed, just create an empty one on the destination.
+
 # You want to use them on your own?
 
 1. Install the via `git clone` and `deploy.sh` (as described in Installation)
