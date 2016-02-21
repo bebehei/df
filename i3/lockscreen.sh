@@ -59,7 +59,7 @@ daemon(){
 
 force=0
 
-while getopts ":hdfln:" opt; do
+while getopts ":hdfln" opt; do
 	case $opt in
 		h)
 			usage
