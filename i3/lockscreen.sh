@@ -7,6 +7,10 @@ LOCK_NOTIFY_TIME=${LOCK_NOTIFY_TIME:-15}
 
 PROGNAME=$(basename $0)
 
+error(){
+	echo -e '\e[01;31m'$*'\e[0m' >&2
+}
+
 usage(){
 	#TODO
 	cat >&2 <<-FIN
