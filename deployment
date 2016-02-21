@@ -26,6 +26,15 @@ i3/redshift/hook.sh ~/.config/redshift/hooks/hook.sh
 i3/winmenu ~/bin/winmenu
 i3/xmon.sh ~/bin/xmon
 i3/xmon.sh.comp.zsh ~/.zcomplete/_xmon
+i3/xmoncfg/display.cfg ~/.display/display.cfg
+i3/xmoncfg/hdmi.cfg ~/.display/hdmi.cfg
+i3/xmoncfg/left.cfg ~/.display/left.cfg
+i3/xmoncfg/leftvga.cfg ~/.display/leftvga.cfg
+i3/xmoncfg/mirrorhdmi.cfg ~/.display/mirrorhdmi.cfg
+i3/xmoncfg/mirrorvga.cfg ~/.display/mirrorvga.cfg
+i3/xmoncfg/right.cfg ~/.display/right.cfg
+i3/xmoncfg/right.cfg ~/.display/default.cfg
+i3/xmoncfg/rightvga.cfg ~/.display/rightvga.cfg
 i3/xkbdtoggle.sh ~/bin/xkbdtoggle.sh
 i3/xfbuttons.sh ~/bin/xfbuttons.sh
 i3/Xresources ~/.Xresources

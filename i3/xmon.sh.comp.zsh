@@ -1,3 +1,4 @@
 #compdef xmon
-_values , mirror hdmi display right left
+cfgs=($(ls ~/.display/*.cfg | xargs basename -s .cfg))
+_values , ${cfgs[@]}
 return 0

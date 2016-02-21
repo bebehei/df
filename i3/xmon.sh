@@ -1,57 +1,32 @@
 #!/bin/sh
 
-case $1 in
-	display)
-		xrandr \
-			--output HDMI1 --off \
-			--output DP1 --off \
-			--output VIRTUAL1 --off \
-			--output eDP1  --mode 1920x1080 --pos    0x0    --rotate normal \
-			--output HDMI2 --off \
+die(){
+	echo $* >&2
+	exit 1
+}
 
-		;;
-	hdmi)
-		xrandr \
-			--output HDMI1 --off \
-			--output DP1 --off \
-			--output VIRTUAL1 --off \
-			--output eDP1  --off \
-			--output HDMI2 --mode 1920x1080 --pos    0x0    --rotate normal \
+profile=$1
+profiledir=~/.display
 
-		;;
-	right)
-		xrandr \
-			--output HDMI1 --off \
-			--output DP1 --off \
-			--output VIRTUAL1 --off \
-			--output eDP1  --mode 1920x1080 --pos    0x0    --rotate normal \
-			--output HDMI2 --mode 1920x1080 --pos 1920x0    --rotate normal \
+[ -n "$profile" ] || die "No profile specified."
+[ -f "$profiledir/$profile.cfg" ] || die "No profile '$profile' found."
+randrargs=""
 
-		;;
-	left)
-		xrandr \
-			--output HDMI1 --off \
-			--output DP1 --off \
-			--output VIRTUAL1 --off \
-			--output eDP1  --mode 1920x1080 --pos 1920x0    --rotate normal \
-			--output HDMI2 --mode 1920x1080 --pos    0x0    --rotate normal \
+while read line; do
+	output=`echo $line | awk '{print $1}'`
+	  mode=`echo $line | awk '{print $2}'`
+	   pos=`echo $line | awk '{print $3}'`
+	rotate=`echo $line | awk '{print $4}'`
 
-		;;
-	mirror)
-		xrandr \
-			--output HDMI1 --off \
-			--output DP1 --off \
-			--output VIRTUAL1 --off \
-			--output eDP1  --mode 1920x1080 --pos    0x0    --rotate normal \
-			--output HDMI2 --mode 1920x1080 --pos    0x0    --rotate normal \
+	if [[ "$mode" == off ]]; then
+		randrargs="$randrargs --output $output --off"
+	elif [ -z "$rotate" ]; then
+		randrargs="$randrargs --output --mode $mode --pos $pos"
+	else
+		randrargs="$randrargs --output $output --mode $mode --pos $pos --rotate $rotate"
+	fi
+done <<< "`grep -v '^\s*#' $profiledir/$profile.cfg`"
+# this is ugly because of /bin/sh. I really should only support bash.
+# http://stackoverflow.com/questions/16854280/modifying-variable-inside-while-loop-is-not-remembered
 
-		;;
-	*)
-		echo "give one of the following values as argument:" >&2
-		echo "    hdmi" >&2
-		echo "    display" >&2
-		echo "    mirror" >&2
-		echo "    right" >&2
-		echo "    left" >&2
-		exit 1
-esac
+xrandr $randrargs
