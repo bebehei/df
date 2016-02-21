@@ -50,7 +50,7 @@ shell/part-perl.sh ~/.profile.d/perl.sh
 shell/part-ruby.sh ~/.profile.d/ruby.sh
 shell/part-vars.sh ~/.profile.d/vars.sh
 top/toprc ~/.toprc
-vim/wuman-vimrc ~/.vim
+vim/wuman-vimrc/bundle ~/.vim/bundle
 vim/wuman-vimrc/vimrc ~/.vimrc
 wget/wgetrc ~/.wgetrc
 zsh/zshrc ~/.zshrc
