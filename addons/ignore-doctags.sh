@@ -7,7 +7,7 @@
 find .git/modules -name info -type d \
 	| while read dir; do
 
-	grep doc/tags $dir/exclude \
+	grep doc/tags $dir/exclude 2>/dev/null \
 		|| (echo 'doc/tags' >> $dir/exclude)
 
 done
