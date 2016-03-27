@@ -37,3 +37,5 @@ RPROMPT='[%*]'
 alias reload=". ~/.zshrc"
 
 source ~/.profile.d/load
+
+source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

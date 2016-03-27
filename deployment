@@ -58,3 +58,4 @@ zsh/zshrc ~/.zshrc
 zsh/oh-my-zsh ~/.oh-my-zsh
 zsh/liquidprompt ~/.liquidprompt
 zsh/completion/README.md ~/.zcomplete/README.md
+zsh/zsh-syntax-highlighting ~/.zsh-syntax-highlighting

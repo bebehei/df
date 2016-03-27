@@ -17,6 +17,7 @@ These are my personal dotfiles. Free for personal use.
     * [liquidprompt](https://github.com/nojhan/liquidprompt)
 * zsh only
     * [oh my zsh](https://github.com/robbyrussell/oh-my-zsh) support
+    * input highlighting via [zsh syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 * small configuration for programs like:
     * wget
     * git
