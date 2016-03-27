@@ -42,6 +42,7 @@ shell/load ~/.profile.d/load
 shell/part-aliases.sh ~/.profile.d/aliases.sh
 shell/part-cd.sh ~/.profile.d/cd.sh
 shell/part-command-not-found.sh ~/.profile.d/command-not-found.sh
+shell/part-extract.sh ~/.profile.d/extract.sh
 shell/part-gitrepo-commited.sh ~/.profile.d/gitrepo-commited.sh
 shell/part-keychain.sh ~/.profile.d/keychain.sh
 shell/part-mysqlpw.sh ~/.profile.d/mysqlpw.sh
