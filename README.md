@@ -18,6 +18,7 @@ These are my personal dotfiles. Free for personal use.
 * zsh only
     * [oh my zsh](https://github.com/robbyrussell/oh-my-zsh) support
     * input highlighting via [zsh syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+    * [auto suggestions](https://github.com/zsh-users/zsh-autosuggestions) via Ctrl+Space
 * small configuration for programs like:
     * wget
     * git
