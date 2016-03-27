@@ -15,7 +15,8 @@ These are my personal dotfiles. Free for personal use.
 * bash **and** zsh
     * keychain for automatic encryption of SSH-Keys
     * [liquidprompt](https://github.com/nojhan/liquidprompt)
-    * zsh: [oh my zsh](https://github.com/robbyrussell/oh-my-zsh)
+* zsh only
+    * [oh my zsh](https://github.com/robbyrussell/oh-my-zsh) support
 * small configuration for programs like:
     * wget
     * git
