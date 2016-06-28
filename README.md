@@ -42,7 +42,7 @@ These are my personal dotfiles. Free for personal use.
 
 ## Installation
 
-Execute the following tasks somewhere. It really shouldn't matter.
+Execute the following tasks somewhere. It really shouldn't matter where you execute them:
 
 
     git clone https://github.com/bebehei/df
