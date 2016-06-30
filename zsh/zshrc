@@ -38,4 +38,9 @@ alias reload=". ~/.zshrc"
 
 source ~/.profile.d/load
 
+ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
+source ~/.zsh-autosuggestions/zsh-autosuggestions.zsh
+#       Ctrl+Space
+bindkey '^ ' autosuggest-accept
+
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
