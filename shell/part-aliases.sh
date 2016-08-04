@@ -10,6 +10,10 @@ alias kilall="killall"
 alias kilal="killall"
 alias killlal="killall"
 
+# Steam locomotive on acid!
+alias LS='sl -F'
+alias ls-l='sl -l'
+
 alias quit="exit"
 
 alias vim="vim -p"
