@@ -23,8 +23,13 @@ grep -v --perl-regexp '^\s*#' $DEPL_FILE | while read line; do
 
 	mkdir -p $(dirname $dst)
 	# if file is a symbolic link, remove the old one
-	[[ -L $dst ]] && rm $dst
-	ln -s $BASE/$src $dst
+	if [[ "$(readlink -f $BASE/$src)" != "$(readlink -f $dst)" ]]; then
+		if [ -L $dst ]; then
+			echo -e "Updating link '$src'\n  old: '$(readlink -f $BASE/$src)'\n  new: '$(readlink -f $dst)'"
+			rm $dst
+		fi
+		[ ! -e $dst ] && ln -s $BASE/$src $dst
+	fi
 done
 
 git -C $DEPL_BASE log -p $DEPL_FILE \
