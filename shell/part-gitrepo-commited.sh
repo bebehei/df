@@ -4,7 +4,7 @@ case "$-" in
 	*i*)
 		# This shell is interactive, if not ignore this part
 		# If printing this in non-interactive shells, it'll may prevent scp to work
-		cfgrepo=`readlink ~/.profile.d/gitrepo-commited.sh`
+		cfgrepo=`readlink ~/.profile.d/10-gitrepo-commited.sh`
 		repo=`dirname $cfgrepo`
 		changes=`git -C $repo status --porcelain | wc -l`
 
