@@ -46,4 +46,18 @@ alias pwedit="vim -p /etc/{passwd,group,shadow,gshadow}"
 alias pitime='time echo "scale=1000; 4*a(1)" | bc -l > /dev/null'
 alias cmdlist='find $(echo $PATH | tr ":" "\n")'
 alias makepasswd='makepasswd --minchars=10 --maxchars=25 --count=10'
-alias snet='ip addr | \grep -v "inet6" | \grep inet | cut -d " " -f 6 | \grep -v 127.0.0.1/8 | xargs nmap'
+
+# scan your local network with nmap
+#
+# usage:
+#  snet <nmap-args>
+# example: (scan for every HP printer in the network)
+#  snet -p jetdirect --open
+#
+# - get all non-linklocal IP addrs from ip
+# - pipe the IPs through ipcalc to get the network ID
+#   - this is neccessary to prevent scanning the same network twice
+#   - likely to experience if connected via wifi and ethernet
+# - xargs it to nmap at the end
+
+alias snet='ip addr | \grep -v "inet6" | \grep inet | cut -d " " -f 6 | \grep -v 127.0.0.1/8 | xargs -n 1 ipcalc | awk "/Network:/{print $2}" | sort -u | xargs nmap'
