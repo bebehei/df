@@ -53,3 +53,11 @@ Execute the following tasks somewhere. It really shouldn't matter where you exec
 This will fetch some other submodules and symlink every configfile in the system.
 
 It won't overwrite your config-files, but only replace symlinks.
+
+## Uninstaller
+
+This repo is so well organised,</sarcasm> it even has got a uninstaller!
+
+With `unlink.sh` you're able to remove all created links.
+
+    ./unlink.sh
