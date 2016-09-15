@@ -15,7 +15,11 @@ if [ ! -r $DEPL_FILE ]; then
 	exit 1
 fi
 
-git -C $DEPL_BASE submodule update --init --recursive
+# Filter out versions below 2.9
+# 10 out of 10 in uglyness-scale
+git --version | grep ' [12].[0-8]' 2>&1 >/dev/null || JOBS="--jobs $(nproc)"
+
+git -C $DEPL_BASE submodule update $JOBS --init --recursive
 
 grep -v --perl-regexp '^\s*#' $DEPL_FILE | while read line; do
 	src=$(echo "${line//\~/$HOME}" | awk '{print $1}')
