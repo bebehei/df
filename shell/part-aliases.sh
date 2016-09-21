@@ -24,9 +24,9 @@ alias fuck="sudo !!"
 # open any file wihtout the knowledge of what type it is
 alias of="xdg-open"
 
-if [ ! -z "$(type sudo 2>/dev/null)" ]; then
+if [ ! -z "$(type sudo 2>/dev/null)" -a "$USER" != 'root' ]; then
 	#create sudo aliases WITHOUT leading s
-	for sudo in wifi-menu netctl mount umount pacman shutdown reboot;
+	for sudo in wifi-menu netctl mount umount pacman shutdown reboot iftop;
 	do
 		type $sudo > /dev/null 2>&1 && alias $sudo="sudo $sudo";
 	done
