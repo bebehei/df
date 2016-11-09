@@ -4,6 +4,7 @@ general {
         interval = 2
 }
 
+order += "disk /home"
 order += "disk /"
 order += "ipv6"
 order += "wireless wlp2s0"
@@ -22,6 +23,9 @@ time {
 
 disk "/" {
         format = "root: %avail"
+}
+disk "/home" {
+        format = "home: %avail"
 }
 
 volume master {
