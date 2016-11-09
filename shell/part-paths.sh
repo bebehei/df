@@ -6,4 +6,4 @@ function set_path(){
 }
 
 set_path ~/.local/bin/
-set_path ~/bin
+set_path ~/.bin

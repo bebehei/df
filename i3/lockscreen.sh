@@ -28,7 +28,7 @@ usage(){
 }
 
 checkfull(){
-	[ 1 -eq "$force" ] || ~/bin/checknofullscreen
+	[ 1 -eq "$force" ] || ~/.bin/checknofullscreen
 }
 
 lock(){

@@ -7,8 +7,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-keyring-daemon
 exec --no-startup-id numlockx on
-exec --no-startup-id ~/bin/xmon default
-exec --no-startup-id ~/bin/lockscreen -d
+exec --no-startup-id ~/.bin/xmon default
+exec --no-startup-id ~/.bin/lockscreen -d
 exec --no-startup-id owncloud
 exec --no-startup-id evolution
 exec --no-startup-id redshift-gtk
@@ -29,7 +29,7 @@ focus_follows_mouse no
 bindsym $mod+Tab workspace next
 bindsym Shift+$mod+Tab workspace prev
 #mit alt+tab fenster wechseln
-bindsym Mod1+Tab exec ~/bin/winmenu
+bindsym Mod1+Tab exec ~/.bin/winmenu
 bindsym $mod+m exec  keepassx2
 
 
@@ -71,16 +71,16 @@ bar {
 }
 
 #AUDIO SECTION
-bindsym Ctrl+Up               exec ~/bin/xfbuttons.sh XF86AudioRaiseVolume
-bindsym Ctrl+Down             exec ~/bin/xfbuttons.sh XF86AudioLowerVolume
-bindsym XF86AudioRaiseVolume  exec ~/bin/xfbuttons.sh XF86AudioRaiseVolume
-bindsym XF86AudioLowerVolume  exec ~/bin/xfbuttons.sh XF86AudioLowerVolume
-bindsym XF86AudioMute         exec ~/bin/xfbuttons.sh XF86AudioMute
-bindsym XF86AudioPlay         exec ~/bin/xfbuttons.sh XF86AudioPlay
-bindsym XF86AudioNext         exec ~/bin/xfbuttons.sh XF86AudioNext
-bindsym XF86AudioPrev         exec ~/bin/xfbuttons.sh XF86AudioPrev
-bindsym XF86MonBrightnessUp   exec ~/bin/xfbuttons.sh XF86MonBrightnessUp
-bindsym XF86MonBrightnessDown exec ~/bin/xfbuttons.sh XF86MonBrightnessDown
+bindsym Ctrl+Up               exec ~/.bin/xfbuttons.sh XF86AudioRaiseVolume
+bindsym Ctrl+Down             exec ~/.bin/xfbuttons.sh XF86AudioLowerVolume
+bindsym XF86AudioRaiseVolume  exec ~/.bin/xfbuttons.sh XF86AudioRaiseVolume
+bindsym XF86AudioLowerVolume  exec ~/.bin/xfbuttons.sh XF86AudioLowerVolume
+bindsym XF86AudioMute         exec ~/.bin/xfbuttons.sh XF86AudioMute
+bindsym XF86AudioPlay         exec ~/.bin/xfbuttons.sh XF86AudioPlay
+bindsym XF86AudioNext         exec ~/.bin/xfbuttons.sh XF86AudioNext
+bindsym XF86AudioPrev         exec ~/.bin/xfbuttons.sh XF86AudioPrev
+bindsym XF86MonBrightnessUp   exec ~/.bin/xfbuttons.sh XF86MonBrightnessUp
+bindsym XF86MonBrightnessDown exec ~/.bin/xfbuttons.sh XF86MonBrightnessDown
 
 
 # main commands
@@ -92,8 +92,8 @@ bindsym $mod+Shift+e exit
 bindsym $mod+Return exec xterm
 
 # screensaver
-bindsym $mod+z exec ~/bin/lockscreen -fl
-bindsym $mod+y exec ~/bin/lockscreen -fl
+bindsym $mod+z exec ~/.bin/lockscreen -fl
+bindsym $mod+y exec ~/.bin/lockscreen -fl
 
 # start dmenu (a program launcher)
 bindsym $mod+x exec --no-startup-id i3-dmenu-desktop --entry-type=command
@@ -117,7 +117,7 @@ bindsym $mod+c layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 #bindsym $mod+space focus mode_toggle
-bindsym $mod+space exec ~/bin/xkbdtoggle.sh
+bindsym $mod+space exec ~/.bin/xkbdtoggle.sh
 bindsym $mod+s focus child
 bindsym $mod+a focus parent
 
