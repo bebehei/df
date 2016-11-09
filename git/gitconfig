@@ -6,10 +6,6 @@
 [user]
 	name = Benedikt Heine
 	email = bebe@bebehei.de
-[url "ssh://git/~/git/"]
-	insteadof = private:
-[url "git://git.gnome.org/"]
-	insteadof = gnome:
 [merge]
 	defaultToUpstream = true
 	tool = vimdiff
