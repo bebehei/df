@@ -43,7 +43,6 @@ fi
 #END alias-definitions
 
 alias pwedit="svim -p /etc/{passwd,group,shadow,gshadow}"
-alias pitime='time echo "scale=1000; 4*a(1)" | bc -l > /dev/null'
 alias cmdlist='find $(echo $PATH | tr ":" "\n")'
 alias makepasswd='makepasswd --minchars=10 --maxchars=25 --count=10'
 
