@@ -89,7 +89,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec i3-sensible-terminal
 
 # screensaver
 bindsym $mod+z exec ~/.bin/lockscreen -fl
