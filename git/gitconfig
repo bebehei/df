@@ -10,8 +10,6 @@
 	defaultToUpstream = true
 	tool = vimdiff
 	template = ~/.git/review-template
-[push]
-	default = matching
 [core]
 	editor = vim
 	eol = native
