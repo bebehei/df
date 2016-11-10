@@ -9,6 +9,10 @@ xterm*borderWidth: 0
 xterm*scrollTtyOutput: false
 xterm*scrollKey: true
 
+XTerm*VT100.AutoWrap: true
+xterm*allowWindowOps: true
+XTerm*VT100.utf8Title: true
+
 ! http://unix.stackexchange.com/questions/227701/how-to-use-ctrl-insert-to-copy-from-xterm
 XTerm*VT100.Translations:       #override\n\
   Shift Ctrl <KeyPress> v: insert-selection(CLIPBOARD)\n\
