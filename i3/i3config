@@ -56,18 +56,18 @@ client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator-color
 
 bar {
-    status_command i3status
-    position top
-    workspace_buttons   yes
-    colors {
-        background          $bg-color
-        statusline          $ws-inactive-text-color
-        separator           $seperator-color
-        focused_workspace   $workspace-color    $workspace-color    $ws-text-color
-        active_workspace    $inactive-workspace $inactive-workspace $ws-inactive-text-color
-        inactive_workspace  $inactive-workspace $inactive-workspace $ws-inactive-text-color
-        urgent_workspace    $urgent-bg-color    $urgent-bg-color    $ws-text-color
-    }
+	status_command i3status
+	position top
+	workspace_buttons   yes
+	colors {
+		background          $bg-color
+		statusline          $ws-inactive-text-color
+		separator           $seperator-color
+		focused_workspace   $workspace-color    $workspace-color    $ws-text-color
+		active_workspace    $inactive-workspace $inactive-workspace $ws-inactive-text-color
+		inactive_workspace  $inactive-workspace $inactive-workspace $ws-inactive-text-color
+		urgent_workspace    $urgent-bg-color    $urgent-bg-color    $ws-text-color
+	}
 }
 
 #AUDIO SECTION

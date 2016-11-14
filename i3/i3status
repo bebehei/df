@@ -1,10 +1,10 @@
 general {
-        output_format = "i3bar"
-        colors = true
-        interval = 2
-        color_good = "#60FF60"
-        color_degraded = "#FFFF60"
-        color_bad = "#FF6060"
+	output_format = "i3bar"
+	colors = true
+	interval = 2
+	color_good = "#60FF60"
+	color_degraded = "#FFFF60"
+	color_bad = "#FF6060"
 }
 
 order += "disk /home"
@@ -21,25 +21,25 @@ order += "time"
 
 
 time {
-        format = "%a %d.%m.%Y %H:%M:%S"
+	format = "%a %d.%m.%Y %H:%M:%S"
 }
 
 disk "/" {
-        format = " %avail"
-        low_threshold = 10
-        threshold_type = percentage_free
+	format = " %avail"
+	low_threshold = 10
+	threshold_type = percentage_free
 }
 disk "/home" {
-        format = " %avail"
-        low_threshold = 10
-        threshold_type = percentage_free
+	format = " %avail"
+	low_threshold = 10
+	threshold_type = percentage_free
 }
 
 volume master {
-        format = " %volume"
-        format_muted = "🔇"
-        device = "default"
-        mixer = "Master"
+	format = " %volume"
+	format_muted = "🔇"
+	device = "default"
+	mixer = "Master"
 }
 
 ipv6 {
@@ -48,31 +48,31 @@ ipv6 {
 }
 
 wireless wlp2s0 {
-        format_up = " %ip (%essid, %bitrate)"
-        format_down = ""
+	format_up = " %ip (%essid, %bitrate)"
+	format_down = ""
 }
 
 ethernet enp1s0f1 {
-        format_up = " %ip (%speed)"
-        format_down = ""
+	format_up = " %ip (%speed)"
+	format_down = ""
 }
 
 battery 1 {
-        format = "%status %percentage %remaining %consumption"
-        format_down = "No battery"
-        status_chr = ""
-        status_bat = ""
-        status_full = ""
-        hide_seconds = true
-        integer_battery_capacity = true
-        last_full_capacity = true
-        path = "/sys/class/power_supply/BAT%d/uevent"
-        low_threshold = 10
-				threshold_type = percentage
+	format = "%status %percentage %remaining %consumption"
+	format_down = "No battery"
+	status_chr = ""
+	status_bat = ""
+	status_full = ""
+	hide_seconds = true
+	integer_battery_capacity = true
+	last_full_capacity = true
+	path = "/sys/class/power_supply/BAT%d/uevent"
+	low_threshold = 10
+	threshold_type = percentage
 }
 
 load {
-        format = "%1min %5min"
+	format = "%1min %5min"
 }
 
 cpu_usage {
