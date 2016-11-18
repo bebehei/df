@@ -15,11 +15,11 @@ if [ ! -r $DEPL_FILE ]; then
 	exit 1
 fi
 
-# Filter out versions below 2.9
-# 10 out of 10 in uglyness-scale
-git --version | grep ' [12].[0-8]' 2>&1 >/dev/null || JOBS="--jobs $(nproc)"
+# If git submodule is already able to handle --jobs, use parallel fetch!
+# If not, update everything in serial way.
+git -C $DEPL_BASE submodule update --init --recursive --jobs $(nproc) \
+ || git -C $DEPL_BASE submodule update --init --recursive
 
-git -C $DEPL_BASE submodule update $JOBS --init --recursive
 
 grep -v --perl-regexp '^\s*#' $DEPL_FILE | while read line; do
 	src=$(echo "${line//\~/$HOME}" | awk '{print $1}')
