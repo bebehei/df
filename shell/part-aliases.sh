@@ -59,4 +59,4 @@ alias makepasswd='makepasswd --minchars=10 --maxchars=25 --count=10'
 #   - likely to experience if connected via wifi and ethernet
 # - xargs it to nmap at the end
 
-alias snet='ip addr | \grep -v "inet6" | \grep inet | cut -d " " -f 6 | \grep -v 127.0.0.1/8 | xargs -n 1 ipcalc | awk "/Network:/{print $2}" | sort -u | xargs nmap'
+alias snet="ip addr | \\grep -v "inet6" | \\grep inet | cut -d \" \" -f 6 | \\grep -v '127\\.0\\.[0-1]\\.[0-1]' | xargs -n 1 ipcalc | awk '/Network:/{print \$2}' | sort -u | xargs nmap"
