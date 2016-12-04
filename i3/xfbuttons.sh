@@ -2,28 +2,17 @@
 
 case $1 in
 	XF86AudioPlay)
-		xdotool key --window $(xdotool search --limit 1 --name "Spotify (Premium )?- Linux Preview") $1
-		xdotool key --window $(xdotool search --limit 1 --name ".*VLC media player") $1
-		dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.rhythmbox  /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+		playerctl play-pause
 	;;
 		
 	XF86AudioNext)
-		xdotool key --window $(xdotool search --limit 1 --name "Spotify (Premium )?- Linux Preview") $1
-		xdotool key --window $(xdotool search --limit 1 --name ".*VLC media player") $1
-		dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.rhythmbox  /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+		playerctl next
 	;;
 		
 	XF86AudioPrev)
-		xdotool key --window $(xdotool search --limit 1 --name "Spotify (Premium )?- Linux Preview") $1
-		xdotool key --window $(xdotool search --limit 1 --name ".*VLC media player") $1
-		dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.rhythmbox  /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+		playerctl previous
 	;;
 
-	XF86AudioPrev)
-		xdotool key --window $(xdotool search --limit 1 --name "Spotify (Premium )?- Linux Preview") $1
-		xdotool key --window $(xdotool search --limit 1 --name ".*VLC media player") $1
-		dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.rhythmbox  /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
-	;;
 	XF86AudioRaiseVolume)
 		pulseaudio-ctl up
 	;;
