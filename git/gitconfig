@@ -43,3 +43,5 @@
 	required = true
 [credential]
 	helper = /usr/bin/git-credential-gnome-keyring
+[rebase]
+	autosquash = true
