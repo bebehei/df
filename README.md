@@ -23,6 +23,7 @@ These are my personal dotfiles. Free for personal use.
     * wget
     * git
     * top
+    * python (CLI readline completion)
 
 # Concepts of this repo
 

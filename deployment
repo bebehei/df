@@ -38,6 +38,7 @@ i3/xmoncfg/rightvga.cfg ~/.display/rightvga.cfg
 i3/xkbdtoggle.sh ~/.bin/xkbdtoggle.sh
 i3/xfbuttons.sh ~/.bin/xfbuttons.sh
 i3/Xresources ~/.Xresources
+python/startup ~/.python_startup
 shell/load ~/.profile.d/load
 shell/part-aliases.sh ~/.profile.d/20-aliases.sh
 shell/part-cd.sh ~/.profile.d/20-cd.sh
