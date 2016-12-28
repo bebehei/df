@@ -10,6 +10,7 @@
 # Files with whitespace are not allowed, these are not processed correct.
 bash/bashrc ~/.bashrc
 bash/bashrc ~/.bash_profile
+bin/clean.sh ~/.bin/clean
 bin/host-is-on.sh ~/.bin/host-is-on
 bin/mdo.sh ~/.bin/mdo
 git/diff-so-fancy/diff-so-fancy ~/.bin/diff-so-fancy
