@@ -15,6 +15,7 @@ alias LS='sl -F'
 alias ls-l='sl -l'
 
 alias quit="exit"
+alias :q="exit"
 
 alias vim="vim -p"
 alias vi="vim -p"
