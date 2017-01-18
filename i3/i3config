@@ -81,6 +81,7 @@ bindsym XF86AudioNext         exec ~/.bin/xfbuttons.sh XF86AudioNext
 bindsym XF86AudioPrev         exec ~/.bin/xfbuttons.sh XF86AudioPrev
 bindsym XF86MonBrightnessUp   exec ~/.bin/xfbuttons.sh XF86MonBrightnessUp
 bindsym XF86MonBrightnessDown exec ~/.bin/xfbuttons.sh XF86MonBrightnessDown
+bindsym XF86Display           exec ~/.bin/xfbuttons.sh XF86Display
 
 
 # main commands
