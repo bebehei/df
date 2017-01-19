@@ -25,10 +25,10 @@ case $1 in
 		pulseaudio-ctl mute
 	;;
 	XF86MonBrightnessUp)
-		xbacklight -inc 10%
+		xbacklight -inc 5%
 	;;
 	XF86MonBrightnessDown)
-		xbacklight -dec 10%
+		xbacklight -dec 5%
 	;;
 	XF86Display)
 		# TODO: Dual-setup of VGA/HDMI does not work
@@ -45,5 +45,4 @@ case $1 in
 			$BASE/xmon.sh display
 		fi
 	;;
-		
 esac
