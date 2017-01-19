@@ -14,7 +14,7 @@ exec --no-startup-id evolution --force-online
 exec --no-startup-id redshift-gtk
 exec --no-startup-id keepassx
 
-font pango:Ubuntu Bold 11
+font pango:Fira Code Bold 11
 
 ##Various
 assign [class="Spotify"] 10
