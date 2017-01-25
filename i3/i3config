@@ -99,7 +99,7 @@ bindsym $mod+y exec ~/.bin/lockscreen -fl
 # start dmenu (a program launcher)
 bindsym $mod+x exec --no-startup-id i3-dmenu-desktop --entry-type=command
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -dmenu -p "" -i -hide-scrollbar -lines 6 -padding 40 -bw 0 -bg "#000000" -fg "$text-color" -hlbg "$bg-color"'
-bindsym $mod+d exec --no-startup-id albert show || albert
+bindsym $mod+d exec --no-startup-id albert && albert show
 
 # kill focused window
 bindsym $mod+Shift+q kill
