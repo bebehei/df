@@ -81,5 +81,5 @@ cpu_usage {
 
 cpu_temperature 1 {
 	format = " %degrees°C"
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp%d_input"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input"
 }
