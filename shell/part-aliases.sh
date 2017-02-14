@@ -44,9 +44,9 @@ if [ ! -z "$(type sudo 2>/dev/null)" -a "$USER" != 'root' ]; then
 	unset sudo
 
 	pacman(){
-		# Check if pacman has -R or -S option
+		# Check if pacman has -S, -R or -U option
 		# which should indicate in most times if we need sudo
-		echo "$*" | grep -- "-[SR]" >/dev/null 2>&1 \
+		echo "$*" | grep -- "-[SRU]" >/dev/null 2>&1 \
 			&& sudo /usr/bin/pacman $* \
 			||      /usr/bin/pacman $*
 	}
