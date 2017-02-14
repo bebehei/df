@@ -13,6 +13,7 @@ exec --no-startup-id seafile-applet
 exec --no-startup-id evolution --force-online
 exec --no-startup-id redshift-gtk
 exec --no-startup-id keepassx
+exec --no-startup-id albert
 
 font pango:Fira Code Bold 11
 
@@ -99,7 +100,7 @@ bindsym $mod+y exec ~/.bin/lockscreen -fl
 # start dmenu (a program launcher)
 bindsym $mod+x exec --no-startup-id i3-dmenu-desktop --entry-type=command
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -dmenu -p "" -i -hide-scrollbar -lines 6 -padding 40 -bw 0 -bg "#000000" -fg "$text-color" -hlbg "$bg-color"'
-bindsym $mod+d exec --no-startup-id albert && albert show
+bindsym $mod+d exec --no-startup-id albert show
 
 # kill focused window
 bindsym $mod+Shift+q kill
