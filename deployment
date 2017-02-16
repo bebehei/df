@@ -25,6 +25,7 @@ i3/locknow.sh ~/.bin/locknow
 i3/redshift/redshift.conf ~/.config/redshift.conf
 i3/redshift/hook.sh ~/.config/redshift/hooks/hook.sh
 i3/winmenu ~/.bin/winmenu
+i3/Xmodmap ~/.Xmodmap
 i3/xmon.sh ~/.bin/xmon
 i3/xmon.sh.comp.zsh ~/.zcomplete/_xmon
 i3/xmoncfg/display.cfg ~/.display/display.cfg
