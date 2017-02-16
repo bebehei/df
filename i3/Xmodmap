@@ -1,9 +1,12 @@
+! Mode_switch on right Alt and on Context-Menu-Button
+keycode 108 = Mode_switch Meta_R Alt_R Meta_R
+keycode 135 = Mode_switch NoSymbol Menu
+! Umlauts on German Positions
 keycode  20 = minus underscore ssharp
 keycode  34 = bracketleft braceleft udiaeresis Udiaeresis
 keycode  47 = semicolon colon odiaeresis Odiaeresis
 keycode  48 = apostrophe quotedbl adiaeresis Adiaeresis
-
-keycode 135 = Mode_switch NoSymbol Menu
+! Umlauts on base-characters
 keycode  38 = a A adiaeresis Adiaeresis
 keycode  30 = u U udiaeresis Udiaeresis
 keycode  32 = o O odiaeresis Odiaeresis
