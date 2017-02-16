@@ -6,13 +6,14 @@ case $1 in
 	XF86AudioPlay)
 		playerctl play-pause
 	;;
-		
 	XF86AudioNext)
 		playerctl next
 	;;
-		
 	XF86AudioPrev)
 		playerctl previous
+	;;
+	XF86AudioStop)
+		playerctl stop
 	;;
 
 	XF86AudioRaiseVolume)

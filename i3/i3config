@@ -79,6 +79,7 @@ bindsym XF86AudioRaiseVolume  exec ~/.bin/xfbuttons.sh XF86AudioRaiseVolume
 bindsym XF86AudioLowerVolume  exec ~/.bin/xfbuttons.sh XF86AudioLowerVolume
 bindsym XF86AudioMute         exec ~/.bin/xfbuttons.sh XF86AudioMute
 bindsym XF86AudioPlay         exec ~/.bin/xfbuttons.sh XF86AudioPlay
+bindsym XF86AudioStop         exec ~/.bin/xfbuttons.sh XF86AudioStop
 bindsym XF86AudioNext         exec ~/.bin/xfbuttons.sh XF86AudioNext
 bindsym XF86AudioPrev         exec ~/.bin/xfbuttons.sh XF86AudioPrev
 bindsym XF86MonBrightnessUp   exec ~/.bin/xfbuttons.sh XF86MonBrightnessUp
