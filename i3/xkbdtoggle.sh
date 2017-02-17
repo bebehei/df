@@ -13,3 +13,7 @@ cat $KBDLIST $KBDLIST \
 	| cat - $KBDLIST \
 	| head -n 1 \
 	| xargs setxkbmap
+
+if [[ "us" == "$(setxkbmap -query | awk '/^layout:/ { print $2}')" ]]; then
+	xmodmap ~/.Xmodmap
+fi
