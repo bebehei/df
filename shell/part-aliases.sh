@@ -23,6 +23,12 @@ alias :qw="exit"
 alias vim="vim -p"
 alias vi="vim -p"
 
+alias nano='vim -p'
+alias pico='vim -p'
+alias emacs='gvim -p'
+alias gedit='gvim -p'
+alias kate='gvim -p'
+
 alias fuck="sudo !!"
 
 # open any file wihtout the knowledge of what type it is
