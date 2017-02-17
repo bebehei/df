@@ -61,7 +61,7 @@ fi
 
 #END alias-definitions
 
-alias pwedit="svim -p /etc/{passwd,group,shadow,gshadow}"
+alias pwedit="sudo vim -p /etc/{passwd,group,shadow,gshadow}"
 alias cmdlist='find $(echo $PATH | tr ":" "\n")'
 alias makepasswd='makepasswd --minchars=10 --maxchars=25 --count=10'
 
