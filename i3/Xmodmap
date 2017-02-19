@@ -11,3 +11,11 @@ keycode  38 = a A adiaeresis Adiaeresis
 keycode  30 = u U udiaeresis Udiaeresis
 keycode  32 = o O odiaeresis Odiaeresis
 keycode  39 = s S ssharp
+! Mediakeys on special F-positions
+keycode  71 = XF86Display F5 F5 F5 F5 F5 XF86Switch_VT_5 F5 F5 XF86Switch_VT_5
+keycode  72 = XF86AudioLowerVolume F6 F6 F6 F6 F6 XF86Switch_VT_6
+keycode  73 = XF86AudioRaiseVolume F7 F7 F7 F7 F7 XF86Switch_VT_7
+keycode  74 = XF86AudioMute F8 F8 F8 F8 F8 XF86Switch_VT_8
+keycode  75 = XF86AudioPrev F9 F9 F9 F9 F9 XF86Switch_VT_9
+keycode  76 = XF86AudioPlay F10 F10 F10 F10 F10 XF86Switch_VT_10
+keycode  95 = XF86AudioNext F11 F11 F11 F11 F11 XF86Switch_VT_11
