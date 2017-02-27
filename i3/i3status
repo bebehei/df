@@ -10,17 +10,17 @@ general {
 order += "disk /home"
 order += "disk /"
 order += "ipv6"
-order += "wireless wlp2s0"
-order += "ethernet enp1s0f1"
+order += "wireless _first_"
+order += "ethernet _first_"
 order += "volume master"
-order += "battery 1"
+order += "battery all"
 order += "cpu_usage"
 order += "cpu_temperature 1"
 order += "load"
-order += "time"
+order += "tztime local"
 
 
-time {
+tztime local {
 	format = "%a %d.%m.%Y %H:%M:%S"
 }
 
@@ -47,17 +47,17 @@ ipv6 {
 	format_down = "v6"
 }
 
-wireless wlp2s0 {
+wireless _first_ {
 	format_up = " %ip (%essid, %bitrate)"
 	format_down = ""
 }
 
-ethernet enp1s0f1 {
+ethernet _first_ {
 	format_up = " %ip (%speed)"
 	format_down = ""
 }
 
-battery 1 {
+battery all {
 	format = "%status %percentage %remaining %consumption"
 	format_down = "No battery"
 	status_chr = ""
@@ -66,7 +66,6 @@ battery 1 {
 	hide_seconds = true
 	integer_battery_capacity = true
 	last_full_capacity = true
-	path = "/sys/class/power_supply/BAT%d/uevent"
 	low_threshold = 10
 	threshold_type = percentage
 }
