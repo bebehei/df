@@ -50,11 +50,12 @@ if [ ! -z "$(type sudo 2>/dev/null)" -a "$USER" != 'root' ]; then
 	unset sudo
 
 	pacman(){
+		local sudo_needed
 		# Check if pacman has -S, -R or -U option
 		# which should indicate in most times if we need sudo
 		echo "$*" | grep -- "-[SRU]" >/dev/null 2>&1 \
-			&& sudo /usr/bin/pacman $* \
-			||      /usr/bin/pacman $*
+			&& sudo_needed="sudo"
+		${sudo_needed} /usr/bin/pacman $*
 	}
 
 fi
