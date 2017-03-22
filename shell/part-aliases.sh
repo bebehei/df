@@ -31,6 +31,16 @@ alias kate='gvim -p'
 
 alias fuck="sudo !!"
 
+# only list the IO of <processname> with iotop
+# io <processname>
+io(){
+	local sudo_needed
+	[ ! -z "$(type sudo 2>/dev/null)" -a "$USER" != 'root' ] \
+		&& sudo_needed="sudo"
+
+	${sudo_needed} iotop -p$(pidof "$1" | sed 's/ / -p/g')
+}
+
 # open any file wihtout the knowledge of what type it is
 alias of="xdg-open"
 
