@@ -6,8 +6,8 @@ case "$1" in
 		$0 pacman
 		;;
 	docker)
-		docker ps -a | awk '/Exited/{print $1}' | xargs -r docker rm
-		docker images | awk '/none/{print $3}' | xargs -r docker rmi
+		docker container ls --filter status=exited --format '{{.ID}}' | xargs -r docker container rm
+		docker image     ls --filter dangling=true --format='{{.ID}}' | xargs -r docker image rm 
 		;;
 	pacman)
 		pacman -Scc
