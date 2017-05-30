@@ -6,8 +6,8 @@ case "$1" in
 		$0 pacman
 		;;
 	docker)
-		docker image prune --force
 		docker container prune --force
+		docker image prune --force
 		;;
 	pacman)
 		pacman -Scc
