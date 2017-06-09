@@ -17,6 +17,9 @@ exec --no-startup-id xmodmap ~/.Xmodmap
 
 font pango:Fira Code Bold 11
 
+# make some windows floating
+for_window [class="Firefox" window_role="About"] floating enable
+
 ##Various
 assign [class="Spotify"] 10
 for_window [class="Spotify"] move workspace 10
