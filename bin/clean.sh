@@ -10,7 +10,7 @@ case "$1" in
 		docker image prune --force
 		;;
 	pacman)
-		pacman -Scc
+		yes | pacman -Scc
 		;;
 	*)
 		echo "Please give parameter of: [all docker pacman]"
