@@ -40,6 +40,9 @@ i3/xmoncfg/rightvga.cfg ~/.display/rightvga.cfg
 i3/xkbdtoggle.sh ~/.bin/xkbdtoggle.sh
 i3/xfbuttons.sh ~/.bin/xfbuttons.sh
 i3/Xresources ~/.Xresources
+konsole/default.profile ~/.local/share/konsole/default.profile
+konsole/konsole.notifyrc ~/.config/konsole.notifyrc
+konsole/konsolerc ~/.config/konsolerc
 python/startup ~/.python_startup
 shell/load ~/.profile.d/load
 shell/part-aliases.sh ~/.profile.d/20-aliases.sh
