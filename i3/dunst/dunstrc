@@ -1,0 +1,64 @@
+# vim: ft=cfg
+[global]
+    font = Fira Sans Mono 11
+
+    markup = full
+    format = "<b>%s</b>\n%p %b"
+
+    sort = yes
+    indicate_hidden = yes
+    alignment = left
+    show_age_threshold = 60
+    word_wrap = yes
+    ignore_newline = no
+
+    geometry = "300x5-30-30"
+    shrink = no
+
+    follow = keyboard
+
+    idle_threshold = 60
+    sticky_history = yes
+    history_length = 20
+    show_indicators = no
+
+    separator_height = 0
+    padding = 8
+    horizontal_padding = 4
+
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/firefox -new-tab
+
+		# Use numix icons (and Adwaita as fallback)
+    icon_position = left
+    icon_folders = /usr/share/icons/Numix/48/actions:/usr/share/icons/Numix/48/animations:/usr/share/icons/Numix/48/apps:/usr/share/icons/Numix/48/categories:/usr/share/icons/Numix/48/devices:/usr/share/icons/Numix/48/emblems:/usr/share/icons/Numix/48/emotes:/usr/share/icons/Numix/48/mimetypes:/usr/share/icons/Numix/48/notifications:/usr/share/icons/Numix/48/places:/usr/share/icons/Numix/48/status:/usr/share/icons/Adwaita/48x48/actions:/usr/share/icons/Adwaita/48x48/apps:/usr/share/icons/Adwaita/48x48/categories:/usr/share/icons/Adwaita/48x48/devices:/usr/share/icons/Adwaita/48x48/emblems:/usr/share/icons/Adwaita/48x48/emotes:/usr/share/icons/Adwaita/48x48/mimetypes:/usr/share/icons/Adwaita/48x48/places:/usr/share/icons/Adwaita/48x48/status
+
+[frame]
+    width = 2
+    color = "#aaaaaa"
+
+[shortcuts]
+    close = mod4+period
+    close_all = mod4+shift+period
+    history = mod4+grave
+
+[urgency_low]
+    background = "#2F343F"
+    foreground = "#888888"
+    timeout = 10
+[urgency_normal]
+    background = "#2F343F"
+    foreground = "#ffffff"
+    timeout = 10
+[urgency_critical]
+    background = "#900000"
+    foreground = "#ffffff"
+    timeout = 0
+
+[history-ignore_pulseaudio-ctl]
+	appname = "pulseaudio-ctl"
+	history_ignore = yes
+
+#[Telegram]
+#	appname = "Telegram Desktop"
+#	new_icon = /usr/share/icons/hicolor/48x48/apps/telegram-desktop.png
