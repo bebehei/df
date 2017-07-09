@@ -5,16 +5,13 @@ DefaultProfile=Profile 6.profile
 Favorites=
 
 [KonsoleWindow]
+SaveGeometryOnExit=false
 ShowMenuBarByDefault=false
 
 [MainWindow]
-Height 1024=755
-Height 1080=1034
 MenuBar=Disabled
 State=AAAA/wAAAAD9AAAAAAAAA74AAAQKAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
-Width 1280=1280
-Width 1920=958
 
 [TabBar]
 TabBarVisibility=AlwaysHideTabBar
