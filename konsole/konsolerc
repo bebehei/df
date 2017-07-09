@@ -2,7 +2,7 @@
 DefaultProfile=default.profile
 
 [Favorite Profiles]
-Favorites=
+Favorites=default.profile
 
 [KonsoleWindow]
 SaveGeometryOnExit=false
