@@ -62,3 +62,8 @@
 [Telegram]
     appname = "Telegram Desktop"
     background = "#0088cc"
+
+[Spotify]
+    appname = "Spotify"
+    foreground = "#ffffff"
+    background = "#1ed760"
