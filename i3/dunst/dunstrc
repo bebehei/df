@@ -1,4 +1,4 @@
-# vim: ft=cfg
+# vim: ft=cfg tabstop=4 shiftwidth=4 expandtab textwidth=0
 [global]
     font = Fira Sans Mono 11
 
@@ -29,7 +29,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/firefox -new-tab
 
-		# Use numix icons (and Adwaita as fallback)
+    # Use numix icons (and Adwaita as fallback)
     icon_position = left
     icon_folders = /usr/share/icons/Numix/48/actions:/usr/share/icons/Numix/48/animations:/usr/share/icons/Numix/48/apps:/usr/share/icons/Numix/48/categories:/usr/share/icons/Numix/48/devices:/usr/share/icons/Numix/48/emblems:/usr/share/icons/Numix/48/emotes:/usr/share/icons/Numix/48/mimetypes:/usr/share/icons/Numix/48/notifications:/usr/share/icons/Numix/48/places:/usr/share/icons/Numix/48/status:/usr/share/icons/Adwaita/48x48/actions:/usr/share/icons/Adwaita/48x48/apps:/usr/share/icons/Adwaita/48x48/categories:/usr/share/icons/Adwaita/48x48/devices:/usr/share/icons/Adwaita/48x48/emblems:/usr/share/icons/Adwaita/48x48/emotes:/usr/share/icons/Adwaita/48x48/mimetypes:/usr/share/icons/Adwaita/48x48/places:/usr/share/icons/Adwaita/48x48/status
 
@@ -56,9 +56,9 @@
     timeout = 0
 
 [history-ignore_pulseaudio-ctl]
-	appname = "pulseaudio-ctl"
-	history_ignore = yes
+    appname = "pulseaudio-ctl"
+    history_ignore = yes
 
 [Telegram]
-	appname = "Telegram Desktop"
-	background = "#0088cc"
+    appname = "Telegram Desktop"
+    background = "#0088cc"
