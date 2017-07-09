@@ -34,7 +34,7 @@
     icon_folders = /usr/share/icons/Numix/48/actions:/usr/share/icons/Numix/48/animations:/usr/share/icons/Numix/48/apps:/usr/share/icons/Numix/48/categories:/usr/share/icons/Numix/48/devices:/usr/share/icons/Numix/48/emblems:/usr/share/icons/Numix/48/emotes:/usr/share/icons/Numix/48/mimetypes:/usr/share/icons/Numix/48/notifications:/usr/share/icons/Numix/48/places:/usr/share/icons/Numix/48/status:/usr/share/icons/Adwaita/48x48/actions:/usr/share/icons/Adwaita/48x48/apps:/usr/share/icons/Adwaita/48x48/categories:/usr/share/icons/Adwaita/48x48/devices:/usr/share/icons/Adwaita/48x48/emblems:/usr/share/icons/Adwaita/48x48/emotes:/usr/share/icons/Adwaita/48x48/mimetypes:/usr/share/icons/Adwaita/48x48/places:/usr/share/icons/Adwaita/48x48/status
 
 [frame]
-    width = 2
+    width = 0
     color = "#aaaaaa"
 
 [shortcuts]
@@ -59,6 +59,6 @@
 	appname = "pulseaudio-ctl"
 	history_ignore = yes
 
-#[Telegram]
-#	appname = "Telegram Desktop"
-#	new_icon = /usr/share/icons/hicolor/48x48/apps/telegram-desktop.png
+[Telegram]
+	appname = "Telegram Desktop"
+	background = "#0088cc"
