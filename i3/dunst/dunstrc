@@ -67,3 +67,8 @@
     appname = "Spotify"
     foreground = "#ffffff"
     background = "#1ed760"
+
+[locking]
+    appname = "lockscreen"
+    new_icon = "system-lock-screen"
+    history_ignore = yes

@@ -40,6 +40,8 @@ lock(){
 
 notification(){
 	notify-send \
+	  -a lockscreen \
+	  -c lock-warn \
 	  -u critical \
 	  -t 5000 \
 	  -i screensaver \
