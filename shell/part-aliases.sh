@@ -79,7 +79,7 @@ alias makepasswd='makepasswd --minchars=10 --maxchars=25 --count=10'
 # set DPMS values in minutes
 dpms(){
 	[ -z "${1}" ] && echo "No time given!" && return 1
-	local secs=`expr "60*${1}"`
+	local secs=`expr "60" "*" "${1}"`
 	xset s off
 	xset dpms "${secs}" "${secs}" "${secs}"
 }
