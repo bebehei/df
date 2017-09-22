@@ -13,7 +13,7 @@
 [core]
 	editor = vim
 	eol = native
-	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
 	ct         = log --graph --decorate --pretty=oneline --abbrev-commit
 	committree = log --graph --decorate --pretty=oneline --abbrev-commit
