@@ -65,10 +65,6 @@
     history_ignore = yes
     set_transient = yes
 
-[locking]
-    appname = "lockscreen"
-    new_icon = "system-lock-screen"
-
 # Supergood seafile devs :facepalm:
 [Seafile]
     appname = "Seafile"
