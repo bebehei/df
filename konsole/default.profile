@@ -1,5 +1,5 @@
 [Appearance]
-ColorScheme=Linux
+ColorScheme=WhiteOnBlack
 Font=Fira Mono Medium for Powerline,11,-1,5,57,0,0,0,0,0,Medium
 
 [General]
