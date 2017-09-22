@@ -59,7 +59,7 @@ if [ ! -z "$(type sudo 2>/dev/null)" -a "$USER" != 'root' ]; then
 	done
 	unset sudo
 
-	pacman(){
+	type pacman >/dev/null 2>&1 && pacman(){
 		local sudo_needed
 		# Check if pacman has -S, -R or -U option
 		# which should indicate in most times if we need sudo
