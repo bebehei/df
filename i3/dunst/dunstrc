@@ -3,7 +3,7 @@
     font = Fira Sans Mono 11
 
     markup = full
-    format = "<b>%s</b>\n%p %b"
+    format = "<b>%s</b>\n%b"
 
     sort = yes
     indicate_hidden = yes
@@ -18,57 +18,58 @@
     follow = keyboard
 
     idle_threshold = 60
-    sticky_history = yes
+    sticky_history = no
     history_length = 20
     show_indicators = no
+    stack_duplicates = yes
 
-    separator_height = 0
+    separator_height = 8
+    separator_color = "#000000"
     padding = 8
-    horizontal_padding = 4
+    horizontal_padding = 8
 
     dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/firefox -new-tab
 
     # Use numix icons (and Adwaita as fallback)
+    max_icon_size = 96
     icon_position = left
-    icon_folders = /usr/share/icons/Numix/48/actions:/usr/share/icons/Numix/48/animations:/usr/share/icons/Numix/48/apps:/usr/share/icons/Numix/48/categories:/usr/share/icons/Numix/48/devices:/usr/share/icons/Numix/48/emblems:/usr/share/icons/Numix/48/emotes:/usr/share/icons/Numix/48/mimetypes:/usr/share/icons/Numix/48/notifications:/usr/share/icons/Numix/48/places:/usr/share/icons/Numix/48/status:/usr/share/icons/Adwaita/48x48/actions:/usr/share/icons/Adwaita/48x48/apps:/usr/share/icons/Adwaita/48x48/categories:/usr/share/icons/Adwaita/48x48/devices:/usr/share/icons/Adwaita/48x48/emblems:/usr/share/icons/Adwaita/48x48/emotes:/usr/share/icons/Adwaita/48x48/mimetypes:/usr/share/icons/Adwaita/48x48/places:/usr/share/icons/Adwaita/48x48/status
+    icon_path = /usr/share/icons/Numix/48/actions:/usr/share/icons/Numix/48/animations:/usr/share/icons/Numix/48/apps:/usr/share/icons/Numix/48/categories:/usr/share/icons/Numix/48/devices:/usr/share/icons/Numix/48/emblems:/usr/share/icons/Numix/48/emotes:/usr/share/icons/Numix/48/mimetypes:/usr/share/icons/Numix/48/notifications:/usr/share/icons/Numix/48/places:/usr/share/icons/Numix/48/status:/usr/share/icons/Adwaita/48x48/actions:/usr/share/icons/Adwaita/48x48/apps:/usr/share/icons/Adwaita/48x48/categories:/usr/share/icons/Adwaita/48x48/devices:/usr/share/icons/Adwaita/48x48/emblems:/usr/share/icons/Adwaita/48x48/emotes:/usr/share/icons/Adwaita/48x48/mimetypes:/usr/share/icons/Adwaita/48x48/places:/usr/share/icons/Adwaita/48x48/status:/usr/share/icons/hicolor/48x48/actions:/usr/share/icons/hicolor/48x48/animations:/usr/share/icons/hicolor/48x48/apps:/usr/share/icons/hicolor/48x48/categories:/usr/share/icons/hicolor/48x48/devices:/usr/share/icons/hicolor/48x48/emblems:/usr/share/icons/hicolor/48x48/emotes:/usr/share/icons/hicolor/48x48/filesystems:/usr/share/icons/hicolor/48x48/intl:/usr/share/icons/hicolor/48x48/mimetypes:/usr/share/icons/hicolor/48x48/places:/usr/share/icons/hicolor/48x48/status:/usr/share/icons/hicolor/48x48/stock
 
-[frame]
-    width = 0
-    color = "#aaaaaa"
+    frame_width = 0
+    frame_color = "#FF0000"
 
 [shortcuts]
-    close = mod4+period
+    close = mod4+grave
     close_all = mod4+shift+period
-    history = mod4+grave
+    history = mod4+shift+grave
 
 [urgency_low]
     background = "#2F343F"
     foreground = "#888888"
-    timeout = 10
 [urgency_normal]
     background = "#2F343F"
-    foreground = "#ffffff"
-    timeout = 10
+    foreground = "#FFFFFF"
 [urgency_critical]
     background = "#900000"
-    foreground = "#ffffff"
-    timeout = 0
-
-[history-ignore_pulseaudio-ctl]
-    appname = "pulseaudio-ctl"
-    history_ignore = yes
+    foreground = "#FFFFFF"
 
 [Telegram]
     appname = "Telegram Desktop"
-    background = "#0088cc"
+    background = "#0088CC"
 
 [Spotify]
     appname = "Spotify"
-    foreground = "#ffffff"
-    background = "#1ed760"
+    foreground = "#FFFFFF"
+    background = "#1ED760"
+    history_ignore = yes
+    set_transient = yes
 
 [locking]
     appname = "lockscreen"
     new_icon = "system-lock-screen"
-    history_ignore = yes
+
+# Supergood seafile devs :facepalm:
+[Seafile]
+    appname = "Seafile"
+    new_icon = "seafile"
