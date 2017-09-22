@@ -73,7 +73,7 @@ fi
 #END alias-definitions
 
 alias pwedit="sudo vim -p /etc/{passwd,group,shadow,gshadow}"
-alias cmdlist='find $(echo $PATH | tr ":" "\n")'
+alias cmdlist='find $(echo $PATH | tr ":" "\n") | awk -F / "{print \$NF}" | sort -u'
 alias makepasswd='makepasswd --minchars=10 --maxchars=25 --count=10'
 
 # set DPMS values in minutes
