@@ -62,6 +62,9 @@
     history_ignore = yes
     set_transient = yes
 
+[lockscreen]
+    history_ignore = yes
+
 # Supergood seafile devs :facepalm:
 [Seafile]
     appname = "Seafile"

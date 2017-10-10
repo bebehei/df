@@ -43,7 +43,7 @@ notification(){
 	  -a lockscreen \
 	  -c lock-warn \
 	  -u critical \
-	  -t 5000 \
+	  -t 100 \
 	  -i system-lock-screen \
 	  "Locking Screen" \
 	  "Will Lock Screen in 15s"
