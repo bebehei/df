@@ -33,9 +33,9 @@
 [difftool]
 	prompt = false
 [color "diff-highlight"]
-	oldNormal = red bold
+	oldNormal = red
 	oldHighlight = red bold 52
-	newNormal = green bold
+	newNormal = green
 	newHighlight = green bold 22
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -45,3 +45,10 @@
 	helper = /usr/bin/git-credential-gnome-keyring
 [rebase]
 	autosquash = true
+[color "diff"]
+	meta = yellow bold
+	commit = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
