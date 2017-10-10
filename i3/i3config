@@ -17,7 +17,6 @@ exec --no-startup-id xmodmap ~/.Xmodmap
 
 #dunst dev
 exec --no-startup-id compton -c
-exec --no-startup-id polari
 
 font pango:Fira Code Bold 11
 
@@ -27,8 +26,6 @@ for_window [class="Firefox" window_role="About"] floating enable
 ##Various
 assign [class="Spotify"] 10
 for_window [class="Spotify"] move workspace 10
-assign [class="Org.gnome.Polari"] 8
-for_window [class="Org.gnome.Polari"] move workspace 8
 assign [class="Thunderbird"] 9
 for_window [class="Thunderbird"] move workspace 9
 hide_edge_borders both
