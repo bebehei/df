@@ -114,11 +114,17 @@ alias dgdb="killall dunst; gdb -ex run ${DUNST_REPO}/dunst -ex 'set confirm off'
 alias dtest="killall dunst; dmake clean && dmake all test; gdb -cd ${DUNST_REPO}/test -ex run ${DUNST_REPO}/test/test -ex 'set confirm off' -ex bt"
 alias dvalgrind="killall dunst; valgrind --leak-check=full --show-leak-kinds=definite --track-origins=yes ${DUNST_REPO}/dunst -startup_notification yes"
 alias dhugo="(cd ${DUNST_REPO}/.dunst-project.o && hugo server) &; xdg-open http://localhost:1313/"
+alias dlog="journalctl -a --follow --since=\"\$(date '+%Y-%m-%d %H:%M' --date='last hour')\" --user -u dunst.service"
+alias dmon="dbus-monitor path=/org/freedesktop/Notifications"
+alias dunstify="${DUNST_REPO}/dunstify"
 
 # Build the dunst package and run it directly
 
 function dpkg(){
-	rm -rf ${DUNST_REPO}/.dunst-git/dunst # force a reclone
+	set -x
+	rm -rf ${DUNST_REPO}/.dunst-git.o/{dunst,pkg,src} # force a reclone and full rebuild
+	rm -rf ${DUNST_REPO}/.dunst-git.o/dunst-git*.pkg.tar.xz
+	set +x
 
 	pushd ${DUNST_REPO}/.dunst-git.o
 	sed -i "s%^source=.*%source=('git+file://${DUNST_REPO}#branch=${1:-master}')%" PKGBUILD
