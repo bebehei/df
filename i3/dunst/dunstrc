@@ -67,6 +67,7 @@
     set_transient = yes
 
 [lockscreen]
+    appname = "lockscreen"
     history_ignore = yes
 
 # Supergood seafile devs :facepalm:
