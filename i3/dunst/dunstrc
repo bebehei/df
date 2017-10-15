@@ -17,6 +17,8 @@
 
     follow = keyboard
 
+    startup_notification = yes
+
     idle_threshold = 60
     sticky_history = no
     history_length = 20
