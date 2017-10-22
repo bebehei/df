@@ -31,6 +31,14 @@ checkfull(){
 	[ 1 -eq "$force" ] || ~/.bin/checknofullscreen
 }
 
+encrypt_the_chest(){
+	if command -v systemctl &>/dev/null; then
+		systemctl hibernate || shutdown now
+	else
+		shutdown now
+	fi
+}
+
 lock(){
 	i3lock \
 	  -p win \
@@ -70,7 +78,7 @@ while getopts ":hdfln" opt; do
 			force=1
 			;;
 		l)
-			checkfull && lock
+			checkfull && (lock || encrypt_the_chest)
 			;;
 		n)
 			checkfull && notification
