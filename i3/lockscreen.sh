@@ -87,11 +87,11 @@ while getopts ":hdfln" opt; do
 			daemon
 			;;
 		\?)
-			error "Invalid option: -args"
+			error "Invalid option: -${opt}"
 			usage
 			;;
 		:)
-			error "Option -args requires an argument."
+			error "Option -${opt} requires an argument."
 			usage
 			;;
 	esac
