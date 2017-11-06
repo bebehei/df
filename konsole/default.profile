@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=WhiteOnBlack
-Font=Fira Mono Medium for Powerline,11,-1,5,57,0,0,0,0,0,Medium
+Font=Fira Code,11,-1,5,75,0,0,0,0,0,Bold
 
 [General]
 Name=default
