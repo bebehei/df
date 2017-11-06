@@ -58,6 +58,7 @@ notification(){
 }
 
 daemon(){
+	# Do not use -secure option, as we have to use -locknow
 	xautolock \
 	  -time $LOCK_TIME \
 	  -locker "$0 -l" \
@@ -69,10 +70,20 @@ daemon(){
 
 force=0
 
-while getopts ":hdfln" opt; do
+while getopts ":hdfLln" opt; do
 	case $opt in
 		h)
 			usage
+			;;
+		L)
+			xautolock -locknow
+
+			# If xautolock is disabled, -locknow won't work.
+			# Therefore in addition we enable it again and
+			# lock it then again, to make sure it's locked.
+			xautolock -enable
+			sleep 1
+			xautolock -locknow
 			;;
 		f)
 			force=1
