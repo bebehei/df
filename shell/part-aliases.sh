@@ -128,8 +128,7 @@ function dpkg(){
 
 	pushd ${DUNST_REPO}/.dunst-git.o
 	sed -i "s%^source=.*%source=('git+file://${DUNST_REPO}#branch=${1:-master}')%" PKGBUILD
-	makepkg -f
-	sudo pacman -U --noconfirm $(ls -c dunst-*.pkg.tar.xz | head -n 1)
+	makepkg -fi
 	popd
 
 	killall dunst
