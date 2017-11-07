@@ -15,14 +15,10 @@ usage(){
 	#TODO
 	cat >&2 <<-FIN
 	Usage:
-	  -f force lock
-	  -l execute the locker
+	  -L lock now via xautolock
 	  -n send notification
 	  -d execute the xautolock daemon
 	  -h help
-
-	  Mind, that the options are order-sensitive. -lf != -fl && -l == -lf
-		(-fl is probably the thing you want)
 	FIN
 	exit 1
 }
