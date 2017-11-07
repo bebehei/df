@@ -11,7 +11,6 @@ exec --no-startup-id ~/.bin/lockscreen -d
 exec --no-startup-id seafile-applet
 exec --no-startup-id thunderbird
 exec --no-startup-id redshift-gtk
-exec --no-startup-id keepassx
 exec --no-startup-id albert
 exec --no-startup-id xmodmap ~/.Xmodmap
 
@@ -38,7 +37,7 @@ bindsym $mod+Tab workspace next
 bindsym Shift+$mod+Tab workspace prev
 #mit alt+tab fenster wechseln
 bindsym Mod1+Tab exec ~/.bin/winmenu
-bindsym $mod+m exec  keepassx2
+bindsym $mod+m exec  keepassxc
 
 
 ##firefox bughelper
