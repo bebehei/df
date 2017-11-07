@@ -5,6 +5,12 @@
 LOCK_TIME=${LOCK_TIME:-3}
 LOCK_NOTIFY_TIME=${LOCK_NOTIFY_TIME:-15}
 
+if [ -n "${WAYLAND_DISPLAY}" ]; then
+	LOCK_CMD="swaylock"
+else
+	LOCK_CMD="i3lock -p win"
+fi
+
 PROGNAME=$(basename $0)
 
 error(){
@@ -36,8 +42,7 @@ encrypt_the_chest(){
 }
 
 lock(){
-	i3lock \
-	  -p win \
+	${LOCK_CMD} \
 	  -t \
 	  -i ~/.lockscreen
 }
