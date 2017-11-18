@@ -19,4 +19,4 @@ if command -v python2 2>&1 >/dev/null; then
   PYTHON_BINARY=python2
 fi
 
-$PYTHON_BINARY ./install.py --clang-completer --omnisharp-completer --gocode-completer --tern-completer --racer-completer
+$PYTHON_BINARY ./install.py --clang-completer

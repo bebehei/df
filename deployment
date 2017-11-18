@@ -58,8 +58,8 @@ shell/part-paths.sh ~/.profile.d/10-paths.sh
 shell/part-vars.sh ~/.profile.d/10-vars.sh
 top/toprc ~/.toprc
 top/htoprc ~/.config/htop/htoprc
-vim/wuman-vimrc/bundle ~/.vim/bundle
-vim/wuman-vimrc/vimrc ~/.vimrc
+vim/bundle ~/.vim/bundle
+vim/vimrc ~/.vimrc
 wget/wgetrc ~/.wgetrc
 zsh/zshrc ~/.zshrc
 zsh/oh-my-zsh ~/.oh-my-zsh

@@ -1,69 +1,251 @@
-"" Syntaxhervorhebung
-syntax on
+" Taken from wuman
+"
+" Environment
+"
+" pathogen (must be placed in the beginning of this file)
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect('bundle/{}')
+call pathogen#infect('bundle-external/{}')
+call pathogen#helptags()
 
-set encoding=utf-8
-"" weite Möglichkeiten zur Einstellung des Zeichensatzes
-" set termencoding=iso-8859-15
-" set fileencodings=ucs-bom,utf-8,latin1
+if &term == "linux"
+	set t_ve+=[?81;0;112c
+endif
 
-"" immer die Statuszeile mit dem Dateinamen anzeigen
-set ls=2
+"
+" General
+"
+set nocompatible             " not compatible with the old-fashion vi mode
+set history=100              " store 100 lines of history
 
-"" automatischer Zeilenumbruch, wenn die Zeile zu lang ist
-set wrap
-" set nowrap
+" open up to 100 documents with `vim -p`
+set tabpagemax=100
 
-"" Kompatibilitätsmodus zu vi abschalten
-set nocompatible
+"
+" User Interface
+"
+set showmode                 " display the current mode
+set ruler                    " always show current position
+set scrolloff=7              " set scroll offset to 7 lines above/below cursor
+set autoread                 " auto read when file is changed from outside
+set nu                       " display line numbers
+set clipboard=unnamed        " yank to the system register (*) by default
+set hid                      " hide abandon buffers in order to not lose undo history
+set showmatch                " cursor shows matching ) and }
+set incsearch                " incremental search
+set ignorecase               " ignore case when searching
+set smartcase                " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set wildchar=<TAB>           " start wild expansion in the command line using <TAB>
+set wildmenu                 " wild char completion menu
 
-"" Wieviele Leerzeichen lang ist ein Tabulator?
-set ts=2
-"" Ersetze Tabulatoren durch Leerzeichen
-" set expandtab
-"" Einrückungstiefe
-set shiftwidth=2
-"" Einrückungen im C-Stil
-" set cindent
-"" alternative Einrückungsstile
-" set autoindent
-" set smartindent
+" ignore these files while expanding wild chars
+set wildignore=*.o,*.class,*.pyc
 
-
-"" zeigt unten links diverse Positionsinformationen der Schreibmarke
-set ruler
-
-"" die Shell, die beim Starten von Programmen aus dem Editor heraus verwendet werden soll
-set shell=/bin/bash
-
-"" zeigt in der Statuszeile an, ob man sich im Einfügemodus (INSERT) oder im Ersetzungsmodus (REPLACE) befindet
-set showmode
-
-"" Zeilennummern anzeigen
-set number
-
-"" Verhalten der Rückschritttaste
+" allow backspacing over everything in insert mode
 set backspace=indent,eol,start
+set whichwrap+=<,>,b,s,h,l,[,]
 
-"" F9 wechselt Syntaxhervorhebung
-map <F9> :if has("syntax_items")<CR>syntax off<CR>else<CR>syntax on<CR>endif<CR><CR>
+filetype on                  " enable filetype detection
+filetype indent on           " enable filetype-specific indenting
+filetype plugin on           " enable filetype-specific plugins
 
-"" F8 wechselt Zeilenubruch
-map <F8> :if has("nowrap_items")<CR>set nowrap<CR>else<CR>set wrap<CR>endif<CR><CR>
-"" nicht an den Zeilenanfang bei Benutzung von Bild auf und Bild ab gehen
-set nostartofline
+" auto reload vimrc when editing it
+autocmd! BufWritePost .vimrc source ~/.vimrc
 
-"" Suchergebnisse hervorheben
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
+" disable annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
 
-"" Wer die Maus für übliches Copy&Paste verwenden will, der sollte diese Zeile hinzufügen:
-set mouse=
+" vimtip#80 restore cursor to file position in previous editing session
+set viminfo='10,\"100,:20,%,n~/.viminfo
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
+
+"
+" Formatting
+"
+set autoindent               " auto indentation
+set copyindent               " copy the previous indentation on autoindenting
+set smarttab                 " insert tabs on line start according to context
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+
+"
+" Colors and Fonts
+"
+syntax on                    " enable syntax highlighting
+set hlsearch                 " highlight search results
+" highlight current line in the current window
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
+
+set background=dark          " set background dark
+set t_Co=256                 " 256 color mode
+
+if has("gui_running")
+  colorscheme moria
+else
+  colorscheme wombat256mod
+endif
+
+
+"
+" Formatting
+"
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>         " toggle paste mode
+set ffs=unix,dos,mac         " use unix as standard file format
+
+"
+" Files
+"
+set nobackup                 " no *~ backup files
+
+if !isdirectory($HOME . "/.cache/vim")
+    call mkdir($HOME . "/.cache/vim", "p")
+"	:silent !install -dm700 ~/.cache/vim >/dev/null 2>&1
+endif
+set directory=~/.cache/vim//
+
+"
+" Statusline
+"
+set laststatus=2
+
+"
+" Encoding
+"
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
+
+fun! ViewUTF8()
+  set encoding=utf-8
+  set termencoding=big5
+endfun
+
+fun! UTF8()
+  set encoding=utf-8
+  set termencoding=big5
+  set fileencoding=utf-8
+  set fileencodings=ucs-bom,big5,utf-8,latin1
+endfun
+
+" set leader to ,
+let mapleader=","
+let g:mapleader=","
+
+" move around splits
+map <C-J> <C-W>j<C-W>_       " move to and maximize the below split
+map <C-K> <C-W>k<C-W>_       " move to and maximize the above split
+nmap <c-h> <c-w>h<c-w><bar>  " move to and maximize the left split
+nmap <c-l> <c-w>l<c-w><bar>  " move to and maximize the right split
+set wmw=0                    " set the min width of a window to 0 so we can maximize others
+set wmh=0                    " set the min height of a window to 0 so we can maximize others
+
+" move around tabs
+" WARN: conflict with the original screen top/bottom, comment them out if you want the original H/L
+map <S-H> gT                 " go to prev tab
+map <S-L> gt                 " go to next tab
+
+map <C-t><C-t> :tabnew<CR>      " new tab
+map <C-t><C-w> :tabclose<CR>    " close tab
+
+nmap <leader>/ :nohl<CR>        " ,/ turns off search highlighting
+
+" bash like keys for the command line
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+cnoremap <C-K> <C-U>
+
+" vim-autoformat: use sourcebeautify shortcut
+nmap <leader>sb :Autoformat<CR>
+
+" ,p toggles paste mode
+nmap <leader>p :set paste!<BAR>set paste?<CR>
+
+" allow multiple indentation/deindentation in visual mode
+vnoremap < <gv
+vnoremap > >gv
+
+" Enable omni completion. (Ctrl-X Ctrl-O)
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType java set omnifunc=javacomplete#Complete
+
+" use syntax complete if nothing else available
+if has("autocmd") && exists("+omnifunc")
+  autocmd Filetype *
+    \ if &omnifunc == "" |
+    \     setlocal omnifunc=syntaxcomplete#Complete |
+    \ endif
+endif
+
+" enable function folding
+set foldmethod=syntax
+set foldlevelstart=10
+
+set cot-=preview             " disable doc preview in omnicomplete
+
+" md is markdown
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+"
+" Plugins
+"
+" vim-airline
+set timeout timeoutlen=1000 ttimeoutlen=50
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'bubblegum'
+let g:airline#extensions#tabline#enabled = 1
+
+" JSON.vim http://www.vim.org/scripts/script.php?script_id=1945
+au! BufRead,BufNewFile *.json set filetype=json
+
+" NERDTree
+" open a NERDTree automatically when vim starts up if no files were specified
+"autocmd vimenter * if !argc() | NERDTree | endif
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" toggle nerdtree drawer
+nnoremap <leader>d :NERDTreeToggle<CR>
+" open nerdtree to the current file
+nnoremap <leader>f :NERDTreeFind<CR>
+
+" YouCompleteMe
+" disable use of tab
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py"
 
 nnoremap <C-H> :Hexmode<CR>
 inoremap <C-H> <Esc>:Hexmode<CR>
 vnoremap <C-H> :<C-U>Hexmode<CR>
+
+" taken from bene
+
+set ls=2
+set nostartofline
 
 " ex command for toggling hex mode - define mapping if desired
 command -bar Hexmode call ToggleHex()
@@ -105,4 +287,3 @@ function ToggleHex()
   let &readonly=l:oldreadonly
   let &modifiable=l:oldmodifiable
 endfunction
-
