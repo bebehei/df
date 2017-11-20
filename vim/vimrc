@@ -94,15 +94,7 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 
-set background=dark          " set background dark
-set t_Co=256                 " 256 color mode
-
-if has("gui_running")
-  colorscheme moria
-else
-  colorscheme wombat256mod
-endif
-
+colorscheme moriarty
 
 "
 " Formatting
