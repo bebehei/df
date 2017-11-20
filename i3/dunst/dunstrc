@@ -59,6 +59,10 @@
     appname = "Telegram Desktop"
     background = "#0088CC"
 
+[fullscreen]
+    msg_urgency = critical
+    show_on_fs = yes
+
 [Spotify]
     appname = "Spotify"
     foreground = "#FFFFFF"
