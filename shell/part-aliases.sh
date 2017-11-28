@@ -118,6 +118,15 @@ alias dlog="journalctl -a --follow --since=\"\$(date '+%Y-%m-%d %H:%M' --date='l
 alias dmon="dbus-monitor path=/org/freedesktop/Notifications"
 alias dunstify="${DUNST_REPO}/dunstify"
 
+# build the whole history of your feature branch but stop on master
+function dhistorybuild(){
+	while ! git branch --contains HEAD master 2>&1 | grep -q master; do
+		git checkout HEAD~1 || break
+		dmake clean all dunstify test || break
+		git status || break
+	done
+}
+
 # Build the dunst package and run it directly
 
 function dpkg(){
