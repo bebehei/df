@@ -5,6 +5,8 @@
 LOCK_TIME=${LOCK_TIME:-3}
 LOCK_NOTIFY_TIME=${LOCK_NOTIFY_TIME:-15}
 
+SOCK_PATH="/run/user/${UID}/i3/locksock"
+
 if [ -n "${WAYLAND_DISPLAY}" ]; then
 	LOCK_CMD="swaylock"
 else
@@ -42,6 +44,7 @@ encrypt_the_chest(){
 }
 
 lock(){
+	socat - "UNIX-LISTEN:${SOCK_PATH}" &
 	${LOCK_CMD} \
 	  -t \
 	  -i ~/.lockscreen
@@ -90,7 +93,9 @@ while getopts ":hdfLln" opt; do
 			force=1
 			;;
 		l)
-			checkfull && (lock || encrypt_the_chest)
+			[ ! -S "${SOCK_PATH}" ] \
+				&& checkfull \
+				&& (lock || encrypt_the_chest)
 			;;
 		n)
 			checkfull && notification
