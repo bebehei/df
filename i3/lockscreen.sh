@@ -44,10 +44,11 @@ encrypt_the_chest(){
 }
 
 lock(){
-	socat - "UNIX-LISTEN:${SOCK_PATH}" &
+	socat /dev/null "UNIX-LISTEN:${SOCK_PATH}" &
 	${LOCK_CMD} \
 	  -t \
 	  -i ~/.lockscreen
+	killall socat
 }
 
 notification(){
