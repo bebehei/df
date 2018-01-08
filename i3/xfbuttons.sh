@@ -46,4 +46,8 @@ case $1 in
 			$BASE/xmon.sh display
 		fi
 	;;
+	*)
+		echo "Unknown key '$1'" >&2
+		exit 1
+	;;
 esac
