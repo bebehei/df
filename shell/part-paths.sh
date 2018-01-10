@@ -9,7 +9,7 @@ set_path ~/.local/bin/
 set_path ~/.bin
 
 if which ruby >/dev/null 2>&1 && which gem >/dev/null 2>&1; then
-    set_path $(ruby -rubygems -e 'puts Gem.user_dir')/bin
+    set_path $(ruby -r rubygems -e 'puts Gem.user_dir')/bin
 fi
 
 # PERL cpan modules
