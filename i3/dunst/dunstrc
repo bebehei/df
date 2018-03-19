@@ -59,9 +59,16 @@
     appname = "Telegram Desktop"
     background = "#0088CC"
 
-[fullscreen]
+[fullscreen_block_all]
+    fullscreen = delay
+
+[fullscreen_show_urgent]
     msg_urgency = critical
-    show_on_fs = yes
+    fullscreen = show
+
+[fullscreen_show_pulseaudio]
+    appname = "pulseaudio-ctl"
+    fullscreen = show
 
 [Spotify]
     appname = "Spotify"
