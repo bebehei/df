@@ -66,6 +66,8 @@ bar {
 	status_command i3status
 	position top
 	workspace_buttons   yes
+	tray_output primary
+	tray_padding 1
 	colors {
 		background          $bg-color
 		statusline          $ws-inactive-text-color
