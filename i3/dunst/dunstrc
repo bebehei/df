@@ -33,7 +33,7 @@
     padding = 8
     horizontal_padding = 8
 
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/rofi -dmenu
     browser = /usr/bin/firefox -new-tab
 
     # Use numix icons (and Adwaita as fallback)
