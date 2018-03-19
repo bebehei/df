@@ -1,6 +1,6 @@
 # vim: ft=cfg tabstop=4 shiftwidth=4 expandtab textwidth=0
 [global]
-    font = Fira Sans Mono 11
+    font = Fira Sans 11
 
     markup = full
     format = "<b>%s</b>\n%b"
@@ -26,6 +26,9 @@
     stack_duplicates = yes
 
     separator_height = 0
+    separator_color = "#FF0000"
+    transparency = 2.5
+
     frame_width = 0
     padding = 8
     horizontal_padding = 8
