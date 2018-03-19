@@ -108,7 +108,7 @@ bindsym $mod+z exec ~/.bin/lockscreen -L
 bindsym $mod+y exec ~/.bin/lockscreen -L
 
 # start albert (program launcher)
-bindsym $mod+d exec --no-startup-id albert show || albert
+bindsym $mod+d exec --no-startup-id albert toggle || albert
 
 # kill focused window
 bindsym $mod+Shift+q kill
