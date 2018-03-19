@@ -22,6 +22,7 @@ font pango:Fira Code Bold 11
 # make some windows floating
 for_window [class="Firefox" window_role="About"] floating enable
 for_window [class="Nightly" window_role="About"] floating enable
+for_window [class="Pavucontrol"] floating enable
 
 ##Various
 assign [class="Spotify"] 10
