@@ -104,8 +104,8 @@ bindsym $mod+Shift+e exit
 bindsym $mod+Return exec i3-sensible-terminal
 
 # screensaver
-bindsym $mod+z exec ~/.bin/lockscreen -L
-bindsym $mod+y exec ~/.bin/lockscreen -L
+bindsym $mod+z exec ~/.bin/lockscreen -fl
+bindsym $mod+y exec ~/.bin/lockscreen -fl
 
 # start albert (program launcher)
 bindsym $mod+d exec --no-startup-id albert toggle || albert
