@@ -45,10 +45,13 @@ encrypt_the_chest(){
 
 lock(){
 	socat /dev/null "UNIX-LISTEN:${SOCK_PATH}" &
+	local socat_pid=$!
+
 	${LOCK_CMD} \
 	  -t \
+	  -n \
 	  -i ~/.lockscreen
-	killall socat
+	kill ${socat_pid}
 }
 
 notification(){
