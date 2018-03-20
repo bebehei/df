@@ -5,7 +5,7 @@
 LOCK_TIME=${LOCK_TIME:-3}
 LOCK_NOTIFY_TIME=${LOCK_NOTIFY_TIME:-15}
 
-SOCK_PATH="/run/user/${UID}/i3/locksock"
+SOCK_PATH="/run/user/${UID}/i3/locksock-${XDG_SESSION_ID:-unknown}"
 
 if [ -n "${WAYLAND_DISPLAY}" ]; then
 	LOCK_CMD="swaylock"
