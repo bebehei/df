@@ -1,4 +1,5 @@
 #!/bin/sh
+
 #alias definitions
 alias chmox="chmod +x"
 alias cd..="cd .."

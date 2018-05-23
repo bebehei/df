@@ -1,4 +1,5 @@
 #!/bin/sh
+
 #correct some fast tipped cds
 function c {
 	if [ $1 == "d.." ]; then

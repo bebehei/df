@@ -1,4 +1,5 @@
 #!/bin/sh
+
 for profile in ~/.profile.d/*.sh; do
 	if [ -x "$profile" ]; then
 		source $profile

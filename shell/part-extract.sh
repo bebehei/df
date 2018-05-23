@@ -1,3 +1,5 @@
+#!/bin/sh
+
 x() {
 	for zipfile in $*; do
 		local extractor

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 [ -f "~/.lockvars" ] && [ -r "~/.lockvars" ] && . ~/.lockvars
 
