@@ -39,6 +39,7 @@ i3/xmoncfg/right.cfg ~/.display/right.cfg
 i3/xmoncfg/right.cfg ~/.display/default.cfg
 i3/xmoncfg/rightvga.cfg ~/.display/rightvga.cfg
 i3/xkbdtoggle.sh ~/.bin/xkbdtoggle.sh
+i3/xprofile ~/.xprofile
 i3/xfbuttons.sh ~/.bin/xfbuttons.sh
 i3/Xresources ~/.Xresources
 konsole/default.profile ~/.local/share/konsole/default.profile
