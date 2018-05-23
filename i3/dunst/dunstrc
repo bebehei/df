@@ -80,6 +80,13 @@
     history_ignore = yes
     set_transient = yes
 
+[VLC]
+    appname = VLC media player
+    foreground = "#f48b00"
+    new_icon = "vlc"
+    history_ignore = yes
+    set_transient = yes
+
 [lockscreen]
     appname = "lockscreen"
     history_ignore = yes
