@@ -17,11 +17,18 @@ order += "battery all"
 order += "cpu_usage"
 order += "cpu_temperature 1"
 order += "load"
+order += "memory"
 order += "tztime local"
 
 
 tztime local {
 	format = "%a %d.%m.%Y %H:%M:%S"
+}
+
+memory {
+	format = "%used"
+	threshold_degraded = "10%"
+	threshold_critical = "5%"
 }
 
 disk "/" {
