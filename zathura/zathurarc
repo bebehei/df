@@ -1,0 +1,7 @@
+# Miscellaneous
+set font "Fira Code Bold 11"
+set selection-clipboard clipboard
+set window-title-home-tilde true
+set statusbar-basename true
+set adjust-open "best-fit"
+set pages-per-row 2
