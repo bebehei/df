@@ -81,6 +81,7 @@
     background = "#1ED760"
     history_ignore = yes
     set_transient = yes
+    fullscreen = show
 
 [VLC]
     appname = VLC media player
@@ -88,6 +89,7 @@
     new_icon = "vlc"
     history_ignore = yes
     set_transient = yes
+    fullscreen = show
 
 [lockscreen]
     appname = "lockscreen"
