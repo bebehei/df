@@ -36,6 +36,8 @@
     dmenu = /usr/bin/rofi -dmenu
     browser = /usr/bin/firefox -new-tab
 
+    corner_radius = 3
+
     # Use numix icons (and Adwaita as fallback)
     max_icon_size = 96
     icon_position = left
