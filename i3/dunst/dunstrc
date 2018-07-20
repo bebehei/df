@@ -73,6 +73,7 @@
 
 [fullscreen_show_pulseaudio]
     appname = "pulseaudio-ctl"
+    history_ignore = yes
     fullscreen = show
 
 [Spotify]
