@@ -33,6 +33,10 @@
     padding = 8
     horizontal_padding = 8
 
+    mouse_left_click   = do_action
+    mouse_right_click  = close_current
+    mouse_middle_click = close_all
+
     dmenu = /usr/bin/rofi -dmenu
     browser = /usr/bin/firefox -new-tab
 
