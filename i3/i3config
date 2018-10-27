@@ -45,24 +45,24 @@ bindsym $mod+m exec  keepassxc
 ##firefox bughelper
 bindsym $mod+^ floating toggle; floating toggle;
 
-set $bg-color               #2F343F
-set $inactive-bg-color      #2F343F
-set $text-color             #F3F4F5
-set $inactive-text-color    #676E7D
-set $urgent-bg-color        #E53935
-set $indicator-color        #00FF00
+set $color_bg               #2F343F
+set $color_bg_inactive      #2F343F
+set $color_text             #F3F4F5
+set $color_text_inactive    #676E7D
+set $color_bg_urgent        #E53935
+set $color_indicator        #00FF00
 
-set $workspace-color        #5294E2
-set $inactive-workspace     #2F343F
-set $seperator-color        #666666
-set $ws-text-color          #FFFFFF
-set $ws-inactive-text-color #D3DAE3
+set $color_separator        #666666
+set $color_ws               #5294E2
+set $color_ws_inactive      #2F343F
+set $color_ws_text          #FFFFFF
+set $color_ws_text_inactive #D3DAE3
 
 # window colors
-client.focused          $bg-color           $bg-color          $text-color          $indicator-color
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator-color
+client.focused          $color_bg           $color_bg          $color_text          $color_indicator
+client.unfocused        $color_bg_inactive  $color_bg_inactive $color_text_inactive $color_indicator
+client.focused_inactive $color_bg_inactive  $color_bg_inactive $color_text_inactive $color_indicator
+client.urgent           $color_bg_urgent    $color_bg_urgent   $color_text          $color_indicator
 
 bar {
 	status_command i3status
@@ -71,13 +71,13 @@ bar {
 	tray_output primary
 	tray_padding 1
 	colors {
-		background          $bg-color
-		statusline          $ws-inactive-text-color
-		separator           $seperator-color
-		focused_workspace   $workspace-color    $workspace-color    $ws-text-color
-		active_workspace    $inactive-workspace $inactive-workspace $ws-inactive-text-color
-		inactive_workspace  $inactive-workspace $inactive-workspace $ws-inactive-text-color
-		urgent_workspace    $urgent-bg-color    $urgent-bg-color    $ws-text-color
+		background          $color_bg
+		statusline          $color_ws_text_inactive
+		separator           $color_separator
+		focused_workspace   $color_ws           $color_ws           $color_ws_text
+		active_workspace    $color_ws_inactive  $color_ws_inactive  $color_ws_text_inactive
+		inactive_workspace  $color_ws_inactive  $color_ws_inactive  $color_ws_text_inactive
+		urgent_workspace    $color_bg_urgent    $color_bg_urgent    $color_ws_text
 	}
 }
 
