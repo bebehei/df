@@ -3,8 +3,6 @@
 #alias definitions
 alias chmox="chmod +x"
 alias cd..="cd .."
-alias ddd="killall -USR1 dd"
-alias sddd="sudo killall -USR1 dd"
 
 alias killlall="killall"
 alias kilall="killall"
