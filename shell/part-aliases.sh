@@ -4,11 +4,6 @@
 alias chmox="chmod +x"
 alias cd..="cd .."
 
-alias killlall="killall"
-alias kilall="killall"
-alias kilal="killall"
-alias killlal="killall"
-
 # Steam locomotive on acid!
 alias LS='sl -F'
 alias ls-l='sl -l'
@@ -112,7 +107,7 @@ DUNST_REPO=~/code/dunst
 #git clone https://aur.archlinux.org/dunst-git.git $DUNST_REPO/.dunst-git.o
 
 # Dunst specific aliases
-alias dkill="killall dunst"
+alias dkill="pkill dunst"
 alias dmake="make -j -C $DUNST_REPO"
 alias drun="dkill; $DUNST_REPO/dunst -conf $DUNST_REPO/.testrc.o"
 alias dgdb="dkill; gdb -ex run ${DUNST_REPO}/dunst -ex 'set confirm off' -ex bt"
@@ -148,5 +143,5 @@ function dpkg(){
 	makepkg -fi
 	popd
 
-	killall dunst
+	pkill dunst
 }
