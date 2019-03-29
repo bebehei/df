@@ -12,7 +12,7 @@ exec --no-startup-id ~/.bin/lockscreen -d
 exec --no-startup-id syncthing-gtk
 exec --no-startup-id thunderbird
 exec --no-startup-id redshift-gtk
-exec --no-startup-id albert
+exec --no-startup-id (. ~/.xprofile && albert)
 exec --no-startup-id xmodmap ~/.Xmodmap
 
 #dunst dev
@@ -109,7 +109,7 @@ bindsym $mod+z exec ~/.bin/lockscreen -fl
 bindsym $mod+y exec ~/.bin/lockscreen -fl
 
 # start albert (program launcher)
-bindsym $mod+d exec --no-startup-id albert toggle || albert
+bindsym $mod+d exec --no-startup-id albert toggle || (. ~/.xprofile && albert)
 
 # kill focused window
 bindsym $mod+Shift+q kill

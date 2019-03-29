@@ -1,1 +1,2 @@
 export TERMINAL=kitty
+export XDG_DATA_DIRS="~/.local/share/:/usr/local/share/:/usr/share:/run/current-system/sw/share:${XDG_DATA_DIRS:+:}${XDG_DATA_DIRS}"
