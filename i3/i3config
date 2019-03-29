@@ -210,3 +210,20 @@ mode "resize" {
 	bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
+
+mode "passthrough" {
+    bindsym Mod4+Escape mode "default"
+    bindsym Ctrl+Up               exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioRaiseVolume
+    bindsym Ctrl+Down             exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioLowerVolume
+    bindsym XF86AudioRaiseVolume  exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioRaiseVolume
+    bindsym XF86AudioLowerVolume  exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioLowerVolume
+    bindsym XF86AudioMute         exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioMute
+    bindsym XF86AudioPlay         exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioPlay
+    bindsym XF86AudioStop         exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioStop
+    bindsym XF86AudioNext         exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioNext
+    bindsym XF86AudioPrev         exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioPrev
+    bindsym XF86MonBrightnessUp   exec --no-startup-id ~/.bin/xfbuttons.sh XF86MonBrightnessUp
+    bindsym XF86MonBrightnessDown exec --no-startup-id ~/.bin/xfbuttons.sh XF86MonBrightnessDown
+    bindsym XF86Display           exec --no-startup-id ~/.bin/xfbuttons.sh XF86Display
+}
+bindsym Mod4+Escape mode "passthrough"
