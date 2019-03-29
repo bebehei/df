@@ -30,6 +30,11 @@ alias emacs='gvim -p'
 alias gedit='gvim -p'
 alias kate='gvim -p'
 
+# kitty is not installed on every remote host
+# As kitty sets TERM=xterm-kitty, we should indicate
+# to the remote host the xterm compatibility
+alias ssh='export TERM=xterm ssh'
+
 alias fuck="sudo !!"
 
 # only list the IO of <processname> with iotop

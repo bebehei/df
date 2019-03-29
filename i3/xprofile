@@ -1,1 +1,1 @@
-export TERMINAL=konsole
+export TERMINAL=kitty
