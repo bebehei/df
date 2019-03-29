@@ -3,6 +3,8 @@
 	status = auto
 	branch = auto
 	ui = true
+[color.blame]
+	repeatedLines = yellow
 [user]
 	name = Benedikt Heine
 	email = bebe@bebehei.de
@@ -10,6 +12,8 @@
 	defaultToUpstream = true
 	tool = vimdiff
 	template = ~/.git/review-template
+[blame]
+	coloring = repeatedLines
 [core]
 	editor = vim
 	eol = native
