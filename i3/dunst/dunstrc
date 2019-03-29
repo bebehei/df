@@ -37,7 +37,7 @@
     mouse_right_click  = close_current
     mouse_middle_click = close_all
 
-    dmenu = /usr/bin/rofi -dmenu
+    dmenu = rofi -dmenu
     browser = /usr/bin/firefox -new-tab
 
     corner_radius = 3
