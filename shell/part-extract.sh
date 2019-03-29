@@ -5,6 +5,8 @@ x() {
 		local extractor
 		if [ -f "$zipfile" ]; then
 			case "$zipfile" in
+				*.deb)
+					extractor="ar x" ;;
 				*.tar.lrz)
 					extractor="lrztar -d" ;;
 				*.lrz)
