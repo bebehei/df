@@ -26,7 +26,7 @@ alias kate='gvim -p'
 # kitty is not installed on every remote host
 # As kitty sets TERM=xterm-kitty, we should indicate
 # to the remote host the xterm compatibility
-alias ssh='export TERM=xterm ssh'
+alias ssh='TERM=xterm ssh'
 
 alias fuck="sudo !!"
 
