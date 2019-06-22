@@ -39,7 +39,7 @@ bindsym $mod+Tab workspace next
 bindsym Shift+$mod+Tab workspace prev
 #mit alt+tab fenster wechseln
 bindsym Mod1+Tab exec ~/.bin/winmenu
-bindsym $mod+m exec  keepassxc
+bindsym $mod+m exec . ~/.profile.d/90-keychain.sh && keepassxc
 
 
 ##firefox bughelper
