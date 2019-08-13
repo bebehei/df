@@ -7,7 +7,7 @@ exec --no-startup-id hsetroot -center ~/.wallpaper
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-keyring-daemon --start --components secrets
-exec --no-startup-id ~/.bin/xmon default
+exec --no-startup-id autorandr --change
 exec --no-startup-id ~/.bin/lockscreen -d
 exec --no-startup-id sleep 1 && QSyncthingTray
 exec --no-startup-id thunderbird

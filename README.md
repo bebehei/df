@@ -6,7 +6,6 @@ These are my personal dotfiles. Free for personal use.
 
 * i3 (window manager)
     * lockscreen support and autolock after idle
-    * multi-monitor-setup via xmon
 * vim
     * forked off [vimrc](https://github.com/bebehei/vimrc/)
     * NerdTree, autocompletion
