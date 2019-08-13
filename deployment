@@ -19,6 +19,7 @@ git/diff-so-fancy/third_party/diff-highlight/diff-highlight ~/.bin/diff-highligh
 git/gitconfig ~/.gitconfig
 i3/dunst/dunstrc ~/.config/dunst/dunstrc
 i3/environment-terminal-default.conf ~/.config/environment.d/terminal-default.conf
+i3/environment-xdg_data_dirs.conf ~/.config/environment.d/xdg_data_dirs.conf
 i3/i3config ~/.config/i3/config
 i3/i3status ~/.config/i3status/config
 i3/checknofullscreen.sh ~/.bin/checknofullscreen
@@ -29,7 +30,6 @@ i3/redshift/hook.sh ~/.config/redshift/hooks/hook.sh
 i3/user-dirs.dirs ~/.config/user-dirs.dirs
 i3/Xmodmap ~/.Xmodmap
 i3/xkbdtoggle.sh ~/.bin/xkbdtoggle.sh
-i3/xprofile ~/.xprofile
 i3/xfbuttons.sh ~/.bin/xfbuttons.sh
 kitty/kitty.conf ~/.config/kitty/kitty.conf
 python/startup ~/.python_startup
