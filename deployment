@@ -18,8 +18,8 @@ git/diff-so-fancy/diff-so-fancy ~/.bin/diff-so-fancy
 git/diff-so-fancy/third_party/diff-highlight/diff-highlight ~/.bin/diff-highlight
 git/gitconfig ~/.gitconfig
 i3/dunst/dunstrc ~/.config/dunst/dunstrc
-i3/environment-terminal-default.conf ~/.config/environment.d/terminal-default.conf
-i3/environment-xdg_data_dirs.conf ~/.config/environment.d/xdg_data_dirs.conf
+i3/environment.d/terminal-default.conf ~/.config/environment.d/terminal-default.conf
+i3/environment.d/xdg_data_dirs.conf ~/.config/environment.d/xdg_data_dirs.conf
 i3/i3config ~/.config/i3/config
 i3/i3status ~/.config/i3status/config
 i3/checknofullscreen.sh ~/.bin/checknofullscreen
