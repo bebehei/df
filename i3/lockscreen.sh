@@ -101,7 +101,7 @@ daemon(){
 	daemon_xautolock &
 	local pid_xautolock=$!
 
-	trap "kill ${pid_xautolock} ${pid_signal} && wait"
+	trap "kill ${pid_xautolock} ${pid_signal} && wait" SIGTERM SIGQUIT
 	wait
 }
 
