@@ -27,7 +27,6 @@ i3/lockscreen.sh ~/.bin/lockscreen
 i3/redshift/redshift.conf ~/.config/redshift.conf
 i3/redshift/hook.sh ~/.config/redshift/hooks/hook.sh
 i3/user-dirs.dirs ~/.config/user-dirs.dirs
-i3/winmenu ~/.bin/winmenu
 i3/Xmodmap ~/.Xmodmap
 i3/xkbdtoggle.sh ~/.bin/xkbdtoggle.sh
 i3/xprofile ~/.xprofile
