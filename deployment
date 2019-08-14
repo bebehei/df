@@ -22,7 +22,6 @@ i3/environment.d/terminal-default.conf ~/.config/environment.d/terminal-default.
 i3/environment.d/xdg_data_dirs.conf ~/.config/environment.d/xdg_data_dirs.conf
 i3/i3config ~/.config/i3/config
 i3/i3status ~/.config/i3status/config
-i3/checknofullscreen.sh ~/.bin/checknofullscreen
 i3/lockscreen.png ~/.lockscreen
 i3/lockscreen.sh ~/.bin/lockscreen
 i3/redshift/redshift.conf ~/.config/redshift.conf

@@ -37,8 +37,17 @@ usage(){
 	exit 1
 }
 
-checkfull(){
-	[ 1 -eq "$force" ] || ~/.bin/checknofullscreen
+# return successfully -> fullscreen
+# return failing -> no fullscreen
+function is_fullscreen() {
+	[ 0 -eq "$force" ] || return 1
+
+	local focused_win="$(xprop -root _NET_ACTIVE_WINDOW | awk -F' ' '{print $NF}')"
+	xprop -id "${focused_win}" _NET_WM_STATE | grep -q _NET_WM_STATE_FULLSCREEN
+}
+
+function already_locked() {
+	[ -S "${SOCK_PATH}" ]
 }
 
 encrypt_the_chest(){
@@ -116,11 +125,11 @@ while getopts ":hdfln" opt; do
 			force=1
 			;;
 		l)
-			[ -S "${SOCK_PATH}" ] \
-				|| (checkfull && (lock || encrypt_the_chest))
+			# If it's not already locked or fullscreen, lock it or force shutdown
+			already_locked || is_fullscreen || lock || encrypt_the_chest
 			;;
 		n)
-			checkfull && notification
+			is_fullscreen || notification
 			;;
 		d)
 			daemon
