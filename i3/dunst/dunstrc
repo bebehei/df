@@ -99,8 +99,3 @@
 [lockscreen]
     appname = "lockscreen"
     history_ignore = yes
-
-# Supergood seafile devs :facepalm:
-[Seafile]
-    appname = "Seafile"
-    new_icon = "seafile"
