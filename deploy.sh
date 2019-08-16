@@ -1,38 +1,40 @@
 #!/usr/bin/env bash
 
-BASE=$(dirname $(readlink -f $0))
+BASE="$(dirname "$(readlink -f "${0}")")"
 
-error(){ echo -e "\e[31m$*\e[0m"; }
-warn(){  echo -e "\e[33m$*\e[0m"; }
+die(){ error "$*"; exit 1; }
+error(){ printf "\e[31m%s\e[0m\n" "$*" >&2; }
+warn(){  printf "\e[33m%s\e[0m\n" "$*" >&2; }
 
 # You can use another base or file by setting the
 # environment DEPL_BASE or DEPL_FILE
-DEPL_BASE=${DEPL_BASE:-$BASE}
-DEPL_FILE=${DEPL_FILE:-$BASE/deployment}
+DEPL_BASE="${DEPL_BASE:-${BASE}}"
+DEPL_FILE="${DEPL_FILE:-${BASE}/deployment}"
 
-if [ ! -r $DEPL_FILE ]; then
-	echo "Deployment-file '$DEPL_FILE' not readable." >&2
-	exit 1
-fi
+[ -r "${DEPL_FILE}" ] || \
+	die "Deployment-file '${DEPL_FILE}' not readable."
 
 # If git submodule is already able to handle --jobs, use parallel fetch!
 # If not, update everything in serial way.
-git -C $DEPL_BASE submodule update --init --recursive --jobs $(nproc) \
- || git -C $DEPL_BASE submodule update --init --recursive
+git -C "${DEPL_BASE}" config --local submodule.fetchJobs 0
+git -C "${DEPL_BASE}" submodule update --init --recursive
 
+grep -v --perl-regexp -- '^\s*#' "${DEPL_FILE}" \
+	| while read src dst ; do
+	src="${src//\~/${HOME}}"
+	dst="${dst//\~/${HOME}}"
 
-grep -v --perl-regexp '^\s*#' $DEPL_FILE | while read line; do
-	src=$(echo "${line//\~/$HOME}" | awk '{print $1}')
-	dst=$(echo "${line//\~/$HOME}" | awk '{print $2}')
-
-	mkdir -p $(dirname $dst)
+	mkdir -p -- "$(dirname -- "${dst}")"
 	# if file is a symbolic link, remove the old one
-	if [[ "$(readlink -f $BASE/$src)" != "$(readlink -f $dst)" ]]; then
-		if [ -L $dst ]; then
-			echo -e "Updating link '$src'\n  old: '$(readlink -f $BASE/$src)'\n  new: '$(readlink -f $dst)'"
-			rm $dst
+	if [[ "$(readlink -f -- "${BASE}/${src}")" != "$(readlink -f -- "${dst}")" ]]; then
+		if [ -L "${dst}" ]; then
+			printf "Updating link '%s'\n  old: '%s'\n  new: '%s'\n" \
+							"${src}" \
+							"$(readlink -f -- "${BASE}/${src}")" \
+							"$(readlink -f -- "${dst}")"
+			rm -- "${dst}"
 		fi
-		[ ! -e $dst ] && ln -s $BASE/$src $dst
+		[ ! -e "${dst}" ] && ln -s -- "${BASE}/${src}" "${dst}"
 	fi
 done
 
