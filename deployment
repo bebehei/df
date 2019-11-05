@@ -11,6 +11,7 @@
 bash/bashrc ~/.bashrc
 bash/bashrc ~/.bash_profile
 bin/clean.sh ~/.bin/clean
+bin/git-authors ~/.bin/git-authors
 bin/git-git.sh ~/.bin/git-git
 bin/host-is-on.sh ~/.bin/host-is-on
 bin/mdo.sh ~/.bin/mdo
