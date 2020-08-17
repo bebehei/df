@@ -84,6 +84,7 @@ bindsym Ctrl+Down             exec --no-startup-id ~/.bin/xfbuttons.sh XF86Audio
 bindsym XF86AudioRaiseVolume  exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioRaiseVolume
 bindsym XF86AudioLowerVolume  exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioLowerVolume
 bindsym XF86AudioMute         exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioMute
+bindsym XF86AudioMicMute      exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioMicMute
 bindsym XF86AudioPlay         exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioPlay
 bindsym XF86AudioStop         exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioStop
 bindsym XF86AudioNext         exec --no-startup-id ~/.bin/xfbuttons.sh XF86AudioNext

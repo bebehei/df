@@ -16,6 +16,9 @@ case $1 in
 		playerctl stop
 	;;
 
+	XF86AudioMicMute)
+		pulseaudio-ctl mute-input
+	;;
 	XF86AudioRaiseVolume)
 		pulseaudio-ctl up
 	;;
