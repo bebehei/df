@@ -12,7 +12,6 @@ exec --no-startup-id ~/.bin/lockscreen -d
 exec --no-startup-id sleep 1 && QSyncthingTray
 exec --no-startup-id thunderbird
 exec --no-startup-id redshift-gtk
-exec --no-startup-id albert
 exec --no-startup-id xmodmap ~/.Xmodmap
 
 #dunst dev
@@ -104,8 +103,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+z exec ~/.bin/lockscreen -fl
 bindsym $mod+y exec ~/.bin/lockscreen -fl
 
-# start albert (program launcher)
-bindsym $mod+d exec --no-startup-id albert toggle || albert
+# start the program launcher
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # kill focused window
 bindsym $mod+Shift+q kill
