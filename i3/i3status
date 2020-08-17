@@ -29,6 +29,7 @@ memory {
 	format = "%used"
 	threshold_degraded = "10%"
 	threshold_critical = "5%"
+	memory_used_method = "memavailable"
 }
 
 disk "/" {
