@@ -28,18 +28,6 @@ alias kate='gvim -p'
 # to the remote host the xterm compatibility
 alias ssh='TERM=xterm-256color ssh'
 
-alias fuck="sudo !!"
-
-# only list the IO of <processname> with iotop
-# io <processname>
-io(){
-	local sudo_needed
-	[ ! -z "$(type sudo 2>/dev/null)" -a "$USER" != 'root' ] \
-		&& sudo_needed="sudo"
-
-	${sudo_needed} iotop -p$(pidof "$1" | sed 's/ / -p/g')
-}
-
 # open any file wihtout the knowledge of what type it is
 alias of="xdg-open"
 
@@ -58,22 +46,12 @@ if [ ! -z "$(type sudo 2>/dev/null)" -a "$USER" != 'root' ]; then
 	done
 	unset sudo
 
-	type pacman >/dev/null 2>&1 && pacman(){
-		local sudo_needed
-		# Check if pacman has -S, -R or -U option
-		# which should indicate in most times if we need sudo
-		echo "$*" | grep -- "-[SRU]" >/dev/null 2>&1 \
-			&& sudo_needed="sudo"
-		${sudo_needed} /usr/bin/pacman $*
-	}
-
 fi
 
 #END alias-definitions
 
 alias pwedit="sudo vim -p /etc/{passwd,group,shadow,gshadow}"
 alias cmdlist='find $(echo $PATH | tr ":" "\n") | awk -F / "{print \$NF}" | sort -u'
-alias makepasswd='makepasswd --minchars=10 --maxchars=25 --count=10'
 
 # set DPMS values in minutes
 dpms(){
@@ -82,21 +60,6 @@ dpms(){
 	xset s off
 	xset dpms "${secs}" "${secs}" "${secs}"
 }
-
-# scan your local network with nmap
-#
-# usage:
-#  snet <nmap-args>
-# example: (scan for every HP printer in the network)
-#  snet -p jetdirect --open
-#
-# - get all non-linklocal IP addrs from ip
-# - pipe the IPs through ipcalc to get the network ID
-#   - this is neccessary to prevent scanning the same network twice
-#   - likely to experience if connected via wifi and ethernet
-# - xargs it to nmap at the end
-
-alias snet="ip addr | \\grep -v "inet6" | \\grep inet | cut -d \" \" -f 6 | \\grep -v '127\\.0\\.[0-1]\\.[0-1]' | xargs -n 1 ipcalc | awk '/Network:/{print \$2}' | sort -u | xargs nmap"
 
 
 DUNST_REPO=~/code/dunst
@@ -128,20 +91,4 @@ function dhistorybuild(){
 		git status || return 1
 	done
 	git checkout "${ref}"
-}
-
-# Build the dunst package and run it directly
-
-function dpkg(){
-	set -x
-	rm -rf ${DUNST_REPO}/.dunst-git.o/{dunst,pkg,src} # force a reclone and full rebuild
-	rm -rf ${DUNST_REPO}/.dunst-git.o/dunst-git*.pkg.tar.xz
-	set +x
-
-	pushd ${DUNST_REPO}/.dunst-git.o
-	sed -i "s%^source=.*%source=('git+file://${DUNST_REPO}#branch=${1:-master}')%" PKGBUILD
-	makepkg -fi
-	popd
-
-	pkill dunst
 }
