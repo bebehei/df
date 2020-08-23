@@ -1,0 +1,6 @@
+configuration {
+    show-icons: true;
+    icon-theme: "Adwaita";
+}
+
+@import "/run/current-system/sw/share/rofi/themes/Arc-Dark.rasi"
