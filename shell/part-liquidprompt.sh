@@ -8,6 +8,4 @@ LP_DISABLED_VCS_PATH=""
 LP_ENABLE_TEMP=0
 LP_ENABLE_BATT=0
 LP_ENABLE_SUDO=1
-# if in git folder, the prompt takes very long to rebuild
-mountpoint $HOME 2> /dev/null > /dev/null && LP_DISABLED_VCS_PATH="$HOME"
 source ~/.liquidprompt/liquidprompt
