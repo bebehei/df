@@ -17,8 +17,6 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(sudo common-aliases colored-man-pages)
 source $ZSH/oh-my-zsh.sh
 
-RPROMPT='[%*]'
-
 alias reload=". ~/.zshrc"
 
 ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
@@ -29,3 +27,5 @@ bindkey '^ ' autosuggest-accept
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source ~/.profile.d/load
+
+RPROMPT='[%*]'
