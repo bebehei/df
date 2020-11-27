@@ -14,6 +14,7 @@ exec --no-startup-id firefox
 exec --no-startup-id redshift-gtk
 exec --no-startup-id telegram-desktop
 exec --no-startup-id thunderbird
+exec --no-startup-id . ~/.profile.d/90-keychain.sh && keepassxc
 exec --no-startup-id xmodmap ~/.Xmodmap
 
 font pango:Fira Code Bold 11
