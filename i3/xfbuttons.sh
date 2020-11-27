@@ -29,10 +29,10 @@ case $1 in
 		pulseaudio-ctl mute
 	;;
 	XF86MonBrightnessUp)
-		xbacklight -inc 5%
+		brightnessctl s +2.5%
 	;;
 	XF86MonBrightnessDown)
-		xbacklight -dec 5%
+		brightnessctl s 2.5%-
 	;;
 	*)
 		echo "Unknown key '$1'" >&2
