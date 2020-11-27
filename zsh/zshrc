@@ -14,7 +14,13 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-plugins=(sudo common-aliases colored-man-pages)
+plugins=(
+	cargo
+	colored-man-pages
+	common-aliases
+	sudo
+	terraform
+)
 source $ZSH/oh-my-zsh.sh
 
 alias reload=". ~/.zshrc"
