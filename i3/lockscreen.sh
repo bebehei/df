@@ -5,8 +5,6 @@
 LOCK_TIME=${LOCK_TIME:-3}
 LOCK_NOTIFY_TIME=${LOCK_NOTIFY_TIME:-15}
 
-SOCK_PATH="/run/user/${UID}/i3/locksock-${XDG_SESSION_ID:-unknown}"
-
 if [ -n "${WAYLAND_DISPLAY}" ]; then
 	LOCK_CMD="swaylock"
 else
@@ -47,7 +45,7 @@ function is_fullscreen() {
 }
 
 function already_locked() {
-	[ -S "${SOCK_PATH}" ]
+	! flock -w 0 ~/.lockscreen true
 }
 
 encrypt_the_chest(){
@@ -59,14 +57,10 @@ encrypt_the_chest(){
 }
 
 lock(){
-	socat /dev/null "UNIX-LISTEN:${SOCK_PATH}" &
-	local socat_pid=$!
-
-	${LOCK_CMD} \
+	flock ~/.lockscreen ${LOCK_CMD} \
 	  -t \
 	  -n \
 	  -i ~/.lockscreen
-	kill ${socat_pid}
 }
 
 notification(){
