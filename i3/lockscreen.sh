@@ -57,7 +57,7 @@ encrypt_the_chest(){
 }
 
 lock(){
-	flock ~/.lockscreen ${LOCK_CMD} \
+	ASAN_OPTIONS=detect_leaks=0 flock ~/.lockscreen ${LOCK_CMD} \
 	  -t \
 	  -n \
 	  -i ~/.lockscreen
