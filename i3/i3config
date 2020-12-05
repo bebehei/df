@@ -2,9 +2,7 @@ set $mod Mod4
 floating_modifier $mod
 
 #startup programs
-exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec_always --no-startup-id hsetroot -tile ~/.wallpaper
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-keyring-daemon --start --components secrets
 exec --no-startup-id autorandr --change
@@ -37,10 +35,6 @@ focus_follows_mouse no
 bindsym $mod+Tab workspace next
 bindsym Shift+$mod+Tab workspace prev
 bindsym $mod+m exec . ~/.profile.d/90-keychain.sh && keepassxc
-
-
-##firefox bughelper
-bindsym $mod+^ floating toggle; floating toggle;
 
 set $color_bg               #2F343F
 set $color_bg_inactive      #2F343F
@@ -117,16 +111,10 @@ bindsym $mod+g fullscreen global
 # change layouts
 bindsym $mod+b split h
 bindsym $mod+v split v
-bindsym $mod+c layout toggle split
-#bindsym $mod+z layout stacking
-#bindsym $mod+t layout tabbed
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-#bindsym $mod+space focus mode_toggle
 bindsym $mod+space exec --no-startup-id ~/.bin/xkbdtoggle.sh
-bindsym $mod+s focus child
-bindsym $mod+a focus parent
 
 bindsym Mod1+Left move workspace to output left
 bindsym Mod1+Right move workspace to output right
