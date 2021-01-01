@@ -25,7 +25,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias reload=". ~/.zshrc"
 
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_STRATEGY=(history)
 source ~/.zsh-autosuggestions/zsh-autosuggestions.zsh
 #       Ctrl+Space
 bindkey '^ ' autosuggest-accept
