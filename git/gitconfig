@@ -45,6 +45,7 @@
 	navigate = true
 	light = false
 	line-numbers = true
+	features = zebra
 [color "diff-highlight"]
 	oldNormal = red
 	oldHighlight = red bold 52
