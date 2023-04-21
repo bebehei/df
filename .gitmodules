@@ -57,9 +57,6 @@
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "vim/bundle/moriarty"]
 	path = vim/bundle/moriarty
 	url = https://github.com/aliou/moriarty.vim

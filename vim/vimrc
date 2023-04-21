@@ -224,12 +224,6 @@ nnoremap <leader>d :NERDTreeToggle<CR>
 " open nerdtree to the current file
 nnoremap <leader>f :NERDTreeFind<CR>
 
-" YouCompleteMe
-" disable use of tab
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
-let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py"
-
 nnoremap <C-H> :Hexmode<CR>
 inoremap <C-H> <Esc>:Hexmode<CR>
 vnoremap <C-H> :<C-U>Hexmode<CR>
