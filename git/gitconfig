@@ -17,7 +17,7 @@
 [core]
 	editor = vim
 	eol = native
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 [alias]
 	ct         = log --graph --decorate --pretty=oneline --abbrev-commit
 	committree = log --graph --decorate --pretty=oneline --abbrev-commit
@@ -36,8 +36,15 @@
 	fetch = +refs/merge-requests/*/head:refs/remotes/origin/merge-requests/*
 [diff]
 	tool = vimdiff
+	colorMoved = default
 [difftool]
 	prompt = false
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	light = false
+	line-numbers = true
 [color "diff-highlight"]
 	oldNormal = red
 	oldHighlight = red bold 52
