@@ -99,7 +99,7 @@ bindsym $mod+z exec ~/.bin/lockscreen -fl
 bindsym $mod+y exec ~/.bin/lockscreen -fl
 
 # start the program launcher
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+space exec --no-startup-id rofi -show drun
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -114,7 +114,7 @@ bindsym $mod+v split v
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-bindsym $mod+space exec --no-startup-id ~/.bin/xkbdtoggle.sh
+bindsym Control+space exec --no-startup-id ~/.bin/xkbdtoggle.sh
 
 bindsym Mod1+Left move workspace to output left
 bindsym Mod1+Right move workspace to output right
