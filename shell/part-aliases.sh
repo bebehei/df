@@ -60,35 +60,3 @@ dpms(){
 	xset s off
 	xset dpms "${secs}" "${secs}" "${secs}"
 }
-
-
-DUNST_REPO=~/code/dunst
-# Clone dunst into these paths to make it work
-#git clone git@github.com:dunst-project/dunst.git $DUNST_REPO
-# suffix the repos with .o to hide them from git, prefix with . to hide from myself
-#git clone git@github.com:dunst-project/dunst-project.org.git $DUNST_REPO/.dunst-project.o
-#git clone https://aur.archlinux.org/dunst-git.git $DUNST_REPO/.dunst-git.o
-
-# Dunst specific aliases
-alias dkill="pkill dunst"
-alias dmake="make -j -C $DUNST_REPO"
-alias drun="dkill; $DUNST_REPO/dunst -conf $DUNST_REPO/.testrc.o"
-alias dgdb="dkill; gdb -ex run ${DUNST_REPO}/dunst -ex 'set confirm off' -ex bt"
-alias dtest="dkill; gdb -cd ${DUNST_REPO}/test -ex run ${DUNST_REPO}/test/test -ex 'set confirm off' -ex bt"
-alias dvalgrind="dkill; G_SLICE=always-malloc G_DEBUG=gc-friendly valgrind --num-callers=40 --leak-check=full --show-leak-kinds=definite --track-origins=yes ${DUNST_REPO}/dunst -startup_notification yes"
-alias dhugo="(cd ${DUNST_REPO}/website && hugo server) &; xdg-open http://localhost:1313/"
-alias dlog="journalctl -a --follow --since=\"\$(date '+%Y-%m-%d %H:%M' --date='last hour')\" --user -u dunst.service"
-alias dmon="dbus-monitor path=/org/freedesktop/Notifications"
-alias dunstify="${DUNST_REPO}/dunstify"
-
-# build the whole history of your feature branch but stop on master
-function dhistorybuild(){
-	local ref="$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)"
-	while ! git branch --contains 2>&1 | grep -q master; do
-		git checkout HEAD~1 || return 1
-		dmake clean || return 1
-		dmake all dunstify test-valgrind doc-doxygen doc || return 1
-		git status || return 1
-	done
-	git checkout "${ref}"
-}
