@@ -29,7 +29,7 @@ set ruler                    " always show current position
 set scrolloff=7              " set scroll offset to 7 lines above/below cursor
 set autoread                 " auto read when file is changed from outside
 set nu                       " display line numbers
-set clipboard=unnamed        " yank to the system register (*) by default
+set clipboard=               " do not yank this shit to my clipboard, this works for unknown reasons now on macOS
 set hid                      " hide abandon buffers in order to not lose undo history
 set showmatch                " cursor shows matching ) and }
 set incsearch                " incremental search
