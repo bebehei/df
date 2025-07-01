@@ -4,6 +4,8 @@
 
 # Git automatic range diff
 
+# Enforce being in a git repository
+git rev-parse --is-inside-work-tree >/dev/null || exit $?
 
 # We actually should check out the head branch via `git remote show ${REMOTE}`,
 # but this requires active connection and active 2FA verification. Tedious to
