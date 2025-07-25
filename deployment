@@ -14,6 +14,7 @@ bin/clean.sh ~/.bin/clean
 bin/git-ard ~/.bin/git-ard
 bin/git-authors ~/.bin/git-authors
 bin/git-git.sh ~/.bin/git-git
+bin/git-rewrite-commits ~/.bin/git-rewrite-commits
 bin/host-is-on.sh ~/.bin/host-is-on
 bin/mdo.sh ~/.bin/mdo
 git/diff-so-fancy/diff-so-fancy ~/.bin/diff-so-fancy
