@@ -36,6 +36,7 @@ i3/xkbdtoggle.sh ~/.bin/xkbdtoggle.sh
 i3/xfbuttons.sh ~/.bin/xfbuttons.sh
 keepassxc/keepassxc.ini ~/.config/keepassxc/keepassxc.ini
 kitty/kitty.conf ~/.config/kitty/kitty.conf
+nvim ~/.config/nvim
 python/startup ~/.python_startup
 shell/load ~/.profile.d/load
 shell/part-aliases.sh ~/.profile.d/20-aliases.sh
