@@ -34,4 +34,16 @@ source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source ~/.profile.d/load
 
+if type brew &>/dev/null; then
+	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+	FPATH=/opt/homebrew/share/zsh/site-functions:$FPATH
+
+	autoload -Uz compinit
+	compinit
+fi
+
+if type kubectl &>/dev/null; then
+	source <(kubectl completion zsh)
+fi
+
 RPROMPT='[%*]'
