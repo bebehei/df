@@ -27,13 +27,13 @@
 [branch]
 	autoSetupMerge = always
 # Fetch also the merge requests data for common remotes
-# GitHub uses the "pull" space, GitLab the "merge-requests"
+# GitHub uses "pull/*", GitLab uses "merge-requests/*"
 [remote "origin"]
 	fetch = +refs/pull/*/head:refs/remotes/origin/pull/*
 	fetch = +refs/merge-requests/*/head:refs/remotes/origin/merge-requests/*
 [remote "upstream"]
 	fetch = +refs/pull/*/head:refs/remotes/upstream/pull/*
-	fetch = +refs/merge-requests/*/head:refs/remotes/origin/merge-requests/*
+	fetch = +refs/merge-requests/*/head:refs/remotes/upstream/merge-requests/*
 [diff]
 	tool = vimdiff
 	colorMoved = default
