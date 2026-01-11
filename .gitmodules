@@ -1,10 +1,10 @@
 [submodule "zsh/liquidprompt"]
 	path = zsh/liquidprompt
-	url = https://github.com/nojhan/liquidprompt
+	url = https://github.com/liquidprompt/liquidprompt
 	branch = master
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh
 	branch = master
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh/zsh-syntax-highlighting
