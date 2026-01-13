@@ -25,7 +25,14 @@
 [rerere]
 	enabled = true
 [branch]
-	autoSetupMerge = always
+	# When creating a new branch, do not copy the upstream
+	# info to the new branch. Otherwise git push fails
+	autoSetupMerge = simple
+[push]
+	# Automatically push branch to remote with the same name
+	# and do not explicitly require git push -u origin <branchname>
+	autoSetupRemote = true
+
 # Fetch also the merge requests data for common remotes
 # GitHub uses "pull/*", GitLab uses "merge-requests/*"
 [remote "origin"]
@@ -72,3 +79,7 @@
 	pushInsteadOf = https://gitlab.com/
 [url "ssh://git@bitbucket.org/"]
 	pushInsteadOf = https://bitbucket.org/
+[init]
+	defaultBranch = main
+[advice]
+	skippedCherryPicks = false
