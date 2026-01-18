@@ -4,5 +4,3 @@ require("config.lazy")
 vim.opt.number = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
-
-vim.o.showtabline = 2
