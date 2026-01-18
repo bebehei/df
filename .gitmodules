@@ -42,3 +42,6 @@
 [submodule "vim/bundle/moriarty"]
 	path = vim/bundle/moriarty
 	url = https://github.com/aliou/moriarty.vim
+[submodule "nvim/lua/lazy"]
+	path = nvim/lua/lazy
+	url = https://github.com/folke/lazy.nvim.git
