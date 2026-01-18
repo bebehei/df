@@ -7,6 +7,7 @@ general {
 	color_bad = "#FF6060"
 }
 
+order += "disk /nix/store"
 order += "disk /home"
 order += "disk /"
 order += "ipv6"
@@ -32,6 +33,11 @@ memory {
 	memory_used_method = "memavailable"
 }
 
+disk "/nix/store" {
+	format = "🖴 %avail"
+	low_threshold = 10
+	threshold_type = percentage_free
+}
 disk "/" {
 	format = " %avail"
 	low_threshold = 10
