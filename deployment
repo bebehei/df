@@ -42,7 +42,6 @@ shell/load ~/.profile.d/load
 shell/part-aliases.sh ~/.profile.d/20-aliases.sh
 shell/part-cd.sh ~/.profile.d/20-cd.sh
 shell/part-command-not-found.sh ~/.profile.d/80-command-not-found.sh
-shell/part-extract.sh ~/.profile.d/40-extract.sh
 shell/part-gitrepo-commited.sh ~/.profile.d/10-gitrepo-commited.sh
 shell/part-keychain.sh ~/.profile.d/90-keychain.sh
 shell/part-liquidprompt.sh ~/.profile.d/10-liquidprompt.sh
