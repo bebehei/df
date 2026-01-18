@@ -19,5 +19,5 @@ if [ -z "${IN_NIX_SHELL}" ]; then
 	# It's likely that I switched away in the meantime
 	LP_ENABLE_RUNTIME_BELL=1
 	LP_ENABLE_RUNTIME_BELL_THRESHOLD=60
-	source ~/.liquidprompt/liquidprompt
+	. ~/.liquidprompt/liquidprompt
 fi
