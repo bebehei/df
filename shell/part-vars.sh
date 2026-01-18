@@ -1,5 +1,5 @@
 #!/bin/sh
 
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export BROWSER=firefox
