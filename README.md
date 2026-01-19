@@ -6,8 +6,10 @@ These are my personal dotfiles. Free for personal use.
 
 * i3 (window manager)
     * lockscreen support and autolock after idle
+* neovim (nvim)
+    * replaces `vim` completely
 * vim
-    * forked off [vimrc](https://github.com/bebehei/vimrc/)
+    * used as fallback, in case neovim is not available
     * NerdTree, autocompletion
     * colored
     * [git diff integration](https://github.com/mhinz/vim-signify)
@@ -47,6 +49,7 @@ Execute the following tasks somewhere. It really shouldn't matter where you exec
 
     git clone https://github.com/bebehei/df
     cd df
+    git submodule update --init --recursive
     ./deploy.sh
 
 This will fetch some other submodules and symlink every configfile in the system.
