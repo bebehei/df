@@ -15,7 +15,6 @@
 [blame]
 	coloring = repeatedLines
 [core]
-	editor = nvim
 	eol = native
 	pager = delta
 [alias]
