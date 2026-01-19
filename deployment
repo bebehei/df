@@ -50,7 +50,6 @@ top/toprc ~/.toprc
 top/htoprc ~/.config/htop/htoprc
 vim/bundle ~/.vim/bundle
 vim/vimrc ~/.vimrc
-wget/wgetrc ~/.wgetrc
 zathura/zathurarc ~/.config/zathura/zathurarc
 zsh/zshrc ~/.zshrc
 zsh/oh-my-zsh ~/.oh-my-zsh
