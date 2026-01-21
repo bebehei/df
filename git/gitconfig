@@ -21,6 +21,7 @@
 	ct         = log --graph --decorate --pretty=oneline --abbrev-commit
 	committree = log --graph --decorate --pretty=oneline --abbrev-commit
 	d = difftool
+	stauts = status
 [rerere]
 	enabled = true
 [branch]
