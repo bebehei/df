@@ -1,4 +1,4 @@
 return {
   'vladdoster/remember.nvim',
-  config = {},
+  opts = {},
 }
