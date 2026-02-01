@@ -7,11 +7,7 @@ return {
   event = "VeryLazy",
   opts = {
     options = {
-      mode = "buffers", -- show buffers, not tabs
-      numbers = "none",
-      diagnostics = "nvim_lsp",
-      separator_style = "slant",
-      sort_by = "insert_after_current",
+      mode = "tabs", -- use tabs in classic vim context
       show_buffer_close_icons = true,
       show_close_icon = false,
       always_show_bufferline = true,
