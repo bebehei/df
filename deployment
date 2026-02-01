@@ -16,8 +16,6 @@ bin/git-authors ~/.bin/git-authors
 bin/git-git.sh ~/.bin/git-git
 bin/git-mergediff ~/.bin/git-mergediff
 bin/git-rewrite-commits ~/.bin/git-rewrite-commits
-git/diff-so-fancy/diff-so-fancy ~/.bin/diff-so-fancy
-git/diff-so-fancy/third_party/diff-highlight/diff-highlight ~/.bin/diff-highlight
 git/gitconfig ~/.gitconfig
 i3/dunst/dunstrc ~/.config/dunst/dunstrc
 i3/environment.d/terminal-default.conf ~/.config/environment.d/terminal-default.conf
