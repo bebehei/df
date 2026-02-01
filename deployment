@@ -16,7 +16,6 @@ bin/git-authors ~/.bin/git-authors
 bin/git-git.sh ~/.bin/git-git
 bin/git-mergediff ~/.bin/git-mergediff
 bin/git-rewrite-commits ~/.bin/git-rewrite-commits
-bin/host-is-on.sh ~/.bin/host-is-on
 git/diff-so-fancy/diff-so-fancy ~/.bin/diff-so-fancy
 git/diff-so-fancy/third_party/diff-highlight/diff-highlight ~/.bin/diff-highlight
 git/gitconfig ~/.gitconfig
