@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Show only the stuff the local branch changed, replicating
+# the output of a pull request
+
+# Enforce being in a git repository
+git rev-parse --is-inside-work-tree >/dev/null || exit $?
+
+git diff "$(git merge-base "HEAD" "origin/HEAD")..HEAD"
