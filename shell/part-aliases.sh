@@ -28,8 +28,23 @@ fi
 # to the remote host the xterm compatibility
 alias ssh='TERM=xterm-256color ssh'
 
-# open any file wihtout the knowledge of what type it is
-alias of="xdg-open"
+# Workplace macOS specific stuff
+if [ "$(uname -s)" = "Darwin" ]; then
+
+  # Replace ipcalc with ipv6-capable ipcalc
+  alias ipcalc="sipcalc"
+
+  # Set auto color like on NixOS
+  alias ls="ls --color=tty"
+  alias ping="ping --apple-time"
+  alias ping6="ping6 --apple-time"
+
+else
+  # Everything, which does not work on macOS
+
+  # open any file wihtout the knowledge of what type it is
+  alias of="xdg-open"
+fi
 
 if [ ! -z "$(type sudo 2>/dev/null)" ] && [ "$USER" != 'root' ]; then
 	#create sudo aliases WITHOUT leading s
