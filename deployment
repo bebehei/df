@@ -8,6 +8,7 @@
 # <sourcefile><whitespace><destinationfile>
 #
 # Files with whitespace are not allowed, these are not processed correct.
+aerospace/aerospace.toml ~/.config/aerospace/aerospace.toml
 bash/bashrc ~/.bashrc
 bash/bashrc ~/.bash_profile
 bin/clean.sh ~/.bin/clean

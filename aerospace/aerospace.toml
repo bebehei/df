@@ -1,0 +1,62 @@
+[mode.main.binding]
+
+alt-shift-c = 'reload-config'
+cmd-enter = 'exec-and-forget cd && exec /opt/homebrew/bin/kitty -1'
+
+# Disable annoying and useless native macOS "hide application" shortcut
+cmd-h = []
+# Disable annoying and useless native macOS "minimize application" shortcut
+cmd-m = []
+
+# FIXME: Understand this to have vertical/horizontal tiling
+# Consider using 'join-with' command as a 'split' replacement if you want to enable normalizations
+#alt-b = 'split horizontal'
+alt-v = 'join-with left'
+alt-f = 'fullscreen'
+alt-b = 'layout tiles horizontal vertical'
+alt-space = 'layout floating tiling'
+
+# Workspace movement
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+alt-0 = 'workspace 10'
+shift-alt-left  = ['move-workspace-to-monitor prev']
+shift-alt-right = ['move-workspace-to-monitor next']
+shift-alt-up    = ['move-workspace-to-monitor up'  ]
+shift-alt-down  = ['move-workspace-to-monitor down']
+
+# Window movement
+shift-alt-1 = 'move-node-to-workspace 1'
+shift-alt-2 = 'move-node-to-workspace 2'
+shift-alt-3 = 'move-node-to-workspace 3'
+shift-alt-4 = 'move-node-to-workspace 4'
+shift-alt-5 = 'move-node-to-workspace 5'
+shift-alt-6 = 'move-node-to-workspace 6'
+shift-alt-7 = 'move-node-to-workspace 7'
+shift-alt-8 = 'move-node-to-workspace 8'
+shift-alt-9 = 'move-node-to-workspace 9'
+shift-alt-0 = 'move-node-to-workspace 10'
+
+# Change Window Focus with alt+<hjkl> on the same monitor
+      alt-h = 'focus left'
+      alt-j = 'focus down'
+      alt-k = 'focus up'
+      alt-l = 'focus right'
+# Move Window with Shift+alt+<hjkl> on the same monitor
+shift-alt-h = 'move left'
+shift-alt-j = 'move down'
+shift-alt-k = 'move up'
+shift-alt-l = 'move right'
+
+# Move the current window with alt+<cursor> to the next monitor
+alt-left  = ['move-node-to-monitor left',  'focus-monitor left']
+alt-right = ['move-node-to-monitor right', 'focus-monitor right']
+alt-up    = ['move-node-to-monitor up',    'focus-monitor up']
+alt-down  = ['move-node-to-monitor down',  'focus-monitor down']
