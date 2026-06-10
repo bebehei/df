@@ -77,10 +77,10 @@ augroup END
 set autoindent               " auto indentation
 set copyindent               " copy the previous indentation on autoindenting
 set smarttab                 " insert tabs on line start according to context
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 "
 " Colors and Fonts
