@@ -7,6 +7,9 @@ vim.opt.shiftwidth  = 4
 vim.opt.tabstop     = 4
 vim.opt.softtabstop = 4
 
+vim.opt.ignorecase  = true -- ignore case when searching
+vim.opt.smartcase  = true  -- ignore case if search pattern is all lowercase, case-sensitive otherwise
+
 -- Automatically create directories when writing to files with non-existent dirs
 vim.api.nvim_create_autocmd({ "BufWritePre", "FileWritePre" }, {
   callback = function(event)
